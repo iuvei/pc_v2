@@ -1,0 +1,501 @@
+@import '../../../Style/variables';
+@import '../../../Style/mixin';
+
+$c_m_background: #4A4A5F;
+
+.content_main_wm{
+    width: 925px;
+    margin-left: 5px;
+}
+
+.content_main{
+    width: 925px;
+    margin-left: 5px;
+    .c_m_nav{
+        position: relative;
+        background-image: url('./Img/nav_bg.jpg');
+        @include lh(42px);
+        .c_m_nav_list{
+            position: absolute;
+            top: -2px;
+            @include wh(835px,44px);
+            padding-left: 12px;
+            li{
+                float: left;
+                padding: 0 15px;
+                font-size: 13px;
+                color:#fff;
+                &:hover{
+                    background-color: #fff;
+                    cursor: pointer;
+                    color:#C5A05A;
+                }
+            }
+            .nav_list_active{
+                box-sizing: border-box;
+                background-color: #fff;
+                color:#C5A05A;
+                border-top: 2px solid #C19A51;
+            }
+            .hvr-float:active, .hvr-float:focus, .hvr-float:hover {
+                -webkit-transform: translateY(-2px) !important;
+                transform: translateY(-2px) !important;
+            }
+        }
+        $c_m_select_method_w:90px;
+        .c_m_select{
+            position: relative;
+            &:hover .c_m_select_list{
+                display: block;
+            }
+        }
+        .c_m_select_method_text{
+            display: block;
+            width: $c_m_select_method_w;
+            text-align: center;
+            background-color: #00B28F;
+            color:#fff;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .c_m_select_list{
+            position: absolute;
+            top: 42px;
+            left:0;
+            width:$c_m_select_method_w;
+            background-color: #fff;
+            border-left: 1px solid #B2B2B2;
+            border-right: 1px solid #B2B2B2;
+            z-index: 9;
+            display: none;
+            li{
+                @include lh(30px);
+                border-bottom: 1px solid #B2B2B2;
+                text-align: center;
+                &:hover{
+                    cursor: pointer;
+                    background-color: #F3F3F3;
+                }
+            }
+        }
+    }
+    .c_m_controler{
+        .c_m_controler_method{
+            position: relative;
+            padding: 20px 15px 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #D6D6D6;
+            .c_m_metho_type{
+                margin-bottom: 10px;
+            }
+            span{
+                display: inline-block;
+                height: 24px;
+                line-height: 24px;
+                margin-right: 15px;
+            }
+            .c_m_method_details{
+                li{
+                    float: left;
+                    @include wh(64px, 24px);
+                    line-height: 24px;
+                    margin-right: 5px;
+                    text-align: center;
+                    @include borderRadius(12px);
+                    &:hover{
+                        background-color: #EEEEEE;
+                        cursor: pointer;
+                    }
+                }
+                .method_details_active{
+                    border: 2px solid #DCBD84;
+                    line-height: 20px;
+                    color:#DCBD84;
+                }
+            }
+            .c_m_bonus_ratio{
+                position: absolute;
+                right:0;
+                bottom:20px;
+                color:#3F3F3F;
+                .ant-select-arrow{
+                    top: 30% !important;
+                    right: -10px !important;
+                }
+            }
+        }
+        .c_m_select_number{
+            background-color: #F5F5F5;
+            border-bottom: 1px solid #D6D6D6;
+            padding: 15px 15px 20px 15px;
+            .c_m_select_title{
+                @include lh(24px);
+                margin-bottom: 20px;
+                .c_m_select_method{
+                    display: inline-block;
+                    @include lh(24px);
+                    @include borderRadius(2px);
+                    background: $c_m_background;
+                    padding: 0 10px;
+                    color:#fff;
+                    margin-right:10px;
+                }
+                .c_m_select_hot{
+                    @extend .c_m_select_method;
+                    padding: 0 5px;
+                    margin: 0 10px 0 0;
+                    li{
+                        float: left;
+                        padding: 0 5px;
+                        line-height: 24px;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                    .active{
+                        background: #D9B673;
+                        @include borderRadius(2px);
+                        @include wh(37px, 20px);
+                        line-height: 20px;
+                        text-align: center;
+                        margin-top: 2px;
+                    }
+                }
+                .c_m_select_name{
+                    position: relative;
+                    @extend .c_m_select_method;
+                    &:after{
+                        @include sj(23px, 40px, 6px, $c_m_background);
+                    }
+                }
+                .c_m_hot_switch{
+                    @include borderRadius(2px);
+                    margin-right: 10px;
+                }
+                .c_m_period_ty{
+                    li{
+                        width: 58px;
+                    }
+                }
+                .c_m_award_period{
+                    display: inline-block;
+                    border: 1px solid #B2B2B2;
+                    //@include wh(178px, 24px);
+                    line-height: 24px;
+                    height:24px;
+                    li{
+                        float: left;
+                        //width: 58px;
+                        text-align: center;
+                        padding: 0 10px;
+                        &:hover{
+                            cursor: pointer;
+                            background: #DFDFDF;
+                            height: 22px;
+                        }
+                    }
+                    li:nth-child(2){
+                        height: 22px;
+                        border-left: 1px solid #B2B2B2;
+                        border-right: 1px solid #B2B2B2;
+                    }
+                }
+                .c_m_select_title_right{
+                    span{
+                        color:#363636;
+                    }
+                    .c_m_lottery_explain{
+                        display: inline-block;
+                        @include wh(70px, 24px);
+                        @include borderRadius(2px);
+                        line-height: 24px;
+                        text-align: center;
+                        background: #8D887B;
+                        color: #fff;
+                        margin-left: 15px;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .c_m_select_body{
+                .c_m_select_body_number{
+                    margin-bottom: 22px;
+                    .c_m_select_places{
+                        float:left;
+                        @include wh(48px, 48px);
+                        line-height: 48px;
+                        text-align: center;
+                        color:$c_m_background;
+                        font-weight: bold;
+                        margin: 0 10px;
+                    }
+                    .c_m_number_list{
+                        display: inline-block;
+                        li{
+                            float:left;
+                            @include wh(48px, 48px);
+                            line-height: 48px;
+                            text-align: center;
+                            @include bis('./Img/ball_dafult_bg.png');
+                            font-weight: bold;
+                            font-size: 20px;
+                            margin-right: 5px;
+                            font-family: myFirstFont;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                        .omit{
+                            margin-top: -14px;
+                            font-size: 11px;
+                            font-weight: normal;
+                        }
+                        .number_active{
+                            @include bis('./Img/ball_active_bg.png');
+                            color: #fff;
+                            .omit{
+                                color: #FE1F1F;
+                            }
+                        }
+                    }
+                    .c_m_number_select{
+                        padding-top: 9px;
+                        li{
+                            float: left;
+                            @include wh(30px, 30px);
+                            line-height: 30px;
+                            @include borderRadius(2px);
+                            text-align: center;
+                            color: #424242;
+                            font-size: 15px;
+                            &:hover{
+                                background: #E0E0E0;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .c_m_select_operate{
+            background: #fff;
+            border-bottom: 1px solid #D6D6D6;
+            padding-top: 10px;
+            text-align: center;
+            .c_m_select_operate_text{
+                height: 40px;
+                line-height: 40px;
+                color:$c_m_background;
+                .c_m_select_money{
+                    margin-right: 30px;
+                    strong{
+                        color:#B88932;
+                        font-weight: normal;
+                        margin: 0 5px;
+                    }
+                }
+                .c_m_select_multiple{
+                    display: inline-block;
+                    height: 30px;
+                    line-height: 30px;
+                    input{
+                        @include wh(40px, 30px);
+                        border: 1px solid #B2B2B2;
+                        text-align: center;
+                        color:$c_m_background;
+                        margin: 0 5px;
+                    }
+                    img{
+                        vertical-align: middle;
+                        &:hover{
+                            cursor:pointer;
+                        }
+                    }
+                }
+                .c_m_select_yjftype{
+                    display: inline-block;
+                    margin-left: 20px;
+                    .c_m_select_yjf{
+                        margin-top: 5px;
+                        @include wh(99px, 30px);
+                        @include borderRadius(2px);
+                        background: $c_m_background;
+                        color:#fff;
+                        padding: 3px;
+                        li{
+                            float: left;
+                            line-height: 24px;
+                            width: 31px;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                        .yjf_active{
+                            @include wh(31px,24px);
+                            @include borderRadius(2px);
+                            background: #F1F4F3;
+                            color: #000;
+                        }
+                    }
+                }
+                .c_m_future_expect{
+                    margin-left: 20px;
+                }
+
+            }
+            .c_m_select_button{
+                margin: 10px 0;
+                .c_m_add_btn{
+                    display: inline-block;
+                    @include wh(156px,52px);
+                    @include bis('./Img/add_btn.png');
+                    margin-right: 5px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                .c_m_bet_btn{
+                    display: inline-block;
+                    @include wh(160px,54px);
+                    @include bis('./Img/bet_btn.png');
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .c_m_select_code_record{
+            padding: 10px;
+            background: #fff;
+            .c_m_select_record_content{
+                border: 1px solid #E0E0E0;
+                .c_m_select_record_table{
+                    border-right: 1px solid #E0E0E0;
+                    height: 150px;
+                    .c_m_select_record_list{
+                        @include lh(30px);
+                        border-bottom: 1px dotted #93979F;
+                        &:last-child{
+                            border: 0;
+                        }
+                        li{
+                            //@include lh(30px);
+                        }
+                        li:nth-child(1){
+                            float: left;
+                            width: 100px;
+                            margin-left: 10px;
+                        }
+                        li:nth-child(2){
+                            float: left;
+                        }
+                        li:nth-child(3){
+                            float: right;
+                        }
+                        li:nth-child(4){
+                            float: right;
+                        }
+                        li:nth-child(5){
+                            float: right;
+                            margin-right: 45px;
+                        }
+                        li:nth-child(6){
+                            float: right;
+                            margin-right: 45px;
+                        }
+                        li:nth-child(7){
+                            float: right;
+                            margin-right: 45px;
+                        }
+                        .c_m_cody_close{
+                            padding: 0 10px;
+                            img{
+                                vertical-align: middle;
+                                margin-bottom: 4px;
+                            }
+                            &:hover{
+                                cursor:pointer;
+                            }
+                        }
+
+                    }
+                }
+                .c_m_machine_select{
+                    height: 150px;
+                    background: #F4F4F4;
+                    text-align: center;
+                    padding-top: 10px;
+                    .machine_defult{
+                        @include bis('./Img/machine_select_bg.png');
+                        @include wh(145px, 40px);
+                        margin: 0 auto 5px auto;
+                        line-height: 40px;
+                        @include sc(14px,#1B1B21);
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                    .machine_active{
+                        @include bis('./Img/machine_active_bg.png');
+                        @include wh(145px, 40px);
+                        color:#fff;
+                    }
+                    .c_m_machine_select_1{
+                        @extend .machine_defult;
+                    }
+                    .c_m_machine_select_5{
+                        @extend .machine_defult;
+                    }
+                    .c_m_empty{
+                        @extend .machine_defult;
+                    }
+                }
+            }
+            .c_m_affirm_bet{
+                @include lh(50px);
+                margin: 5px 0 20px 0;
+                .c_m_affirm_bet_list{
+                    li{
+                        float:left;
+                        @include sc(14px,#1B1B21);
+                        margin-right: 20px;
+                    }
+                    strong{
+                        font-weight: normal;
+                        color:#B88932;
+                    }
+                    .c_m_superaddition{
+                        @include wh(85px, 50px);
+                        @include bis('./Img/superaddition_bg.png');
+                        @include sc(17px,#505050);
+                        text-align: center;
+                        margin-right: 10px;
+                        float: right;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                    .c_m_affirm_bet_btn{
+                        @include wh(156px, 50px);
+                        @include bis('./Img/affirm_bet_bg.png');
+                        @include sc(17px,#fff);
+                        line-height: 49px;
+                        text-align: center;
+                        font-weight: bold;
+                        margin-right: 15px;
+                        margin-top: 1px;
+                        float: right;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

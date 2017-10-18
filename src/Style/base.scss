@@ -1,0 +1,22 @@
+@import './reset.scss';
+@import './variables.scss';
+@import './mixin.scss';
+@import './vender/antd.css';
+@import './vender/nprogress.css';
+@import './hover/hover-min.css';
+
+/* 浮动公共样式 */
+.left{ float:left; _display:inline; }
+.right{ float:right; _display:inline; }
+.clear:after{ display:block; content:''; clear:both;}
+.clear{ zoom:1;}
+
+.ellipsis{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+
+
+

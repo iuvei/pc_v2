@@ -1,0 +1,55 @@
+@import '../../Style/variables';
+@import '../../Style/mixin';
+
+.s_m_main{
+    $background-color: #4A4A5F;
+    .a_m_controler{
+        background-color: #fff;
+        margin: 11px 0 20px 5px;
+        font-size: 15px;
+        .a_m_title{
+            @include lh(50px);
+            padding-left: 22px;
+            font-size: 14px;
+            color:$background-color;
+            background-color: #F4F4F4;
+        }
+        .a_m_nav{
+            background-color: #3E3E49;
+            color: #fff;
+            @include lh(45px);
+        }
+        .a_m_nav_list{
+            li{
+                float: left;
+                padding: 0 28px;
+                &:hover{
+                    cursor: pointer;
+                    background-color: #ddd;
+                    color:#3A2C0F;
+                }
+            }
+            .a_m_nav_active{
+                box-sizing: border-box;
+                background-color: #fff;
+                color:#3A2C0F;
+                border-top: 2px solid #CB1313;
+                @include lh(45px);
+            }
+        }
+        .ant-select-selection{
+            @include borderRadius(0);
+            border: 1px solid #B2B2B2;
+        }
+        .ant-input{
+            @extend .ant-select-selection;
+            height: 30px;
+        }
+        .ant-select-selection--single{
+            height: 30px;
+        }
+        .ant-select-selection__rendered{
+            line-height: 28px;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import '../../../Style/variables';
+@import '../../../Style/mixin';
+
+$background-color: #3C3C3C;
+.left_sider{
+    @include wh(50px, 100%);
+    background: #282828;
+    text-align: center;
+    margin-top: $content-top;
+    .left_sider_list{
+        li{
+            @include lh(47px);
+            border-bottom: 1px solid $background-color;
+            img{
+                vertical-align: middle;
+                margin-bottom: 2px;
+            }
+            &:hover{
+                cursor:pointer;
+            }
+        }
+        li:last-child{
+            @include lh(13px);
+            background: $background-color;
+            border:0;
+        }
+    }
+}
