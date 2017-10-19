@@ -16,6 +16,7 @@ $background-color: #4A4A5F;
     .a_m_nav{
         background-color: $background-color;
         color: #fff;
+        padding-left: 15px;
         @include lh(45px);
     }
     .a_m_nav_list{

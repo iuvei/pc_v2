@@ -1,0 +1,39 @@
+@import '../../../Style/variables';
+@import '../../../Style/mixin';
+
+
+.marke_k_main{
+    .marke_k_list{
+        width: 345px;
+        margin: 50px auto 30px;
+        li{
+            margin: 12px 0;
+            color:#363636;
+            font-size: 14px;
+            @include lh(32px);
+        }
+        .marke_k_register_link{
+            border: 1px solid #CB1313;
+            @include borderRadius(2px);
+            li{
+                float:left;
+                @include lh(32px);
+                margin: 0;
+                padding: 0 20px;
+            }
+            .register_link_active{
+                background-color: #CB1313;
+                color:#fff;
+            }
+        }
+    }
+    .marke_k_left{
+        display: inline-block;
+        width: 110px;
+        text-align: right;
+        padding-right: 17px;
+    }
+    .ant-input {
+        width: 200px;
+    }
+}
