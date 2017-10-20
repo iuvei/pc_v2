@@ -1,15 +1,12 @@
 /*团队列表*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import { DatePicker, Checkbox, Table, Badge, Menu, Dropdown, Icon } from 'antd';
+import { DatePicker, Table } from 'antd';
 import 'whatwg-fetch'
 
 import './TeamList.scss'
 
 import t_m_serch from './Img/t_m_serch.png'
-import t_m_icon from './Img/t_m_icon.png'
-import t_m_icon2 from './Img/t_m_icon2.png'
-
 
 @observer
 export default class TeamList extends Component {
@@ -26,12 +23,6 @@ export default class TeamList extends Component {
     };
     onChange(date, dateString) {
         console.log(date, dateString);
-    }
-    onSelectLottery(e) {
-        console.log(`checked = ${e.target.checked}`);
-    }
-    onChangeTable(pagination, filters, sorter) {
-        console.log('params', pagination, filters, sorter);
     }
 
     handleTableChange = (pagination, filters, sorter) => {

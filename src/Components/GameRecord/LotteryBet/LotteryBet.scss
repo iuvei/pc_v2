@@ -2,7 +2,6 @@
 @import '../../../Style/mixin';
 
 $border-color: #B2B2B2;
-$rodio-check-color: #CB1313;
 
 .team_list{
     color: #363636;
@@ -61,9 +60,7 @@ $rodio-check-color: #CB1313;
                     float: left;
                     margin-right: 30px;
                     .l_b_acount{
-                        display: inline-block;
-                        width: 70px;
-                        text-align: right;
+
                     }
                     .l_b_user_name{
                         box-sizing: border-box;

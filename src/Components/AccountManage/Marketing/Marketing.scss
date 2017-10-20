@@ -3,26 +3,37 @@
 
 
 .marke_k_main{
+    padding: 0 15px 20px;
+    .marke_k_main_top{
+        padding-bottom: 10px;
+        border-bottom: 1px dotted #85888D;
+    }
     .marke_k_list{
-        width: 345px;
+        width: 350px;
         margin: 50px auto 30px;
         li{
             margin: 12px 0;
             color:#363636;
             font-size: 14px;
-            @include lh(32px);
+            @include lh(35px);
+        }
+        li:last-child{
+            margin-top: 35px;
         }
         .marke_k_register_link{
-            border: 1px solid #CB1313;
+            border: 1px solid $rodio-check-color;
             @include borderRadius(2px);
             li{
                 float:left;
                 @include lh(32px);
                 margin: 0;
                 padding: 0 20px;
+                &:hover{
+                    cursor: pointer;
+                }
             }
             .register_link_active{
-                background-color: #CB1313;
+                background-color: $rodio-check-color;
                 color:#fff;
             }
         }
@@ -34,6 +45,31 @@
         padding-right: 17px;
     }
     .ant-input {
-        width: 200px;
+        width: 236px;
+    }
+    .marke_k_register_site{
+        margin: 20px 0 15px;
+        color: #363636;
+    }
+    .t_l_table_list{
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 10px;
+    }
+    /*复选框样式*/
+    .ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner {
+        background-color: $rodio-check-color;
+        border-color: $rodio-check-color;
+    }
+    .ant-radio-checked .ant-radio-inner {
+        border-color: $rodio-check-color;
+    }
+    // 生成推广链接按钮
+    .ant-btn-primary {
+        background-color: #CF2027;
+        border-color: #CF2027;
+    }
+    .ant-btn-lg{
+        padding: 4px 26px 5px 26px;
     }
 }

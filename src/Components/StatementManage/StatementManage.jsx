@@ -40,7 +40,7 @@ export default class StatementManage extends Component {
                                             <Link to="/statementManage/selfTable">个人总表</Link>
                                         </li>
                                         <li className={3 === this.state.navIndex ? 'a_m_nav_active' : ''} onClick={()=>{this.setState({navIndex: 3})}}>
-                                            <Link to="/statementManage/teamList">团队总表</Link>
+                                            <Link to="/statementManage/teamTable">团队总表</Link>
                                         </li>
                                         <li className={4 === this.state.navIndex ? 'a_m_nav_active' : ''} onClick={()=>{this.setState({navIndex: 4})}}>
                                             <Link to="/statementManage/gameBill">游戏帐变</Link>

@@ -12,7 +12,7 @@ import t_m_icon2 from './Img/t_m_icon2.png'
 
 
 @observer
-export default class TeamList extends Component {
+export default class teamTable extends Component {
     constructor(props){
         super(props)
         this.state = {

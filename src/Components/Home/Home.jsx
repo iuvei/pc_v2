@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react';
 
 import HeaderNav from '../Common/HeaderNav/headerNav'
 import Footer from '../Common/Footer/Footer'
-import BetCenter from '../Betting/BetCenter'
 
 import './Home.scss';
 

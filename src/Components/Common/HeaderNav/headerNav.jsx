@@ -41,8 +41,10 @@ export default class HeaderNav extends Component {
                             >
                                 <Menu.Item key="1">
                                     <div className="nav-text">
-                                        <p>首页</p>
-                                        <p>Home</p>
+                                        <Link to={`/betCenter`}>
+                                            <p>首页</p>
+                                            <p>Home</p>
+                                        </Link>
                                     </div>
                                 </Menu.Item>
                                 <SubMenu
@@ -74,8 +76,10 @@ export default class HeaderNav extends Component {
                                 </SubMenu>
                                 <Menu.Item key="2">
                                     <div className="nav-text">
-                                        <p>优惠活动</p>
-                                        <p>Activity</p>
+                                        <Link to={`/betCenter`}>
+                                            <p>优惠活动</p>
+                                            <p>Activity</p>
+                                        </Link>
                                     </div>
                                 </Menu.Item>
                                 <Menu.Item key="3">
@@ -88,8 +92,10 @@ export default class HeaderNav extends Component {
                                 </Menu.Item>
                                 <Menu.Item key="4">
                                     <div className="nav-text">
-                                        <p>财务中心</p>
-                                        <p>Finacial</p>
+                                        <Link to={`/betCenter`}>
+                                            <p>财务中心</p>
+                                            <p>Finacial</p>
+                                        </Link>
                                     </div>
                                 </Menu.Item>
                                 <Menu.Item key="5">
