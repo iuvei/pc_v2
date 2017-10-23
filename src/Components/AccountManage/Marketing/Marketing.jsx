@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import { InputNumber,Input, Checkbox, Button, Table } from 'antd';
+import { InputNumber,Input, Checkbox, Button, Table, Radio } from 'antd';
 
 import './Marketing.scss'
 
@@ -13,6 +13,7 @@ export default class Marketing extends Component {
           data: [],
           pagination: {},
           loading: false,
+          radioMemberValue: 1, //默认选中代理
       }
     };
     enterIconLoading() {
@@ -21,8 +22,11 @@ export default class Marketing extends Component {
     onChange(value) {
         console.log('changed', value);
     };
-    onChangeCheckbox(e) {
-        console.log(`checked = ${e.target.checked}`);
+    onChangeMember(e) {
+        console.log('radio checked', e.target.value);
+        this.setState({
+            value: e.target.value,
+        });
     };
     handleTableChange = (pagination, filters, sorter) => {
         const pager = { ...this.state.pagination };
@@ -70,7 +74,7 @@ export default class Marketing extends Component {
         const columns = [
             {
                 title: '链接地址',
-                dataIndex: 'name2121',// 列数据在数据项中对应的 key，支持 a.b.c 的嵌套写法
+                dataIndex: 'name2121',
                 // width: '20%',
             }, {
                 title: '用户类型',
@@ -82,7 +86,7 @@ export default class Marketing extends Component {
                 title: '时间',
                 dataIndex: 'gender',
             }, {
-                title: '注册数',
+                title: '注册敄1�7',
                 dataIndex: 'name',
             }, {
                 title: '备注',
@@ -94,6 +98,7 @@ export default class Marketing extends Component {
                 title: '操作',
                 dataIndex: 'email6',
             }];
+        const RadioGroup = Radio.Group;
         return (
             <div className="marke_k_main">
                 <div className="marke_k_main_top">
@@ -108,8 +113,10 @@ export default class Marketing extends Component {
                         <li>
                             <span className="marke_k_left">用户类型：</span>
                             <span>
-                                <Checkbox onChange={this.onChangeCheckbox}>代理</Checkbox>
-                                <Checkbox onChange={this.onChangeCheckbox}>会员</Checkbox>
+                                <RadioGroup onChange={this.onChangeMember} value={this.state.radioMemberValue}>
+                                    <Radio value={1}>代理</Radio>
+                                    <Radio value={0}>会员</Radio>
+                                  </RadioGroup>
                             </span>
                         </li>
                         <li>

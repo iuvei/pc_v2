@@ -27,13 +27,6 @@ export default class LotteryBet extends Component {
     onChange(date, dateString) {
         console.log(date, dateString);
     };
-    onSelectLottery(e) {
-        console.log(`checked = ${e.target.checked}`);
-    };
-    onChangeTable(pagination, filters, sorter) {
-        console.log('params', pagination, filters, sorter);
-    };
-
     handleTableChange = (pagination, filters, sorter) => {
         const pager = { ...this.state.pagination };
         pager.current = pagination.current;

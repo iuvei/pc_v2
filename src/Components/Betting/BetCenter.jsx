@@ -17,32 +17,32 @@ export default class BetCenter extends Component {
         return (
             <div className="main">
                 <div className="b_c_left_sider" >
-                    <QueueAnim duration={1000}
-                               animConfig={[
-                                   { opacity: [1, 0], translateX: [0, -100] }
-                               ]}>
+                    {/*<QueueAnim duration={1000}*/}
+                               {/*animConfig={[*/}
+                                   {/*{ opacity: [1, 0], translateX: [0, -100] }*/}
+                               {/*]}>*/}
                         <LeftSider key="LeftSider"/>
-                    </QueueAnim>
+                    {/*</QueueAnim>*/}
                 </div>
                     <Row type="flex" justify="center" align="top">
                         <Col span={1}></Col>
                         <Col span={19}>
-                            <QueueAnim duration={1000}
-                                       animConfig={[
-                                           { opacity: [1, 0], translateY: [0, 50] },
-                                           { opacity: [1, 0], translateY: [0, -50] }
-                                       ]}>
-                                <ContentTop key="a"/>
-                                <ContentMian key="b"/>
-                            </QueueAnim>
+                            {/*<QueueAnim duration={1000}*/}
+                                       {/*animConfig={[*/}
+                                           {/*{ opacity: [1, 0], translateY: [0, 50] },*/}
+                                           {/*{ opacity: [1, 0], translateY: [0, -50] }*/}
+                                       {/*]}>*/}
+                                <ContentTop key="ContentTop"/>
+                                <ContentMian key="ContentMian"/>
+                            {/*</QueueAnim>*/}
                         </Col>
                         <Col span={4}>
-                            <QueueAnim duration={1000}
-                                       animConfig={[
-                                           { opacity: [1, 0], translateX: [0, 100] }
-                                       ]}>
+                            {/*<QueueAnim duration={1000}*/}
+                                       {/*animConfig={[*/}
+                                           {/*{ opacity: [1, 0], translateX: [0, 100] }*/}
+                                       {/*]}>*/}
                                 <RightSider key="RightSider"/>
-                            </QueueAnim>
+                            {/*</QueueAnim>*/}
                         </Col>
                     </Row>
 
