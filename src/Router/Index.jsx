@@ -18,6 +18,13 @@ import {
     bankCardManage,
     security,
     message,
+    financingCenter,
+    recharge,
+    withdraw,
+    mentionFillingRecord,
+    transfer,
+    transferRecord,
+    accountChange,
 } from './Chunks';
 
 const routes = params => (
@@ -35,6 +42,15 @@ const routes = params => (
             <Route path="/accountManage/message" getComponent={message} params={params}/>
         </Route>
         <Route path="/gameRecord" getComponent={gameRecord} params={params}/>
+        <Route path="/financingCenter" getComponent={financingCenter} params={params}>
+            <IndexRoute getComponent={recharge} />
+            <Route path="/financingCenter/recharge" getComponent={recharge} params={params}/>
+            <Route path="/financingCenter/withdraw" getComponent={withdraw} params={params}/>
+            <Route path="/financingCenter/mentionFillingRecord" getComponent={mentionFillingRecord} params={params}/>
+            <Route path="/financingCenter/transfer" getComponent={transfer} params={params}/>
+            <Route path="/financingCenter/transferRecord" getComponent={transferRecord} params={params}/>
+            <Route path="/financingCenter/accountChange" getComponent={accountChange} params={params}/>
+        </Route>
         <Route path="/statementManage" getComponent={statementManage} params={params}>
             <IndexRoute getComponent={teamStatistics} />
             <Route path="/statementManage/teamStatistics" getComponent={teamStatistics} params={params}/>
@@ -42,7 +58,6 @@ const routes = params => (
             <Route path="/statementManage/selfTable" getComponent={selfTable} params={params}/>
             <Route path="/statementManage/gameBill" getComponent={gameBill} params={params}/>
         </Route>
-
     </Route>
 
 );

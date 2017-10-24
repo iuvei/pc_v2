@@ -19,6 +19,14 @@
         li:last-child{
             margin-top: 35px;
         }
+        .inputText{
+            color: #797979;
+            margin-left: 12px;
+            strong{
+                font-weight: normal;
+                color:#D70000;
+            }
+        }
         .marke_k_register_link{
             border: 1px solid $rodio-check-color;
             @include borderRadius(2px);
@@ -35,6 +43,27 @@
                 background-color: $rodio-check-color;
                 color:#fff;
             }
+        }
+        .m_k_slider{
+            display: inline-block;
+            height: 32px;
+            li{
+                margin: 0 5px;
+                float: left;
+                line-height: 32px;
+            }
+            //.m_k_minus_add{
+            //    @include wh(20px, 20px);
+            //    line-height: 18px;
+            //    border: 1px solid #C8C8C8;
+            //    @include borderRadius(3px);
+            //    margin-top: 5.5px;
+            //    background-color: #fff;
+            //    text-align: center;
+            //    &:hover{
+            //        cursor: pointer;
+            //    }
+            //}
         }
     }
     .marke_k_left{
@@ -55,20 +84,12 @@
         background-color: #fff;
         padding: 10px;
     }
-    /*复选框样式*/
-    .ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner {
-        background-color: $rodio-check-color;
-        border-color: $rodio-check-color;
-    }
-    .ant-radio-checked .ant-radio-inner {
-        border-color: $rodio-check-color;
-    }
-    // 生成推广链接按钮
-    .ant-btn-primary {
-        background-color: #CF2027;
-        border-color: #CF2027;
-    }
     .ant-btn-lg{
         padding: 4px 26px 5px 26px;
+    }
+    .ant-slider{
+        border-top: 4px solid #F4F4F4;
+        border-bottom: 4px solid #F4F4F4;
+        background-color: #A9A9A9;
     }
 }

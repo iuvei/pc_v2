@@ -4855,8 +4855,8 @@ textarea.ant-input {
 }
 .ant-btn-primary {
   color: #fff;
-  background-color: #108ee9;
-  border-color: #108ee9;
+  background-color: #CF2027;
+  border-color: #CF2027;
 }
 .ant-btn-primary > a:only-child {
   color: currentColor;
@@ -4873,8 +4873,8 @@ textarea.ant-input {
 .ant-btn-primary:hover,
 .ant-btn-primary:focus {
   color: #fff;
-  background-color: #49a9ee;
-  border-color: #49a9ee;
+  background-color: #c43e46;
+  border-color: #c43e46;
 }
 .ant-btn-primary:hover > a:only-child,
 .ant-btn-primary:focus > a:only-child {
@@ -4893,8 +4893,8 @@ textarea.ant-input {
 .ant-btn-primary:active,
 .ant-btn-primary.active {
   color: #fff;
-  background-color: #0e77ca;
-  border-color: #0e77ca;
+  background-color: #CF2027;
+  border-color: #CF2027;
 }
 .ant-btn-primary:active > a:only-child,
 .ant-btn-primary.active > a:only-child {
@@ -5902,7 +5902,7 @@ textarea.ant-input {
 .ant-radio-wrapper:hover .ant-radio .ant-radio-inner,
 .ant-radio:hover .ant-radio-inner,
 .ant-radio-focused .ant-radio-inner {
-  border-color: #108ee9;
+  border-color: #CB1313;
 }
 .ant-radio-inner {
   position: relative;
@@ -5930,7 +5930,7 @@ textarea.ant-input {
   border-top: 0;
   border-left: 0;
   content: ' ';
-  background-color: #108ee9;
+  background-color: #CB1313;
   opacity: 0;
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
@@ -5949,7 +5949,7 @@ textarea.ant-input {
   right: 0;
 }
 .ant-radio-checked .ant-radio-inner {
-  border-color: #108ee9;
+  border-color: #CB1313;
 }
 .ant-radio-checked .ant-radio-inner:after {
   -webkit-transform: scale(1);
@@ -14513,7 +14513,7 @@ textarea.ant-pagination-options-quick-jumper input {
   left: 0;
   height: 4px;
   border-radius: 4px;
-  background-color: #9fd2f6;
+  background-color: #CF2027;
   z-index: 1;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
@@ -14522,10 +14522,10 @@ textarea.ant-pagination-options-quick-jumper input {
   background-color: #e1e1e1;
 }
 .ant-slider:hover .ant-slider-handle {
-  border-color: #49a9ee;
+  border-color: #CF2027;
 }
 .ant-slider:hover .ant-slider-track {
-  background-color: #70bbf2;
+  background-color: #CF2027;
 }
 .ant-slider-handle {
   position: absolute;
@@ -14535,7 +14535,7 @@ textarea.ant-pagination-options-quick-jumper input {
   height: 14px;
   cursor: pointer;
   border-radius: 50%;
-  border: solid 2px #88c7f4;
+  border: solid 2px #DCDCDC;
   background-color: #fff;
   z-index: 2;
   -webkit-transition: border-color 0.3s ease, -webkit-transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);

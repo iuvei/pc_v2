@@ -21,13 +21,8 @@ export default class HeaderNav extends Component {
     };
     render() {
         const SubMenu = Menu.SubMenu;
-        const menu = (
-            <Menu>
-                <Menu.Item key="1">1st menu item</Menu.Item>
-                <Menu.Item key="2">2nd memu item</Menu.Item>
-                <Menu.Item key="3">3d menu item</Menu.Item>
-            </Menu>
-        );
+        const MenuItemGroup = Menu.ItemGroup;
+
         return (
             <div>
                 <nav className="nav">
@@ -35,7 +30,7 @@ export default class HeaderNav extends Component {
                         <img className="logo" src={logoSrc} alt="logo"/>
                         <div className="menus">
                             <Menu
-                                // onClick={this.handleClick}
+                                onClick={this.handleClick}
                                 selectedKeys={[this.state.current]}
                                 mode="horizontal"
                             >
@@ -47,28 +42,31 @@ export default class HeaderNav extends Component {
                                         </Link>
                                     </div>
                                 </Menu.Item>
-                                <SubMenu
-                                    title={
-                                        <div className="nav-text">
-                                            <Link to={`/betCenter`}>
-                                                <p>彩票游戏</p>
-                                                <p>Lottery</p>
-                                            </Link>
-                                        </div>
-                                    }>
-                                    <Menu.Item key="firmInfo:1">
-                                        <Link to="/firmIntroduce">公司介绍</Link>
-                                    </Menu.Item>
-                                    <Menu.Item key="firmInfo:2">
-                                        <Link to="/journalism">公司新闻</Link>
-                                    </Menu.Item>
-                                    <Menu.Item key="firmInfo:3">联系我们</Menu.Item>
+                                <SubMenu className="c_p_game"
+                                         title={
+                                                    <div className="nav-text">
+                                                        <Link to={`/betCenter`}>
+                                                            <p>彩票游戏</p>
+                                                            <p>Lottery</p>
+                                                        </Link>
+                                                    </div>
+                                                }>
+                                    <MenuItemGroup title="Item 1">
+                                        <Menu.Item key="setting:1">Option 1</Menu.Item>
+                                        <Menu.Item key="setting:2">Option 2</Menu.Item>
+                                    </MenuItemGroup>
+                                    <MenuItemGroup title="Item 2">
+                                        <Menu.Item key="setting:3">Option 3</Menu.Item>
+                                        <Menu.Item key="setting:4">Option 4</Menu.Item>
+                                    </MenuItemGroup>
                                 </SubMenu>
                                 <SubMenu
                                     title={
                                     <div className="nav-text">
-                                        <p>综合游戏</p>
-                                        <p>Other Games</p>
+                                        <Link to={`/betCenter`}>
+                                            <p>综合游戏</p>
+                                            <p>Other Games</p>
+                                        </Link>
                                     </div>
                                 }>
                                     <Menu.Item key="solution:1">Option 1</Menu.Item>
@@ -92,7 +90,7 @@ export default class HeaderNav extends Component {
                                 </Menu.Item>
                                 <Menu.Item key="4">
                                     <div className="nav-text">
-                                        <Link to={`/betCenter`}>
+                                        <Link to={`/financingCenter`}>
                                             <p>财务中心</p>
                                             <p>Finacial</p>
                                         </Link>

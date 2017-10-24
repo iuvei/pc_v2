@@ -96,3 +96,46 @@ export const gameBill = (location, callback) => {
     }, 'gameBill');
 };
 
+// 财务中心
+export const financingCenter = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/FinancingCenter/FinancingCenter').default);
+    }, 'financingCenter');
+};
+// 财务中心/充值
+export const recharge = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/FinancingCenter/Recharge/Recharge').default);
+    }, 'recharge');
+};
+// 财务中心/提现
+export const withdraw = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/FinancingCenter/Withdraw/Withdraw').default);
+    }, 'withdraw');
+};
+// 财务中心/充提记录
+export const mentionFillingRecord = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/FinancingCenter/MentionFillingRecord/MentionFillingRecord').default);
+    }, 'mentionFillingRecord');
+};
+// 财务中心/转账
+export const transfer = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/FinancingCenter/Transfer/Transfer').default);
+    }, 'transfer');
+};
+// 财务中心/转账记录
+export const transferRecord = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/FinancingCenter/TransferRecord/TransferRecord').default);
+    }, 'transferRecord');
+};
+// 财务中心/资金帐变
+export const accountChange = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/FinancingCenter/AccountChange/AccountChange').default);
+    }, 'accountChange');
+};
+

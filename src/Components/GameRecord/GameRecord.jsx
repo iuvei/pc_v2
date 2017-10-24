@@ -35,7 +35,7 @@ export default class GameRecord extends Component {
                                 <span>彩票投注</span>
                             </div>
                             <div className="a_m_nav">
-                                <ul className="a_m_nav_list">
+                                <ul className="a_m_nav_list a_m_nav_list_p">
                                     {
                                         navList.map((value, index)=>{
                                             return (
