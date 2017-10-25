@@ -36,6 +36,7 @@ export default class Recharge extends Component {
     onRecharge() {
         this.setState({ iconLoadingRecharge: true });
     };
+    // 选择不同类型的充值界面
     rechargeMain() {
         const imgUrl = [nongye, jianshe, zhongxin, guangda, beijing, gongshang, guangfa, pufa, youzheng, shanghai, pingan, xingye];
         const ul_0 = <div>
@@ -58,13 +59,19 @@ export default class Recharge extends Component {
                                 <InputNumber min={1} max={100000} defaultValue={1} size="large" onChange={(value)=>{this.onRechargeAmount(value)}} />
                                 <span style={{margin: '0 15px 0 3px'}}>元</span>
                                 <span className="r_m_recharge_text">
-                                                    单笔充值限额：最低
-                                                    <strong style={{color: '#CB1313',fontWeight: 'normal'}}>10</strong>
-                                                    ，最高
-                                                    <strong style={{color: '#CB1313',fontWeight: 'normal'}}>50000</strong>
-                                                    ，单日充值总额无上限
-                                                </span>
+                                    单笔充值限额：最低
+                                    <strong style={{color: '#CB1313',fontWeight: 'normal'}}>10</strong>
+                                    ，最高
+                                    <strong style={{color: '#CB1313',fontWeight: 'normal'}}>50000</strong>
+                                    ，单日充值总额无上限
+                                </span>
                                 <p className="r_m_dx">壹百元整</p>
+                            </li>
+                            <li className="r_m_primary_btn">
+                                <span className="r_m_li_w"></span>
+                                <Button type="primary" size="large" loading={this.state.iconLoadingRecharge} onClick={()=>{this.onRecharge()}}>
+                                    立即充值
+                                </Button>
                             </li>
                         </ul>
                      </div>;
@@ -86,6 +93,12 @@ export default class Recharge extends Component {
                                         <strong style={{color: '#CB1313',fontWeight: 'normal'}}>50000</strong>
                                     </span>
                             <p className="r_m_dx">壹百元整</p>
+                        </li>
+                        <li className="r_m_primary_btn">
+                            <span className="r_m_li_w"></span>
+                            <Button type="primary" size="large" loading={this.state.iconLoadingRecharge} onClick={()=>{this.onRecharge()}}>
+                                立即充值
+                            </Button>
                         </li>
                     </ul>;
         const ul_2 = <ul className="r_m_list">
@@ -134,11 +147,6 @@ export default class Recharge extends Component {
 
                 </ul>
                 { this.rechargeMain() }
-                <div className="r_m_primary_btn">
-                    <Button type="primary" size="large" loading={this.state.iconLoadingRecharge} onClick={()=>{this.onRecharge()}}>
-                        立即充值
-                    </Button>
-                </div>
             </div>
         );
     }

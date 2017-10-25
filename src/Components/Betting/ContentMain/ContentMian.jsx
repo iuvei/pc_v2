@@ -261,7 +261,7 @@ export default class ContentMian extends Component {
                                             <li>[定位胆_定位胆]</li>
                                             <li>12314564897897987,454</li>
 
-                                            <li className="c_m_cody_close hvr-pop"><img src={close} alt=""/></li>
+                                            <li className="c_m_cody_close hvr-grow-shadow"><img src={close} alt=""/></li>
                                             <li>1500.00元</li>
                                             <li>448注</li>
                                             <li>1倍</li>

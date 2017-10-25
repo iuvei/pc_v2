@@ -45,15 +45,21 @@ export default class HeaderNav extends Component {
                                 <SubMenu className="c_p_game"
                                          title={
                                                     <div className="nav-text">
-                                                        <Link to={`/betCenter`}>
-                                                            <p>彩票游戏</p>
-                                                            <p>Lottery</p>
-                                                        </Link>
+                                                        <p>彩票游戏</p>
+                                                        <p>Lottery</p>
                                                     </div>
                                                 }>
                                     <MenuItemGroup title="Item 1">
-                                        <Menu.Item key="setting:1">Option 1</Menu.Item>
-                                        <Menu.Item key="setting:2">Option 2</Menu.Item>
+                                        <Menu.Item key="setting:1">
+                                            <Link to={`/betCenter`}>
+                                                Option 1
+                                            </Link>
+                                        </Menu.Item>
+                                        <Menu.Item key="setting:2">
+                                            <Link to={`/gameRecord`}>
+                                                Option 2
+                                            </Link>
+                                        </Menu.Item>
                                     </MenuItemGroup>
                                     <MenuItemGroup title="Item 2">
                                         <Menu.Item key="setting:3">Option 3</Menu.Item>

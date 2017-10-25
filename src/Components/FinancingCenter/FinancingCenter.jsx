@@ -55,22 +55,22 @@ export default class FinancingCenter extends Component {
                             </div>
                             <div className="a_m_nav">
                                 <ul className="a_m_nav_list">
-                                    <li className={0 === this.state.navIndex ? 'a_m_nav_active' : ''} onClick={()=>{this.setState({navIndex: 0})}}>
+                                    <li className={0 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 0})}}>
                                         <Link to="/FinancingCenter/recharge">充值</Link>
                                     </li>
-                                    <li className={1 === this.state.navIndex ? 'a_m_nav_active' : ''} onClick={()=>{this.setState({navIndex: 1})}}>
+                                    <li className={1 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 1})}}>
                                         <Link to="/FinancingCenter/withdraw">提现</Link>
                                     </li>
-                                    <li className={2 === this.state.navIndex ? 'a_m_nav_active' : ''} onClick={()=>{this.setState({navIndex: 2})}}>
+                                    <li className={2 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 2})}}>
                                         <Link to="/FinancingCenter/mentionFillingRecord">充提记录</Link>
                                     </li>
-                                    <li className={3 === this.state.navIndex ? 'a_m_nav_active' : ''} onClick={()=>{this.setState({navIndex: 3})}}>
+                                    <li className={3 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 3})}}>
                                         <Link to="/FinancingCenter/transfer">转账</Link>
                                     </li>
-                                    <li className={4 === this.state.navIndex ? 'a_m_nav_active' : ''} onClick={()=>{this.setState({navIndex: 4})}}>
+                                    <li className={4 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 4})}}>
                                         <Link to="/FinancingCenter/transferRecord">转账记录</Link>
                                     </li>
-                                    <li className={5 === this.state.navIndex ? 'a_m_nav_active' : ''} onClick={()=>{this.setState({navIndex: 5})}}>
+                                    <li className={5 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 5})}}>
                                         <Link to="/FinancingCenter/accountChange">资金账变</Link>
                                     </li>
                                 </ul>
