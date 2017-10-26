@@ -8,8 +8,11 @@
         text-align: center;
         background: #8D887B;
     }
+    .ant-table-header{
+        
+    }
 }
-.ant-table-scroll{
+.ant-table-body{
     /*---滚动条默认显示样式--*/
     &::-webkit-scrollbar-thumb{
         background-color:#018EE8;

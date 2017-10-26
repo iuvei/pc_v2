@@ -16,43 +16,35 @@ export default class BetCenter extends Component {
     render() {
         return (
             <div className="main">
-                <QueueAnim duration={1000}
-                animConfig={[
-                { opacity: [1, 0], translateX: [0, -100] }
-                ]}>
-                <div>
-                    <div className="b_c_left_sider" >
-                        {/*<QueueAnim duration={1000}*/}
-                        {/*animConfig={[*/}
-                        {/*{ opacity: [1, 0], translateX: [0, -100] }*/}
-                        {/*]}>*/}
-                        <LeftSider key="LeftSider"/>
-                        {/*</QueueAnim>*/}
+                <QueueAnim>
+                    <div key="div">
+                        <div className="b_c_left_sider" >
+                            <QueueAnim  duration={1000}
+                                        animConfig={[
+                                                        { opacity: [1, 0], translateX: [0, -100] }
+                                                    ]}
+                                        key="QueueAnim_LeftSider">
+                                <LeftSider key="LeftSider"/>
+                            </QueueAnim>
+                        </div>
+                        <Row type="flex" justify="center" align="top">
+                            <Col span={1}></Col>
+                            <Col span={19}>
+                                <ContentTop key="ContentTop"/>
+                                <ContentMian key="ContentMian"/>
+                            </Col>
+                            <Col span={4}>
+                                <QueueAnim duration={1000}
+                                animConfig={[
+                                                { opacity: [1, 0], translateX: [0, 100] }
+                                            ]}
+                                key="QueueAnim_RightSider">
+                                    <RightSider key="RightSider"/>
+                                </QueueAnim>
+                            </Col>
+                        </Row>
                     </div>
-                    <Row type="flex" justify="center" align="top">
-                        <Col span={1}></Col>
-                        <Col span={19}>
-                            {/*<QueueAnim duration={1000}*/}
-                            {/*animConfig={[*/}
-                            {/*{ opacity: [1, 0], translateY: [0, 50] }*/}
-                            {/*]}>*/}
-                            <ContentTop key="ContentTop"/>
-                            <ContentMian key="ContentMian"/>
-                            {/*</QueueAnim>*/}
-
-                        </Col>
-                        <Col span={4}>
-                            {/*<QueueAnim duration={1000}*/}
-                            {/*animConfig={[*/}
-                            {/*{ opacity: [1, 0], translateX: [0, 100] }*/}
-                            {/*]}>*/}
-                            <RightSider key="RightSider"/>
-                            {/*</QueueAnim>*/}
-                        </Col>
-                    </Row>
-                </div>
                 </QueueAnim>
-
             </div>
         );
     }
