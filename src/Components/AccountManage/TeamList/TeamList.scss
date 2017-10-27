@@ -18,25 +18,21 @@ $border-color: #B2B2B2;
             .t_l_time_row{
                 @include lh(30px);
                 margin-bottom: 12px;
+                .ant-input{
+                    width: 175px;
+                    @include borderRadius(0);
+                    height: 30px;
+                }
+                .ant-input-number{
+                    width: 70px;
+                    border-radius: 0;
+                    @include lh(30px);
+                }
                 li{
                     float: left;
                 }
                 li:first-child{
                     margin-left: 15px;
-                }
-                .l_b_user_name{
-                    box-sizing: border-box;
-                    border: 1px solid $border-color;
-                    padding: 3px 5px;
-                    @include lh(30px);
-                    margin-left: 8px;
-                    width: 130px;
-                }
-                .l_b_balance{
-                    border: 1px solid $border-color;
-                    @include lh(30px);
-                    padding: 3px 5px;
-                    width: 70px;
                 }
                 .t_m_serch{
                     height: 30px;
@@ -74,11 +70,7 @@ $border-color: #B2B2B2;
             background-color: #ECFEFF;
         }
     }
-    .ant-input{
-        @include borderRadius(0);
-        border: 1px solid $border-color;
-        height: 30px;
-    }
+
 }
 .t_l_prompt{
     background-color: #bbb;

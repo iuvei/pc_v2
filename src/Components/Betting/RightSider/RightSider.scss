@@ -2,7 +2,7 @@
 @import '../../../Style/mixin';
 
 .right_sider{
-    margin: $content-top 0 10px -10px;
+    margin: $content-top 0 10px -19px;
 }
 .user_info{
     @include wh(210px, 178px);
@@ -61,6 +61,7 @@
 .history_period{
     background-color: #fff;
     padding-bottom: 24px;
+    width: 210px;
     .thead_title{
         background-color: #8D887B;
         font-size: 14px;

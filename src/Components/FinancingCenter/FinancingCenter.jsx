@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import {Link} from 'react-router';
-import { Row, Col  } from 'antd';
-
-import LeftSider from '../Betting/LeftSider/LeftSider';
+import { Row, Col } from 'antd';
+import QueueAnim from 'rc-queue-anim';
 
 import './FinancingCenter.scss';
 @observer
@@ -39,49 +38,55 @@ export default class FinancingCenter extends Component {
                 return '充值';
         }
     };
+    componentWillMount() {
+    };
+    componentDidMount() {
+    };
+
     render() {
         return (
-            <div className="financing_c_main main_width">
-                <Row type="flex" justify="center" align="top">
-                    <Col span={1}>
-                        <LeftSider/>
-                    </Col>
-                    <Col span={23}>
-                        <div className="a_m_controler">
-                            <div className="a_m_title">
-                                <span>财务中心</span>
-                                <span> > </span>
-                                <span>{this.onChangeTitle()}</span>
+            <div className="financing_c_main mix_height">
+                <QueueAnim duration={1000}
+                           animConfig={[
+                               { opacity: [1, 0], translateY: [0, 50] }
+                           ]}>
+                    <Row type="flex" justify="center" align="top" key="financingCenter">
+                        <Col span={24}>
+                            <div className="a_m_controler">
+                                <div className="a_m_title">
+                                    <span>财务中心</span>
+                                    <span> > </span>
+                                    <span>{this.onChangeTitle()}</span>
+                                </div>
+                                <div className="a_m_nav">
+                                    <ul className="a_m_nav_list">
+                                        <li className={0 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 0})}}>
+                                            <Link to="/FinancingCenter/recharge">充值</Link>
+                                        </li>
+                                        <li className={1 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 1})}}>
+                                            <Link to="/FinancingCenter/withdraw">提现</Link>
+                                        </li>
+                                        <li className={2 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 2})}}>
+                                            <Link to="/FinancingCenter/mentionFillingRecord">充提记录</Link>
+                                        </li>
+                                        <li className={3 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 3})}}>
+                                            <Link to="/FinancingCenter/transfer">转账</Link>
+                                        </li>
+                                        <li className={4 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 4})}}>
+                                            <Link to="/FinancingCenter/transferRecord">转账记录</Link>
+                                        </li>
+                                        <li className={5 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 5})}}>
+                                            <Link to="/FinancingCenter/accountChange">资金账变</Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    {this.props.children}
+                                </div>
                             </div>
-                            <div className="a_m_nav">
-                                <ul className="a_m_nav_list">
-                                    <li className={0 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 0})}}>
-                                        <Link to="/FinancingCenter/recharge">充值</Link>
-                                    </li>
-                                    <li className={1 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 1})}}>
-                                        <Link to="/FinancingCenter/withdraw">提现</Link>
-                                    </li>
-                                    <li className={2 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 2})}}>
-                                        <Link to="/FinancingCenter/mentionFillingRecord">充提记录</Link>
-                                    </li>
-                                    <li className={3 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 3})}}>
-                                        <Link to="/FinancingCenter/transfer">转账</Link>
-                                    </li>
-                                    <li className={4 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 4})}}>
-                                        <Link to="/FinancingCenter/transferRecord">转账记录</Link>
-                                    </li>
-                                    <li className={5 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 5})}}>
-                                        <Link to="/FinancingCenter/accountChange">资金账变</Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                {this.props.children}
-                            </div>
-                        </div>
-                    </Col>
-
-                </Row>
+                        </Col>
+                    </Row>
+                </QueueAnim>
             </div>
         );
     }

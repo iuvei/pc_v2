@@ -1,3 +1,10 @@
+
+
+export const login = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Login/Login').default);
+    }, 'login');
+};
 export const home = (location, callback) => {
     require.ensure([], (require) => {
         callback(null, require('../Components/Home/Home').default);

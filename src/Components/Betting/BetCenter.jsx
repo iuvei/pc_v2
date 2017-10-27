@@ -5,7 +5,6 @@ import QueueAnim from 'rc-queue-anim';
 
 import './BetCenter.scss';
 
-import LeftSider from './LeftSider/LeftSider';
 import ContentTop from './ContentTop/ContentTop';
 import RightSider from './RightSider/RightSider';
 import ContentMian from './ContentMain/ContentMian';
@@ -15,35 +14,25 @@ export default class BetCenter extends Component {
 
     render() {
         return (
-            <div className="main">
-                <QueueAnim>
-                    <div key="div">
-                        <div className="b_c_left_sider" >
-                            <QueueAnim  duration={1000}
-                                        animConfig={[
-                                                        { opacity: [1, 0], translateX: [0, -100] }
-                                                    ]}
-                                        key="QueueAnim_LeftSider">
-                                <LeftSider key="LeftSider"/>
-                            </QueueAnim>
-                        </div>
-                        <Row type="flex" justify="center" align="top">
-                            <Col span={1}></Col>
-                            <Col span={19}>
-                                <ContentTop key="ContentTop"/>
-                                <ContentMian key="ContentMian"/>
+            <div>
+                <QueueAnim duration={1000}
+                    animConfig={[
+                    { opacity: [1, 0], translateY: [0, 50] }
+                    ]}>
+                    <Row type="flex" justify="center" align="top" key="betcenter">
+                        <Col span={20}>
+                            <ContentTop key="ContentTop"/>
+                            <ContentMian key="ContentMian"/>
+                        </Col>
+                        <QueueAnim duration={1000}
+                        animConfig={[
+                        { opacity: [1, 0], translateX: [0, 80] }
+                        ]} key="RightSiderCol">
+                            <Col span={4}  key="RightSider">
+                                <RightSider/>
                             </Col>
-                            <Col span={4}>
-                                <QueueAnim duration={1000}
-                                animConfig={[
-                                                { opacity: [1, 0], translateX: [0, 100] }
-                                            ]}
-                                key="QueueAnim_RightSider">
-                                    <RightSider key="RightSider"/>
-                                </QueueAnim>
-                            </Col>
-                        </Row>
-                    </div>
+                        </QueueAnim>
+                    </Row>
                 </QueueAnim>
             </div>
         );

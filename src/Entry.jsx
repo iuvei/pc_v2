@@ -6,7 +6,6 @@ import Routes from './Router/Index';
 import 'whatwg-fetch'
 
 import './Style/base.scss';
-// import './CommonJs/jquery-3.2.1.min'
 
 // hashHistory, browserHistory
 render(

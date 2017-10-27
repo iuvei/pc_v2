@@ -3088,7 +3088,7 @@ samp {
   transition: color .3s ease;
 }
 .ant-alert-close-icon .anticon-cross:hover {
-  color: #404040;
+  color: #282828;
 }
 .ant-alert-close-text {
   position: absolute;
@@ -3733,7 +3733,7 @@ textarea.ant-select-auto-complete.ant-select .ant-input {
   font-size: 12px;
 }
 .ant-select-selection--multiple .ant-select-selection__choice__remove:hover {
-  color: #404040;
+  color: #282828;
 }
 .ant-select-selection--multiple .ant-select-selection__choice__remove:before {
   content: "\E633";
@@ -11745,7 +11745,7 @@ textarea.ant-time-picker-input {
 }
 .ant-dropdown-menu-dark,
 .ant-dropdown-menu-dark .ant-dropdown-menu {
-  background: #404040;
+  background: #282828;
 }
 .ant-dropdown-menu-dark .ant-dropdown-menu-item,
 .ant-dropdown-menu-dark .ant-dropdown-menu-submenu-title,
@@ -12613,7 +12613,7 @@ textarea.ant-input-number {
   flex: 0 0 auto;
 }
 .ant-layout-header {
-  background: #404040;
+  background: #282828;
   padding: 0 50px;
   height: 64px;
   line-height: 64px;
@@ -12634,7 +12634,7 @@ textarea.ant-input-number {
   -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   position: relative;
-  background: #404040;
+  background: #282828;
 }
 .ant-layout-sider-has-trigger {
   padding-bottom: 48px;
@@ -12667,7 +12667,7 @@ textarea.ant-input-number {
   width: 36px;
   height: 42px;
   line-height: 42px;
-  background: #404040;
+  background: #282828;
   color: #fff;
   font-size: 18px;
   border-radius: 0 4px 4px 0;
@@ -13175,17 +13175,17 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 .ant-menu-dark,
 .ant-menu-dark .ant-menu-sub {
   color: rgba(255, 255, 255, 0.67);
-  background: #404040;
+  background: #282828;
 }
 .ant-menu-dark .ant-menu-inline.ant-menu-sub {
   background: #333;
 }
 .ant-menu-dark.ant-menu-horizontal {
-  border-bottom-color: #404040;
+  border-bottom-color: #282828;
 }
 .ant-menu-dark.ant-menu-horizontal > .ant-menu-item,
 .ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu {
-  border-color: #404040;
+  border-color: #282828;
   border-bottom: 0;
   top: 0;
 }
@@ -13591,7 +13591,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   outline: none;
 }
 .ant-notification-notice-close:hover {
-  color: #404040;
+  color: #282828;
 }
 .ant-notification-notice-btn {
   float: right;
@@ -16043,7 +16043,7 @@ tr.ant-table-expanded-row:hover {
   font-size: 12px;
 }
 .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab .anticon-close:hover {
-  color: #404040;
+  color: #282828;
   font-weight: bold;
 }
 .ant-tabs.ant-tabs-editable-card > .ant-tabs-bar .ant-tabs-tab > div {
@@ -16093,7 +16093,7 @@ tr.ant-table-expanded-row:hover {
   font-size: 12px;
 }
 .ant-tabs-extra-content .ant-tabs-new-tab:hover {
-  color: #404040;
+  color: #282828;
 }
 .ant-tabs-vertical.ant-tabs-card > .ant-tabs-bar .ant-tabs-nav-container {
   height: auto;

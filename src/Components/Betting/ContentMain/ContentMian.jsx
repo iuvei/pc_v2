@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import { Select, Row, Col } from 'antd';
+import { Select, Row, Col, Button, Radio } from 'antd';
 import './ContentMain.scss'
 
 import BetRecordTable from '../BetRecordTable/BetRecordTable'
@@ -32,7 +32,9 @@ export default class ContentMian extends Component {
     handleChangeRatio(value) {
         console.log(value);
     };
-
+    handleSizeChange(e) {
+        console.log(e.target.value)
+    }
     // 监听输入倍数
     multipleValue(event) {
         console.log(event.target.value)
@@ -125,23 +127,21 @@ export default class ContentMian extends Component {
                     </div>
                     <div className="c_m_select_number">
                         <div className="c_m_select_title">
-                            <ul className="c_m_select_name">
-                                <li className="left">前三组选复式</li>
-                            </ul>
+                            <div className="c_m_select_name">
+                                前三组选复式
+                            </div>
                             <ul className="c_m_select_hot">
                                 <li onClick={()=>{this.setState({hotIndex : 0})}} className={this.state.hotIndex === 0 ? 'active' : ''} >冷热</li>
                                 <li onClick={()=>{this.setState({hotIndex : 1})}} className={this.state.hotIndex === 1 ? 'active' : ''}>遗漏</li>
                             </ul>
-                            <ul className="c_m_award_period c_m_hot_switch clear">
-                                <li onClick={()=>{this.setState({hotSwitch : !this.state.hotSwitch})}}>
-                                    {this.state.hotSwitch ? '开' : '关'}
-                                </li>
-                            </ul>
-                            <ul className="c_m_award_period c_m_period_ty clear">
-                                <li>30期</li>
-                                <li>60期</li>
-                                <li>100期</li>
-                            </ul>
+                            <Button className="c_m_btn" onClick={()=>{this.setState({hotSwitch : !this.state.hotSwitch})}}>
+                                {this.state.hotSwitch ? '开' : '关'}
+                            </Button>
+                            <Radio.Group  onChange={(e)=>{this.handleSizeChange(e)}}>
+                                <Radio.Button value="30期">30期</Radio.Button>
+                                <Radio.Button value="60期">60期</Radio.Button>
+                                <Radio.Button value="100期">100期</Radio.Button>
+                            </Radio.Group>
                             <span className="c_m_select_title_right right">
                                 <span>从万、千、百位各选一个号码组成一注</span>
                                 <span className="c_m_lottery_explain">中奖说明</span>
@@ -151,7 +151,7 @@ export default class ContentMian extends Component {
                             <div className="c_m_select_body_number">
                                 <p className="c_m_select_places">万位</p>
                                 <ul className="c_m_number_list">
-                                    <li>0<p className="omit">3</p></li>
+                                    <li>1<p className="omit">3</p></li>
                                     <li className="number_active">0<p className="omit">3</p></li>
                                     <li>0<p className="omit">3</p></li>
                                     <li>0<p className="omit">3</p></li>
@@ -261,7 +261,17 @@ export default class ContentMian extends Component {
                                             <li>[定位胆_定位胆]</li>
                                             <li>12314564897897987,454</li>
 
-                                            <li className="c_m_cody_close hvr-grow-shadow"><img src={close} alt=""/></li>
+                                            <li className="c_m_cody_close"><img src={close} alt=""/></li>
+                                            <li>1500.00元</li>
+                                            <li>448注</li>
+                                            <li>1倍</li>
+                                            <li>元</li>
+                                        </ul>
+                                        <ul className="c_m_select_record_list clear">
+                                            <li>[定位胆_定位胆]</li>
+                                            <li>12314564897897987,454</li>
+
+                                            <li className="c_m_cody_close"><img src={close} alt=""/></li>
                                             <li>1500.00元</li>
                                             <li>448注</li>
                                             <li>1倍</li>

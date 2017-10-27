@@ -1,7 +1,7 @@
 /*彩票投注*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import { DatePicker, Checkbox, Radio, Table, Select } from 'antd';
+import { DatePicker, Checkbox, Radio, Table, Select, Input } from 'antd';
 import 'whatwg-fetch'
 
 import './LotteryBet.scss'
@@ -325,7 +325,7 @@ export default class LotteryBet extends Component {
                 }]
         }
         return (
-            <div className="team_list">
+            <div className="lottery_bet">
                 <div className="team_list_top">
                     <div className="t_l_time" style={{borderBottom: this.props.navIndex === 5 ? '0' : '1px dotted #8B8D92'}}>
                         <ul className="t_l_time_row">
@@ -393,7 +393,7 @@ export default class LotteryBet extends Component {
                             </li>
                             <li style={{display: this.props.navIndex === 1 ? 'none' : 'block'}}>
                                 <span className={this.props.navIndex === 5 ? 'l_b_acount' : ''}>用户名：</span>
-                                <input className="l_b_user_name" type="text"/>
+                                <Input placeholder="请输入用户名" />
                             </li>
                             <li style={{marginRight: 0, display: this.props.navIndex === 1 ? 'none' : 'block'}}>
                                 <Checkbox onChange={(e)=>{this.selectSubordinate(e)}}>包含下级</Checkbox>

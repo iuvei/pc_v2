@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import {
+    login,
     home,
     betCenter,
     accountManage,
@@ -28,8 +29,12 @@ import {
 } from './Chunks';
 
 const routes = params => (
-    <Route path="/" getComponent={home}>
-        <IndexRoute getComponent={betCenter} />
+
+    <Route path="/">
+        <IndexRoute getComponent={login} />
+        <Route path="/home" getComponent={home} params={params}>
+            <IndexRoute getComponent={betCenter} />
+        </Route>
         <Route path="/betCenter" getComponent={betCenter} params={params}/>
         <Route path="/accountManage" getComponent={accountManage} params={params}>
             <IndexRoute getComponent={selfInfo} />

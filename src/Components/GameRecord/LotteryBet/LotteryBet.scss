@@ -3,7 +3,7 @@
 
 $border-color: #B2B2B2;
 
-.team_list{
+.lottery_bet{
     color: #363636;
     font-size: 14px;
     .team_list_top{
@@ -62,12 +62,7 @@ $border-color: #B2B2B2;
                     .l_b_acount{
 
                     }
-                    .l_b_user_name{
-                        box-sizing: border-box;
-                        border: 1px solid $border-color;
-                        padding: 3px 5px;
-                        @include lh(30px);
-                        margin-left: 8px;
+                    .ant-input{
                         width: 120px;
                     }
                 }

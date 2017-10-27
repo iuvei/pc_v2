@@ -4,7 +4,7 @@
 .g_r_main{
     .ant-select-selection{
         @include borderRadius(0);
-        border: 1px solid #B2B2B2;
+        //border: 1px solid #B2B2B2;
     }
     .ant-input{
         @extend .ant-select-selection;

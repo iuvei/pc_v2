@@ -1,7 +1,7 @@
 /*团队列表*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import { DatePicker, Table } from 'antd';
+import { DatePicker, Table, Input, InputNumber } from 'antd';
 import 'whatwg-fetch'
 
 import './TeamList.scss'
@@ -119,15 +119,15 @@ export default class TeamList extends Component {
                         <ul className="t_l_time_row">
                             <li>
                                 <span>用户名：</span>
-                                <input className="l_b_user_name" type="text"/>
+                                <Input placeholder="请输入用户名" />
                             </li>
                             <li className="t_m_date_classify">余额：</li>
                             <li style={{marginLeft: '8px'}}>
-                                <input className="l_b_balance" type="text"/>
+                                <InputNumber min={1} max={100000} defaultValue={3} onChange={()=>{this.onChange()}} />
                             </li>
                             <li style={{margin: '0 8px'}}>至</li>
                             <li>
-                                <input className="l_b_balance" type="text"/>
+                                <InputNumber min={1} max={100000} defaultValue={3} onChange={()=>{this.onChange()}} />
                             </li>
                             <li className="t_m_date_classify">注册时间：</li>
                             <li style={{marginLeft: '8px'}}><DatePicker onChange={(date, dateString)=>{this.onChange(date, dateString)}} /></li>

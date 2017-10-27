@@ -130,7 +130,7 @@ $c_m_background: #4A4A5F;
             border-bottom: 1px solid #D6D6D6;
             padding: 15px 15px 20px 15px;
             .c_m_select_title{
-                @include lh(24px);
+                //@include lh(24px);
                 margin-bottom: 20px;
                 .c_m_select_method{
                     display: inline-block;
@@ -146,7 +146,7 @@ $c_m_background: #4A4A5F;
                     padding: 0 5px;
                     margin: 0 10px 0 0;
                     li{
-                        float: left;
+                        display: inline-block;
                         padding: 0 5px;
                         line-height: 24px;
                         &:hover{
@@ -169,37 +169,11 @@ $c_m_background: #4A4A5F;
                         @include sj(23px, 40px, 6px, $c_m_background);
                     }
                 }
-                .c_m_hot_switch{
-                    @include borderRadius(2px);
+                .c_m_btn{
+                    line-height: 16px;
+                    @include wh(30px, 24px);
+                    padding: 0;
                     margin-right: 10px;
-                }
-                .c_m_period_ty{
-                    li{
-                        width: 58px;
-                    }
-                }
-                .c_m_award_period{
-                    display: inline-block;
-                    border: 1px solid #B2B2B2;
-                    //@include wh(178px, 24px);
-                    line-height: 24px;
-                    height:24px;
-                    li{
-                        float: left;
-                        //width: 58px;
-                        text-align: center;
-                        padding: 0 10px;
-                        &:hover{
-                            cursor: pointer;
-                            background: #DFDFDF;
-                            height: 22px;
-                        }
-                    }
-                    li:nth-child(2){
-                        height: 22px;
-                        border-left: 1px solid #B2B2B2;
-                        border-right: 1px solid #B2B2B2;
-                    }
                 }
                 .c_m_select_title_right{
                     span{
@@ -375,6 +349,7 @@ $c_m_background: #4A4A5F;
                 .c_m_select_record_table{
                     border-right: 1px solid #E0E0E0;
                     height: 150px;
+                    overflow-y: scroll;
                     .c_m_select_record_list{
                         @include lh(30px);
                         border-bottom: 1px dotted #93979F;
@@ -495,6 +470,10 @@ $c_m_background: #4A4A5F;
                 }
             }
         }
+    }
+    .ant-radio-button-wrapper{
+        height: 24px;
+        line-height: 23px;
     }
 }
 
