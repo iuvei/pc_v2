@@ -52,13 +52,14 @@ export const bankCardManage = (location, callback) => {
         callback(null, require('../Components/AccountManage/BankCardManage/BankCardManage').default);
     }, 'bankCardManage');
 };
-// 账户管理/银行卡管理
+
+// 账户管理/安全中心
 export const security = (location, callback) => {
     require.ensure([], (require) => {
         callback(null, require('../Components/AccountManage/Security/Security').default);
     }, 'security');
 };
-// 账户管理/银行卡管理
+// 账户管理/站内信
 export const message = (location, callback) => {
     require.ensure([], (require) => {
         callback(null, require('../Components/AccountManage/Message/Message').default);

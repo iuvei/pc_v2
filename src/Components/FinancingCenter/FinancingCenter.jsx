@@ -45,7 +45,7 @@ export default class FinancingCenter extends Component {
 
     render() {
         return (
-            <div className="financing_c_main mix_height">
+            <div className="financing_c_main">
                 <QueueAnim duration={1000}
                            animConfig={[
                                { opacity: [1, 0], translateY: [0, 50] }

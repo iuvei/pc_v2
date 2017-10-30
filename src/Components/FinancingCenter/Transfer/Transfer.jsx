@@ -1,3 +1,4 @@
+/*转账*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { Select, InputNumber, Input, Button } from 'antd';

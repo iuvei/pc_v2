@@ -8,8 +8,6 @@ import './TeamTable.scss'
 
 import t_m_serch from './Img/t_m_serch.png'
 import t_m_icon from './Img/t_m_icon.png'
-import t_m_icon2 from './Img/t_m_icon2.png'
-
 
 @observer
 export default class teamTable extends Component {
@@ -156,7 +154,7 @@ export default class teamTable extends Component {
                         </div>
                     </div>
                 ),// 可以自定义筛选菜单，此函数只负责渲染图层，需要自行编写各种交互
-                filterIcon: <img className="" style={{verticalAlign: 'inherit', marginLeft: '4px'}} src={t_m_icon2} alt="提示" title="提示"/>, // 自定义 fiter 图标。
+                filterIcon: <img className="" style={{verticalAlign: 'sub', marginLeft: '4px'}} src={t_m_icon} alt="提示" title="提示"/>, // 自定义 fiter 图标。
             }, {
                 title: '投注',
                 dataIndex: 'email',

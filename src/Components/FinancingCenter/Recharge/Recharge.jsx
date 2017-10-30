@@ -1,3 +1,4 @@
+/*充值*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { InputNumber, Button } from 'antd';
@@ -16,7 +17,6 @@ import youzheng from './Img/youzheng.png'
 import shanghai from './Img/shanghai.png'
 import pingan from './Img/pingan.png'
 import xingye from './Img/xingye.png'
-
 
 
 @observer

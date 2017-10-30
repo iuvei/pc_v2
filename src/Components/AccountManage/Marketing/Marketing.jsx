@@ -233,11 +233,11 @@ export default class Marketing extends Component {
                                 <li>
                                     <span className="marke_k_left">用户类型：</span>
                                     <span>
-                                                            <RadioGroup onChange={(e)=>{this.onChangeMember(e)}} value={this.state.radioMemberValue}>
-                                                                <Radio value={1}>代理</Radio>
-                                                                <Radio value={0}>会员</Radio>
-                                                              </RadioGroup>
-                                                        </span>
+                                        <RadioGroup onChange={(e)=>{this.onChangeMember(e)}} value={this.state.radioMemberValue}>
+                                            <Radio value={1}>代理</Radio>
+                                            <Radio value={0}>会员</Radio>
+                                          </RadioGroup>
+                                    </span>
                                 </li>
                                 <li>
                                     <span className="marke_k_left">奖金组设置：</span>

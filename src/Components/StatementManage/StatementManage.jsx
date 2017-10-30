@@ -14,7 +14,25 @@ export default class StatementManage extends Component {
             navIndex: 1,
         }
     };
-
+    onChangeTitle() {
+        switch(this.state.navIndex)
+        {
+            case 1:
+                return '团队统计';
+                break;
+            case 2:
+                return '个人总表';
+                break;
+            case 3:
+                return '团队总表';
+                break;
+            case 4:
+                return '游戏帐变';
+                break;
+            default:
+                return '团队统计';
+        }
+    };
     render() {
         return (
             <div className="s_m_main">
@@ -29,7 +47,7 @@ export default class StatementManage extends Component {
                                     <div className="a_m_title">
                                         <span>报表管理</span>
                                         <span> > </span>
-                                        <span>团队统计</span>
+                                        <span>{this.onChangeTitle()}</span>
                                     </div>
                                     <div className="a_m_nav">
                                         <ul className="a_m_nav_list">

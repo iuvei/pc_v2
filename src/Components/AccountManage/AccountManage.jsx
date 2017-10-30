@@ -15,7 +15,6 @@ export default class AccountManage extends Component {
         }
     };
     onChangeTitle() {
-        console.log(this.state.navIndex)
         switch(this.state.navIndex)
         {
             case 0:

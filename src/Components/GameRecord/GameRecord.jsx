@@ -22,7 +22,7 @@ export default class GameRecord extends Component {
     render() {
         const navList = ['彩票投注', '追号记录', '真人投注', '体育投注', 'PT投注', '博饼投注'];
         return (
-            <div className="g_r_main mix_height">
+            <div className="g_r_main">
                 <QueueAnim duration={1000}
                 animConfig={[
                 { opacity: [1, 0], translateY: [0, 50] }

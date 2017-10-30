@@ -22,15 +22,13 @@
     width: $nav_width_1200;
     margin: 0 auto;
 }
-.mix_height{
-    height: 725px;
-}
 
 /*二级导航栏样式*/
 .a_m_controler{
         background-color: #F4F4F4;
-        margin: 11px 0 20px 5px;
+        margin: 11px 0 30px 5px;
         font-size: 15px;
+        min-height: 700px;
         .a_m_title{
             @include lh(50px);
             padding-left: 22px;
