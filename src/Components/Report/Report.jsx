@@ -4,10 +4,10 @@ import { Link } from 'react-router';
 import { Row, Col  } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 
-import './StatementManage.scss'
+import './Report.scss'
 
 @observer
-export default class StatementManage extends Component {
+export default class Report extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -40,7 +40,7 @@ export default class StatementManage extends Component {
                            animConfig={[
                                { opacity: [1, 0], translateY: [0, 50] }
                            ]}>
-                    <div className="g_r_main" key="statementManage">
+                    <div className="g_r_main" key="report">
                         <Row type="flex" justify="center" align="top">
                             <Col span={24}>
                                 <div className="a_m_controler">
@@ -52,16 +52,16 @@ export default class StatementManage extends Component {
                                     <div className="a_m_nav">
                                         <ul className="a_m_nav_list">
                                             <li className={1 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 1})}}>
-                                                <Link to="/statementManage/teamStatistics">团队统计</Link>
+                                                <Link to="/report/teamStatistics">团队统计</Link>
                                             </li>
                                             <li className={2 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 2})}}>
-                                                <Link to="/statementManage/selfTable">个人总表</Link>
+                                                <Link to="/report/selfTable">个人总表</Link>
                                             </li>
                                             <li className={3 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 3})}}>
-                                                <Link to="/statementManage/teamTable">团队总表</Link>
+                                                <Link to="/report/teamTable">团队总表</Link>
                                             </li>
                                             <li className={4 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 4})}}>
-                                                <Link to="/statementManage/gameBill">游戏帐变</Link>
+                                                <Link to="/report/gameBill">游戏帐变</Link>
                                             </li>
                                         </ul>
                                     </div>

@@ -28,6 +28,22 @@ $fc:#fff;
     border-top: $b solid $bc;
 }
 
+/*箭头-有背景色*/
+@mixin icon_arrows_bg($top,$right,$b_color,$wh,$bg,$deg){
+    display:inline-block;
+    position: absolute;
+    top: $top;
+    right: $right;
+    content: '';
+    border: 1px solid $b_color;
+    border-bottom: 0;
+    border-left: 0;
+    width: $wh;
+    height: $wh;
+    background-color: $bg;
+    transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+}
 /*箭头*/
 @mixin icon_arrows($top,$right,$b_color,$wh,$deg){
     display:inline-block;

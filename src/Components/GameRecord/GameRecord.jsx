@@ -1,3 +1,4 @@
+/*游戏记录*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { Row, Col  } from 'antd';

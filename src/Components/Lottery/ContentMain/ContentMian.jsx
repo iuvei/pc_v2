@@ -19,7 +19,7 @@ export default class ContentMian extends Component {
             navIndex : 0,
             hotIndex : 0,
             hotSwitch : false, // 冷热遗漏开关
-            multipleValue : 1, // 倍数
+            multipleValue : 1, // 投注倍数
             selectYjf: 0, // 选择元角分模式
         }
     };
@@ -54,10 +54,6 @@ export default class ContentMian extends Component {
     addMultiple() {
         this.setState({multipleValue: this.state.multipleValue + 1})
     };
-    // 选择元角分模式
-    selectYjf() {
-
-    }
     render() {
         const Option = Select.Option;
         const arr = ['五星','五星','五星','五星','五星'];
@@ -69,13 +65,13 @@ export default class ContentMian extends Component {
                         {
                             arr.map(( element,index ) => {
                                 return(
-                                    <li onClick={ () => { this.setState({ navIndex : index }) } } className={ this.check_nav_index( index ) } key={index}>{element}</li>
+                                    <li onClick={() => { this.setState({ navIndex : index }) }} className={ this.check_nav_index( index ) } key={index}>{element}</li>
                                 )
                             })
                         }
                     </ul>
                     <div className="c_m_select right">
-                        <div className="c_m_select_method_text hvr-back-pulse">任选玩法</div>
+                        <div className="c_m_select_method_text">任选玩法</div>
                         <ul className="c_m_select_list clear">
                             <li>任选二</li>
                             <li>任选二</li>

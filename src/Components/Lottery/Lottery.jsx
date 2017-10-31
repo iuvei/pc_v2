@@ -3,14 +3,14 @@ import {observer} from 'mobx-react';
 import { Row, Col } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 
-import './BetCenter.scss';
+import './Lottery.scss';
 
 import ContentTop from './ContentTop/ContentTop';
 import RightSider from './RightSider/RightSider';
 import ContentMian from './ContentMain/ContentMian';
 
 @observer
-export default class BetCenter extends Component {
+export default class Lottery extends Component {
 
     render() {
         return (

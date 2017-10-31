@@ -3,11 +3,12 @@ import { Route, IndexRoute } from 'react-router';
 
 import {
     login,
+    main,
     home,
-    betCenter,
-    accountManage,
+    lottery,
+    account,
     gameRecord,
-    statementManage,
+    report,
     teamStatistics,
     teamTable,
     selfTable,
@@ -19,7 +20,7 @@ import {
     bankCardManage,
     security,
     message,
-    financingCenter,
+    financial,
     recharge,
     withdraw,
     mentionFillingRecord,
@@ -32,35 +33,36 @@ const routes = params => (
 
     <Route path="/">
         <IndexRoute getComponent={login} />
-        <Route path="/home" getComponent={home} params={params}>
-            <IndexRoute getComponent={betCenter} />
-            <Route path="/betCenter" getComponent={betCenter} params={params}/>
-            <Route path="/accountManage" getComponent={accountManage} params={params}>
+        <Route path="/main" getComponent={main} params={params}>
+            <IndexRoute getComponent={lottery} />
+            <Route path="/lottery" getComponent={lottery} params={params}/>
+            <Route path="/home" getComponent={home} params={params}/>
+            <Route path="/account" getComponent={account} params={params}>
                 <IndexRoute getComponent={selfInfo} />
-                <Route path="/accountManage/selfInfo" getComponent={selfInfo} params={params}/>
-                <Route path="/accountManage/teamList" getComponent={teamList} params={params}/>
-                <Route path="/accountManage/marketing" getComponent={marketing} params={params}/>
-                <Route path="/accountManage/contract" getComponent={contract} params={params}/>
-                <Route path="/accountManage/bankCardManage" getComponent={bankCardManage} params={params}/>
-                <Route path="/accountManage/security" getComponent={security} params={params}/>
-                <Route path="/accountManage/message" getComponent={message} params={params}/>
+                <Route path="/account/selfInfo" getComponent={selfInfo} params={params}/>
+                <Route path="/account/teamList" getComponent={teamList} params={params}/>
+                <Route path="/account/marketing" getComponent={marketing} params={params}/>
+                <Route path="/account/contract" getComponent={contract} params={params}/>
+                <Route path="/account/bankCardManage" getComponent={bankCardManage} params={params}/>
+                <Route path="/account/security" getComponent={security} params={params}/>
+                <Route path="/account/message" getComponent={message} params={params}/>
             </Route>
             <Route path="/gameRecord" getComponent={gameRecord} params={params}/>
-            <Route path="/financingCenter" getComponent={financingCenter} params={params}>
+            <Route path="/financial" getComponent={financial} params={params}>
                 <IndexRoute getComponent={recharge} />
-                <Route path="/financingCenter/recharge" getComponent={recharge} params={params}/>
-                <Route path="/financingCenter/withdraw" getComponent={withdraw} params={params}/>
-                <Route path="/financingCenter/mentionFillingRecord" getComponent={mentionFillingRecord} params={params}/>
-                <Route path="/financingCenter/transfer" getComponent={transfer} params={params}/>
-                <Route path="/financingCenter/transferRecord" getComponent={transferRecord} params={params}/>
-                <Route path="/financingCenter/accountChange" getComponent={accountChange} params={params}/>
+                <Route path="/financial/recharge" getComponent={recharge} params={params}/>
+                <Route path="/financial/withdraw" getComponent={withdraw} params={params}/>
+                <Route path="/financial/mentionFillingRecord" getComponent={mentionFillingRecord} params={params}/>
+                <Route path="/financial/transfer" getComponent={transfer} params={params}/>
+                <Route path="/financial/transferRecord" getComponent={transferRecord} params={params}/>
+                <Route path="/financial/accountChange" getComponent={accountChange} params={params}/>
             </Route>
-            <Route path="/statementManage" getComponent={statementManage} params={params}>
+            <Route path="/report" getComponent={report} params={params}>
                 <IndexRoute getComponent={teamStatistics} />
-                <Route path="/statementManage/teamStatistics" getComponent={teamStatistics} params={params}/>
-                <Route path="/statementManage/teamTable" getComponent={teamTable} params={params}/>
-                <Route path="/statementManage/selfTable" getComponent={selfTable} params={params}/>
-                <Route path="/statementManage/gameBill" getComponent={gameBill} params={params}/>
+                <Route path="/report/teamStatistics" getComponent={teamStatistics} params={params}/>
+                <Route path="/report/teamTable" getComponent={teamTable} params={params}/>
+                <Route path="/report/selfTable" getComponent={selfTable} params={params}/>
+                <Route path="/report/gameBill" getComponent={gameBill} params={params}/>
             </Route>
         </Route>
     </Route>

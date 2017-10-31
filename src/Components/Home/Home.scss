@@ -1,22 +1,239 @@
 @import '../../Style/variables';
 @import '../../Style/mixin';
 
-header {
-    width:100%;
-}
-footer{
-    background: #E6EAE9;
-}
 
-.berCenter{
-    background: #E6EAE9;
-}
-.berCenter_bg{
-    background: url('../../Images/betCenter_bg.jpg') no-repeat;
-    background-size: 100% 614px;
-    .main{
+.home_main{
+    position: relative;
+    .home_m_top{
+        position: relative;
+        .home_m_top_text{
+            @include cl;
+            top: 25%;
+            color:#fff;
+            text-align: center;
+            z-index: 9;
+            h3{
+                font-size: 20px;
+                color:#C0C0C0;
+            }
+            h1{
+                font-size: 45px;
+            }
+            h2{
+                font-size: 24px;
+                color:#ddd;
+            }
+            .home_m_top_download{
+                @include wh(204px, 36px);
+                line-height: 36px;
+                border: 1px solid #fff;
+                @include borderRadius(18px);
+                font-size: 14px;
+                margin: 40px auto 0;
+                &:hover{
+                    cursor: pointer;
+                    color: $color_CF2027;
+                }
+            }
+        }
+        .home_m_top_down_icon:before{
+            @include icon_arrows(-45px,50%,#B7B5B5,20px,135deg)
+        }
+    }
+    .home_m_lottery{
+        li{
+            float: left;
+            width: 33.33%;
+            position: relative;
+            img{
+                vertical-align: middle;
+            }
+            &:hover .home_m_lottery_type_hover{
+                display: block;
+            }
+        }
+        .home_m_lottery_type_hover{
+            //display: none;
+            @include wh(100%, 138px);
+            background: rgba(176,26,18, .7);
+        }
+        .home_m_lottery_type{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            color: #fff;
+            padding: 20px 0 18px 20px;
+            h3{
+                font-size: 18px;
+            }
+            h4{
+                font-size: 14px;
+            }
+            .home_m_gaming{
+                display: inline-block;
+                @include wh(107px, 32px);
+                line-height: 32px;
+                font-size: 14px;
+                margin-top: 15px;
+                @include borderRadius(16px);
+                background-color: #fff;
+                text-align: center;
+                color: #B12F2D;
+            }
+        }
+    }
+    .home_m_active{
         width: $nav_width_1200;
-        min-height: 700px;
-        margin: 0 auto 20px;
+        margin: 32px auto 85px;
+        .home_favourable_active{
+            @include wh(180px, 100px);
+            margin: 0 auto;
+            padding-top: 40px;
+            background: url(./Img/home_favourable_active.png) no-repeat top center;
+            text-align: center;
+            p{
+                font-size: 24px;
+                color: $color_363636;
+                i{
+                    font-style: normal;
+                }
+            }
+            h5{
+                font-size: 12px;
+            }
+        }
+        .home_m_active_list{
+            margin-top: 25px;
+            li{
+                float:left;
+                margin-right: 21px;
+                &:last-child{
+                    margin-right: 0;
+                }
+                img{
+                    vertical-align: middle;
+                }
+                &:hover .home_m_active_type{
+                    background-color: #BC0000;
+                    color: #fff;
+                }
+            }
+            .home_m_active_type{
+                @include wh(100%, 50px);
+                line-height: 50px;
+                text-align: center;
+                background-color: #fff;
+                font-size: 14px;
+                color: $color_363636;
+                border-bottom: 2px solid #CBCBCB;
+            }
+        }
+    }
+    .home_m_bottom{
+        background: url('./Img/home_bottom.png') no-repeat center center;
+        height: 296px;
+        padding-top: 70px;
+        .home_m_bottom_list{
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: #fff;
+            li{
+                float: left;
+                width: 240px;
+                margin-right: 65px;
+                p{
+                    text-align: center;
+                    font-size: 13px;
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+                &:nth-child(1) .home_m_recharge_top{
+                    background: url(./Img/cz_icon.png) no-repeat center left;
+                }
+                &:nth-child(2) .home_m_recharge_top{
+                    background: url(./Img/tk_icon.png) no-repeat center left;
+                }
+                &:nth-child(3) .home_m_recharge_top{
+                    background: url(./Img/pt_icon.png) no-repeat center left;
+                }
+                &:nth-child(4) .home_m_recharge_top{
+                    background: url(./Img/hz_icon.png) no-repeat center left;
+                }
+            }
+
+            .home_m_recharge_top{
+                padding-left: 50px;
+                margin-bottom: 18px;
+                .home_m_top_left{
+                    margin-left: 10px;
+                    h3{
+                        font-size: 18px;
+                    }
+                    h4{
+                        font-size: 14px;
+                    }
+                }
+                .home_m_top_right{
+                    height: 48px;
+                    margin-left: 15px;
+                    padding-top: 10px;
+                    span{
+                        font-size: 18px;
+                    }
+                    .home_m_time{
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+    .home_main_left{
+        position: fixed;
+        left: 0;
+        top: 30%;
+        @include wh(357px, 364px);
+        background: url(./Img/active_left.png) no-repeat center center;
+    }
+    .home_m_info_controler{
+        height: 120px;
+        overflow: hidden;
+        position: absolute;
+        top: 190px;
+        right:50px;
+    }
+    .home_m_info_list{
+        color: #fff;
+        font-size: 12px;
+        li{
+            @include lh(20px);
+            i{
+                font-style: normal;
+                display: inline-block;
+                color: #40FCDF;
+                width: 40px;
+            }
+            span{
+                margin-right: 5px;
+            }
+            em{
+                font-style: normal;
+                color:#FFDE45;
+            }
+            .home_m_lottery_name{
+                display: inline-block;
+                width: 65px;
+                margin:0 2px 0 5px;
+            }
+        }
+    }
+    .home_m_close{
+        position: absolute;
+        top: 140px;
+        right:25px;
+        &:hover{
+            cursor: pointer;
+        }
     }
 }

@@ -22,6 +22,11 @@
     width: $nav_width_1200;
     margin: 0 auto;
 }
+body{
+    /* 禁止页面选中复制 */
+    -moz-user-select:none;
+    -webkit-user-select:none;
+}
 
 /*二级导航栏样式*/
 .a_m_controler{
@@ -114,5 +119,11 @@ body, .ant-table-body, .c_m_select_record_table{
     overflow: visible !important;
     margin-bottom: -1px !important;
 }
-
+/*超过宽度以...现在*/
+.ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
 

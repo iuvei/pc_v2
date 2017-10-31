@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { Link } from 'react-router';
 
-import { Menu, Dropdown, Icon, Badge } from 'antd';
+import { Menu, Icon, Badge } from 'antd';
 import './headerNav.scss';
 
 import logoSrc from '../../../Images/logo.png'
@@ -29,18 +29,6 @@ export default class HeaderNav extends Component {
     render() {
         const SubMenu = Menu.SubMenu;
         const MenuItemGroup = Menu.ItemGroup;
-        const menu = (
-            <Menu>
-                <Menu.Item key="0">
-                    <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
-                </Menu.Item>
-                <Menu.Item key="1">
-                    <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
-                </Menu.Item>
-                <Menu.Divider />
-                <Menu.Item key="3" disabled>3rd menu item（disabled）</Menu.Item>
-            </Menu>
-        );
         return (
             <div>
                 <div className="nav_top">
@@ -50,14 +38,35 @@ export default class HeaderNav extends Component {
                             <a href="javascript: void(0)">[点击查看]</a>
                         </div>
                         <ul className="n_t_list right">
-                            <li className="n_t_cursor">
-                                <Dropdown overlay={menu}>
-                                    <a className="ant-dropdown-link" href="javascript: void(0)">
-                                        <img src={name_icon} style={{verticalAlign: 'middle',marginRight: 5}}/>
-                                        supervip01
-                                        <Icon type="caret-down" />
-                                    </a>
-                                </Dropdown>
+                            <li className="n_t_cursor n_t_position">
+                                <img src={name_icon} style={{verticalAlign: 'middle',marginRight: 5}}/>
+                                supervip01
+                                <Icon type="caret-down" style={{marginLeft: '5px'}}/>
+                                <div className="n_t_controler">
+                                    <div className="n_t_drop_down">
+                                        <ul className="n_t_down_list">
+                                            <li>
+                                                <span className="left">用户类型</span>
+                                                <span className="right color_DFC674">代理</span>
+                                            </li>
+                                            <li>
+                                                <span className="left">奖金组</span>
+                                                <span className="right color_DFC674">1956</span>
+                                            </li>
+                                            <li>
+                                                <span className="left">上次登录地点</span>
+                                                <span className="right color_DFC674">菲律宾</span>
+                                            </li>
+                                            <li>
+                                                <span className="left">上次登录时间</span>
+                                                <span className="right">2018-08-09&nbsp;12:55:00</span>
+                                            </li>
+                                            <li>
+                                                <p className="n_t_exit">退出登录</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </li>
                             <li className="n_t_message n_t_cursor">
                                 <Badge count={119} overflowCount={99}>
@@ -72,13 +81,13 @@ export default class HeaderNav extends Component {
                                     <img src={this.state.hideBalance ? on_icon : off_icon} onClick={()=>{this.setState({hideBalance: this.state.hideBalance ? false : true})}} className="n_t_hide_balance"/>
                                 </span>
                             </li>
-                            <li className="n_t_cursor">
+                            <li className="n_t_cursor_color">
                                 充值
                             </li>
-                            <li className="n_t_cursor">
+                            <li className="n_t_cursor_color">
                                 提款
                             </li>
-                            <li className="n_t_cursor">
+                            <li className="n_t_cursor_color">
                                 转账
                             </li>
                         </ul>
@@ -95,7 +104,7 @@ export default class HeaderNav extends Component {
                             >
                                 <Menu.Item key="1">
                                     <div className="nav-text">
-                                        <Link to={`/betCenter`}>
+                                        <Link to={`/home`}>
                                             <p>首页</p>
                                             <p>Home</p>
                                         </Link>
@@ -110,7 +119,7 @@ export default class HeaderNav extends Component {
                                                 }>
                                     <MenuItemGroup title="Item 1">
                                         <Menu.Item key="setting:1">
-                                            <Link to={`/betCenter`}>
+                                            <Link to={`/lottery`}>
                                                 Option 1
                                             </Link>
                                         </Menu.Item>
@@ -128,7 +137,7 @@ export default class HeaderNav extends Component {
                                 <SubMenu
                                     title={
                                     <div className="nav-text">
-                                        <Link to={`/betCenter`}>
+                                        <Link to={`/lottery`}>
                                             <p>综合游戏</p>
                                             <p>Other Games</p>
                                         </Link>
@@ -139,7 +148,7 @@ export default class HeaderNav extends Component {
                                 </SubMenu>
                                 <Menu.Item key="2">
                                     <div className="nav-text">
-                                        <Link to={`/betCenter`}>
+                                        <Link to={`/lottery`}>
                                             <p>优惠活动</p>
                                             <p>Activity</p>
                                         </Link>
@@ -155,15 +164,15 @@ export default class HeaderNav extends Component {
                                 </Menu.Item>
                                 <Menu.Item key="4">
                                     <div className="nav-text">
-                                        <Link to={`/financingCenter`}>
+                                        <Link to={`/financial`}>
                                             <p>财务中心</p>
-                                            <p>Finacial</p>
+                                            <p>Financial</p>
                                         </Link>
                                     </div>
                                 </Menu.Item>
                                 <Menu.Item key="5">
                                     <div className="nav-text">
-                                        <Link to={`/statementManage`}>
+                                        <Link to={`/report`}>
                                             <p>报表管理</p>
                                             <p>Report</p>
                                         </Link>
@@ -171,7 +180,7 @@ export default class HeaderNav extends Component {
                                 </Menu.Item>
                                 <Menu.Item key="6">
                                     <div className="nav-text">
-                                        <Link to={`/accountManage`}>
+                                        <Link to={`/account`}>
                                             <p>账户管理</p>
                                             <p>Account</p>
                                         </Link>
