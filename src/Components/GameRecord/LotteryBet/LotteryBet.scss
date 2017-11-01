@@ -99,6 +99,16 @@ $border-color: #B2B2B2;
             background-color: #fff;
             padding: 5px;
         }
+        .t_l_page{
+            float: right;
+            margin-top: 8px;
+        }
+        .ant-select-selection{
+            @include borderRadius(4px);
+        }
+        .ant-pagination-options-size-changer{
+            margin-right: 0;
+        }
     }
     .ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner {
         background-color: $rodio-check-color;

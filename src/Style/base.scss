@@ -126,4 +126,11 @@ body, .ant-table-body, .c_m_select_record_table{
     text-overflow: ellipsis;
     vertical-align: bottom;
 }
+/*所有表格内容居中显示*/
+th, td {
+    text-align: center !important;
+}
+.ant-pagination-options-size-changer {
+    margin-right: 0;
+}
 

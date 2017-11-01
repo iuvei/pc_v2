@@ -24,14 +24,14 @@ export default class Lottery extends Component {
                             <ContentTop key="ContentTop"/>
                             <ContentMian key="ContentMian"/>
                         </Col>
-                        <QueueAnim duration={1000}
-                        animConfig={[
-                        { opacity: [1, 0], translateX: [0, 80] }
-                        ]} key="RightSiderCol">
-                            <Col span={4}  key="RightSider">
-                                <RightSider/>
-                            </Col>
-                        </QueueAnim>
+                        <Col span={4}  >
+                            <QueueAnim duration={1000}
+                                       animConfig={[
+                                           { opacity: [1, 0], translateX: [0, 80] }
+                                       ]} key="RightSiderCol">
+                                <RightSider key="RightSider"/>
+                            </QueueAnim>
+                        </Col>
                     </Row>
                 </QueueAnim>
             </div>

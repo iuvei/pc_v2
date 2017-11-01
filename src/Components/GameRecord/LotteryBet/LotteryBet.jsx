@@ -1,7 +1,7 @@
 /*彩票投注*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import { DatePicker, Checkbox, Radio, Table, Select, Input } from 'antd';
+import { DatePicker, Checkbox, Radio, Table, Select, Input, Pagination } from 'antd';
 import 'whatwg-fetch'
 
 import './LotteryBet.scss'
@@ -102,7 +102,10 @@ export default class LotteryBet extends Component {
     onOk(value) {
         console.log('onOk: ', value);
     };
-
+    onShowSizeChange(current, pageSize) {
+        console.log(current, pageSize);
+        this.setState({pagination: current})
+    };
     render() {
         const Option = Select.Option;
         const RadioGroup = Radio.Group;
@@ -420,11 +423,15 @@ export default class LotteryBet extends Component {
                         <Table columns={columns}
                                rowKey={record => record.registered}
                                dataSource={this.state.data}
-                               pagination={this.state.pagination}
+                               // pagination={this.state.pagination}
+                               pagination={false}
                                loading={this.state.loading}
                                footer={this.props.navIndex === 0 ? this.c_p_t_z_tabelFooter : ()=>{return '123546'}}
                                onChange={this.handleTableChange}
                         />
+                    </div>
+                    <div className="t_l_page">
+                        <Pagination showSizeChanger onShowSizeChange={(current, pageSize)=>{this.onShowSizeChange(current, pageSize)}} defaultCurrent={1} total={500} />
                     </div>
                 </div>
             </div>

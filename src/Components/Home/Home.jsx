@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import TweenOne from 'rc-tween-one';
 import './Home.scss'
+import { stateVar } from '../../State/Index';
 
 import home_top from './Img/home_top.jpg';
 import home_lottery01 from './Img/home_lottery01.jpg';
@@ -20,6 +21,8 @@ export default class Home extends Component {
         super(props);
         this.state = {
             noticePosition: 0,// 列表位置
+            leftActive: stateVar.homeMainLeftActive,
+            repeat: -1,
             infoList: [
                 {
                     text: '恭喜',
@@ -79,38 +82,18 @@ export default class Home extends Component {
             ],
         };
     };
-    move (destination, duration) { // 实现滚动动画
-        let speed = ((destination - this.state.noticePosition) * 1000) / (duration * 60);
-        console.log(speed)
-        let count = 0;
-        let step = () => {
-            this.setState({noticePosition: this.state.noticePosition + speed});
-            count++;
-            window.requestAnimationFrame(() => {
-                if (this.state.noticePosition < destination) {
-                    step();
-                } else {
-                    this.setState({noticePosition: destination})
-                }
-            })
-        };
-        step()
-    };
+
     componentWillMount(){
-        // let destination = 0.53;
-        // setInterval(() => {
-        //     if (destination / 0.53 < this.state.infoList.length) {
-        //         this.move(destination, 500);
-        //         destination += 0.53;
-        //     } else { // 列表到底
-        //         this.setState({noticePosition: 0});  // 设置列表为开始位置
-        //         destination = 0.53;
-        //         this.move(destination, 500);
-        //         destination += 0.53;
-        //     }
-        // }, 3000)
+
+    };
+    handclick() {
+        stateVar.homeMainLeftActive = false;
+        this.setState({leftActive: false});
+        this.setState({repeat: 0});
     };
     render() {
+        // const { homeMainLeftActive } = stateVar;
+        // console.log(homeMainLeftActive);
         return (
             <div className="home_main">
                 <div className="home_m_top">
@@ -119,7 +102,7 @@ export default class Home extends Component {
                         <h3>MOBILE PHONE CLIENT</h3>
                         <h1>恒彩手机客户端</h1>
                         <h2>随时随地随心，从此财富只在指尖流动</h2>
-                        <p className="home_m_top_download">立即下载</p>
+                        <a href="#" className="home_m_top_download">立即下载</a>
                     </div>
                     <TweenOne
                         animation={{ y: '-=20', yoyo: true, repeat: -1, duration: 1000 }}
@@ -131,8 +114,7 @@ export default class Home extends Component {
                 <ul className="home_m_lottery clear">
                     <li>
                         <img src={home_lottery01} width="100%" alt=""/>
-
-                        <div className="home_m_lottery_type">
+                        <div className="home_m_lottery_type home_m_lottery_type_hover">
                             <h3>重庆时时彩</h3>
                             <h4>重庆市福利彩票发行中心承销的福彩快开彩票</h4>
                             <a href="javascript:void(0)" className="home_m_gaming">立即游戏</a>
@@ -140,9 +122,19 @@ export default class Home extends Component {
                     </li>
                     <li>
                         <img src={home_lottery02} width="100%" alt=""/>
+                        <div className="home_m_lottery_type home_m_lottery_type_hover">
+                            <h3>腾讯分分彩</h3>
+                            <h4>重庆市福利彩票发行中心承销的福彩快开彩票</h4>
+                            <a href="javascript:void(0)" className="home_m_gaming">立即游戏</a>
+                        </div>
                     </li>
                     <li>
                         <img src={home_lottery03} width="100%" alt=""/>
+                        <div className="home_m_lottery_type home_m_lottery_type_hover">
+                            <h3>泰国300秒</h3>
+                            <h4>重庆市福利彩票发行中心承销的福彩快开彩票</h4>
+                            <a href="javascript:void(0)" className="home_m_gaming">立即游戏</a>
+                        </div>
                     </li>
                 </ul>
                 <div className="home_m_active">
@@ -230,21 +222,20 @@ export default class Home extends Component {
                         </li>
                     </ul>
                 </div>
-                <div className="home_main_left">
-                    <img className="home_m_close" src={active_close} alt=""/>
+                <div className="home_main_left" style={{display:  this.state.leftActive ? 'block' : 'none'}}>
+                    <img className="home_m_close" onClick={()=>{this.handclick()}} src={active_close} alt=""/>
                     <div className="home_m_info_controler">
                         <TweenOne
-                            animation={{ y: '-=20', yoyo: false, repeat: -1, duration: 3000 }}
+                            animation={{ y: '-=60', yoyo: false, repeat: this.state.repeat, duration: 8000 }}
                             key="icon"
                         >
-
-                            <ul className="home_m_info_list" style={{transform: 'translateY(-'+this.state.noticePosition+'px) translateZ(0px)'}}>
+                            <ul className="home_m_info_list">
                                 {
                                     this.state.infoList.map((item,index)=>{
                                         return (
                                             <li key={index}>
                                                 <span>{item.text}</span>
-                                                <i className="ellipsis">{item.name}</i>
+                                                <i className="ellipsis">{index}</i>
                                                 <span className="home_m_lottery_name ellipsis">{item.lotteryName}</span>
                                                 <span>{item.status}</span>
                                                 <em>{item.money}</em>

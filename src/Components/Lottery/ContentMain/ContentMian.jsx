@@ -147,15 +147,15 @@ export default class ContentMian extends Component {
                             <div className="c_m_select_body_number">
                                 <p className="c_m_select_places">万位</p>
                                 <ul className="c_m_number_list">
-                                    <li>1<p className="omit">3</p></li>
-                                    <li className="number_active">0<p className="omit">3</p></li>
                                     <li>0<p className="omit">3</p></li>
-                                    <li>0<p className="omit">3</p></li>
-                                    <li>0<p className="omit">3</p></li>
-                                    <li>0<p className="omit">3</p></li>
-                                    <li>0<p className="omit">3</p></li>
-                                    <li>0<p className="omit">3</p></li>
-                                    <li>0<p className="omit">3</p></li>
+                                    <li className="number_active">1<p className="omit">3</p></li>
+                                    <li>2<p className="omit">3</p></li>
+                                    <li>3<p className="omit">3</p></li>
+                                    <li>4<p className="omit">3</p></li>
+                                    <li>5<p className="omit">3</p></li>
+                                    <li>6<p className="omit">3</p></li>
+                                    <li>7<p className="omit">3</p></li>
+                                    <li>8<p className="omit">3</p></li>
                                 </ul>
                                 <ul className="c_m_number_select right">
                                     <li>全</li>
@@ -170,7 +170,7 @@ export default class ContentMian extends Component {
                                 <p className="c_m_select_places">万位</p>
                                 <ul className="c_m_number_list">
                                     <li>0<p className="omit">3</p></li>
-                                    <li className="number_active">0<p className="omit">3</p></li>
+                                    <li className="number_active">2<p className="omit">3</p></li>
                                     <li>0<p className="omit">3</p></li>
                                     <li>0<p className="omit">3</p></li>
                                     <li>0<p className="omit">3</p></li>

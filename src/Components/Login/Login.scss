@@ -1,7 +1,16 @@
 @import '../../Style/variables';
 @import '../../Style/mixin';
 
+
 .login{
-    width: 200px;
-    margin: 100px auto;
+    width: 820px;
+    margin: 20% auto;
+    .ant-input{
+        @include wh(210px,45px);
+        margin-right: 8px;
+    }
+    .ant-btn-primary{
+        height: 45px;
+        font-size: 14px;
+    }
 }

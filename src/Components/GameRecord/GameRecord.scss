@@ -2,6 +2,10 @@
 @import '../../Style/mixin';
 
 .g_r_main{
+    .a_m_title, .team_list_top{
+        background-color: #fff;
+    }
+    
     .ant-select-selection{
         @include borderRadius(0);
         //border: 1px solid #B2B2B2;

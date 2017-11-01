@@ -24,15 +24,22 @@
                 color:#ddd;
             }
             .home_m_top_download{
+                display: block;
                 @include wh(204px, 36px);
                 line-height: 36px;
                 border: 1px solid #fff;
                 @include borderRadius(18px);
                 font-size: 14px;
                 margin: 40px auto 0;
+                color: #fff;
                 &:hover{
                     cursor: pointer;
-                    color: $color_CF2027;
+                    background: $color_CF2027;
+                    border: 1px solid $color_CF2027;
+                    transition: background .3s;
+                    -moz-transition: background .3s; /* Firefox 4 */
+                    -webkit-transition: background .3s; /* Safari 和 Chrome */
+                    -o-transition: background .3s; /* Opera */
                 }
             }
         }
@@ -45,24 +52,32 @@
             float: left;
             width: 33.33%;
             position: relative;
+            overflow: hidden;
             img{
                 vertical-align: middle;
             }
+            &:hover .home_m_lottery_type{
+                bottom: 0px;
+            }
             &:hover .home_m_lottery_type_hover{
-                display: block;
+                background: rgba(176,26,18, .7);
             }
         }
         .home_m_lottery_type_hover{
-            //display: none;
             @include wh(100%, 138px);
-            background: rgba(176,26,18, .7);
+            background: rgba(176,26,18, 0);
         }
         .home_m_lottery_type{
             position: absolute;
-            bottom: 0;
+            bottom: -57px;
             left: 0;
             color: #fff;
             padding: 20px 0 18px 20px;
+
+            transition: bottom .3s;
+            -moz-transition: bottom .3s; /* Firefox 4 */
+            -webkit-transition: bottom .3s; /* Safari 和 Chrome */
+            -o-transition: bottom .3s; /* Opera */
             h3{
                 font-size: 18px;
             }
@@ -192,7 +207,7 @@
     .home_main_left{
         position: fixed;
         left: 0;
-        top: 30%;
+        bottom: 0;
         @include wh(357px, 364px);
         background: url(./Img/active_left.png) no-repeat center center;
     }

@@ -1,0 +1,54 @@
+@import '../../../Style/variables';
+@import '../../../Style/mixin';
+
+
+.self_i_main{
+    .self_i_top{
+        padding: 25px;
+        border-bottom: 1px solid $border-bottom-color;
+        font-size: 14px;
+        .self_i_info{
+            color: $color_363636;
+            margin-left: 28px;
+            padding-top: 10px;
+            li{
+                @include lh(30px);
+            }
+            .self_i_nickname{
+                padding-left: 15px;
+                margin-left: 15px;
+                background: url(./Img/set_icon.png) no-repeat center left;
+                color: #0099FF;
+                border-bottom: 1px solid #0099FF;
+            }
+        }
+
+    }
+    .self_i_bottom{
+        border: 1px solid #ccc;
+        margin: 15px 10px 0;
+        padding: 12px;
+        background-color: #fff;
+    }
+
+    /*上传头像 -start-*/
+    .avatar-uploader,
+    .avatar-uploader-trigger,
+    .avatar {
+        width: 115px;
+        height: 115px;
+    }
+    .avatar-uploader {
+        display: block;
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .avatar-uploader-trigger {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 28px;
+        color: #999;
+    }
+    /*上传头像 -end-*/
+}

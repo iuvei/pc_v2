@@ -73,13 +73,46 @@ export default class HeaderNav extends Component {
                                     <img src={email_icon} alt="站内信"/>
                                 </Badge>
                             </li>
-                            <li>
+                            <li className="n_t_balance_p">
                                 <span>余额：</span>
                                 <span className="n_t_balance">
                                     <i>￥</i>
                                     <i>{this.state.hideBalance ? '6666.6666' : '******'}</i>
                                     <img src={this.state.hideBalance ? on_icon : off_icon} onClick={()=>{this.setState({hideBalance: this.state.hideBalance ? false : true})}} className="n_t_hide_balance"/>
                                 </span>
+                                <div className="n_t_controler">
+                                    <div className="n_t_drop_down">
+                                        <ul className="n_t_down_list">
+                                            <li>
+                                                <span className="left">彩票余额：</span>
+                                                <span className="right color_DFC674">￥00.00</span>
+                                            </li>
+                                            <li>
+                                                <span className="left">EA余额：</span>
+                                                <span className="right color_DFC674">￥00.00</span>
+                                            </li>
+                                            <li>
+                                                <span className="left">PT余额：</span>
+                                                <span className="right color_DFC674">￥00.00</span>
+                                            </li>
+                                            <li>
+                                                <span className="left">GT余额：</span>
+                                                <span className="right color_DFC674">￥00.00</span>
+                                            </li>
+                                            <li>
+                                                <span className="left">博饼余额：</span>
+                                                <span className="right color_DFC674">￥00.00</span>
+                                            </li>
+                                            <li>
+                                                <span className="left">体育余额：</span>
+                                                <span className="right color_DFC674">￥00.00</span>
+                                            </li>
+                                            <li>
+                                                <p className="n_t_exit">刷新余额</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </li>
                             <li className="n_t_cursor_color">
                                 充值

@@ -97,6 +97,29 @@ $width_100: 100%;
         .n_t_message{
             width: 80px;
         }
+
+        .n_t_balance_p{
+            position: relative;
+            &:hover .n_t_controler{
+                height: 240px;
+                transition: height .3s;
+                -moz-transition: height .3s; /* Firefox 4 */
+                -webkit-transition: height .3s; /* Safari 和 Chrome */
+                -o-transition: height .3s; /* Opera */
+            }
+            .n_t_down_list{
+                @include wh(200px, 230px);
+                &:before{
+                    @include icon_arrows_bg(5px,100px,#FFDB70,10px,#1D1D26,-45deg);
+                }
+            }
+            .n_t_controler{
+                left: -6px;
+            }
+            .n_t_exit{
+                background: url(./Img/update_money.png) no-repeat center left !important;
+            }
+        }
         .ant-badge-count{
             @include lh(17px);
             padding: 0 4px;
@@ -132,7 +155,6 @@ $width_100: 100%;
         width: $nav_width_1200;
         margin: 0 auto;
         .logo{
-            //vertical-align: middle;
             margin-top: 7.5px;
         }
         .menus {
