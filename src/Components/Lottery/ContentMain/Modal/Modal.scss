@@ -1,0 +1,49 @@
+@import '../../../../Style/variables';
+@import '../../../../Style/mixin';
+
+
+.modal_main{
+    .m_m_content{
+        margin: 20px 0;
+        font-size: 14px;
+        color: $color_363636;
+
+        .modal_periods{
+            .m_p_text{
+                margin: 0 10px 0 20px;
+                @include lh(28px);
+            }
+            .m_periods_list{
+                li{
+                    float: left;
+                    border: 1px solid #B2B2B2;
+                    @include wh(42px, 28px);
+                    line-height: 26px;
+                    margin-right: 5px;
+                    text-align: center;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                .m_periods_active{
+                    background: #FFF5F5 url(./Img/time_active.png) no-repeat bottom right;
+                    border: 1px solid $rodio-check-color;
+                    color: $rodio-check-color;
+                }
+            }
+        }
+        .periods_input, .multiple_input{
+            margin-left: 20px;
+            &>span{
+                margin: 0 8px;
+            }
+        }
+        .m_m_btn{
+            margin-left: 20px;
+        }
+    }
+    .ant-input-number{
+        @include borderRadius(0);
+    }
+}
+

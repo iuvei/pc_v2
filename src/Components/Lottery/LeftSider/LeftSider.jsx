@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { Menu, Affix } from 'antd';
+import QueueAnim from 'rc-queue-anim';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
@@ -25,7 +26,11 @@ export default class LeftSider extends Component {
     }
     render() {
         return (
-                <div className="left_sider">
+            <QueueAnim duration={1000}
+                       animConfig={[
+                           { opacity: [1, 0], translateX: [0, -100] }
+                       ]}>
+                <div className="left_sider" key="LeftSider">
                     <Menu onClick={()=>{this.handleClick()}}
                           mode="vertical"
                           theme="dark"
@@ -72,6 +77,7 @@ export default class LeftSider extends Component {
                         </SubMenu>
                     </Menu>
                 </div>
+            </QueueAnim>
         );
     }
 }

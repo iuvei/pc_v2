@@ -27,6 +27,12 @@ $fc:#fff;
     border-right: $b solid transparent;
     border-top: $b solid $bc;
 }
+@mixin transform($type, $time){
+    transition: $type $time;
+    -moz-transition: $type $time; /* Firefox 4 */
+    -webkit-transition: $type $time; /* Safari 和 Chrome */
+    -o-transition: $type $time; /* Opera */
+}
 
 /*箭头-有背景色*/
 @mixin icon_arrows_bg($top,$right,$b_color,$wh,$bg,$deg){

@@ -3,8 +3,15 @@
 
 
 .login{
-    width: 820px;
-    margin: 20% auto;
+    background-image: radial-gradient(ellipse farthest-corner at center top, #000d4d 0%, #000105 100%);
+    cursor:move;
+    .login_main{
+        width: 820px;
+        position: absolute;
+        left: 50%;
+        margin-left: -410px;
+        top: 40%;
+    }
     .ant-input{
         @include wh(210px,45px);
         margin-right: 8px;
@@ -13,4 +20,12 @@
         height: 45px;
         font-size: 14px;
     }
+
+    //#canv {
+    //    position: absolute;
+    //    width: 100%;
+    //    height: 100%;
+    //    top: 0;
+    //    left: 0;
+    //}
 }

@@ -1,0 +1,70 @@
+@import '../../../Style/variables';
+@import '../../../Style/mixin';
+
+
+.home_m_top{
+    position: relative;
+    .home_m_banner{
+        //width: 100%;
+        // 如果在第一屏且导航位置为 relative, 一屏为 height: calc(~"100vh - 64px");
+        //position: relative;
+        //text-align: center;
+        //border-color: #666;
+        //&:before {
+            background-image: url("../Img/home_top.jpg");
+            background-size: cover;
+            // background-attachment: fixed;
+            //background-position: center;
+            position: fixed;
+            display: block;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            //width: 100%;
+            height: 780px;
+            content: '';
+            z-index: -1;
+        //}
+    }
+    .home_m_top_text{
+        @include cl;
+        top: 25%;
+        color:#fff;
+        text-align: center;
+        z-index: 9;
+        h3{
+            font-size: 20px;
+            color:#C0C0C0;
+        }
+        h1{
+            font-size: 45px;
+        }
+        h2{
+            font-size: 24px;
+            color:#ddd;
+        }
+        .home_m_top_download{
+            display: block;
+            @include wh(204px, 36px);
+            line-height: 36px;
+            border: 1px solid #fff;
+            @include borderRadius(18px);
+            font-size: 14px;
+            margin: 40px auto 0;
+            color: #fff;
+            &:hover{
+                cursor: pointer;
+                background: $color_CF2027;
+                border: 1px solid $color_CF2027;
+                transition: background .3s;
+                -moz-transition: background .3s; /* Firefox 4 */
+                -webkit-transition: background .3s; /* Safari 和 Chrome */
+                -o-transition: background .3s; /* Opera */
+            }
+        }
+    }
+    .home_m_top_down_icon:before{
+        @include icon_arrows(-45px,50%,#B7B5B5,20px,135deg)
+    }
+}

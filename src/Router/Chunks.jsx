@@ -13,7 +13,7 @@ export const main = (location, callback) => {
 // 首页
 export const home = (location, callback) => {
     require.ensure([], (require) => {
-        callback(null, require('../Components/Home/home').default);
+        callback(null, require('../Components/Home/Home').default);
     }, 'home');
 };
 // 彩票游戏

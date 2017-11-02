@@ -3,6 +3,7 @@ import {observer} from 'mobx-react';
 import {Link} from 'react-router';
 import { Row, Col } from 'antd';
 import QueueAnim from 'rc-queue-anim';
+import ModelView from '../Common/ChildNav/ChildNav'
 
 import './Financial.scss';
 @observer
@@ -44,6 +45,27 @@ export default class Financial extends Component {
     };
 
     render() {
+        const navList = [
+            {
+                link: '/financial/recharge',
+                text: '充值'
+            },{
+                link: '/financial/withdraw',
+                text: '提现'
+            },{
+                link: '/financial/mentionFillingRecord',
+                text: '充提记录'
+            },{
+                link: '/financial/transfer',
+                text: '转账'
+            },{
+                link: '/financial/transferRecord',
+                text: '转账记录'
+            },{
+                link: '/financial/accountChange',
+                text: '资金账变'
+            }
+        ];
         return (
             <div className="financing_c_main">
                 <QueueAnim duration={1000}
@@ -58,28 +80,7 @@ export default class Financial extends Component {
                                     <span> > </span>
                                     <span>{this.onChangeTitle()}</span>
                                 </div>
-                                <div className="a_m_nav">
-                                    <ul className="a_m_nav_list">
-                                        <li className={0 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 0})}}>
-                                            <Link to="/financial/recharge">充值</Link>
-                                        </li>
-                                        <li className={1 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 1})}}>
-                                            <Link to="/financial/withdraw">提现</Link>
-                                        </li>
-                                        <li className={2 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 2})}}>
-                                            <Link to="/financial/mentionFillingRecord">充提记录</Link>
-                                        </li>
-                                        <li className={3 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 3})}}>
-                                            <Link to="/financial/transfer">转账</Link>
-                                        </li>
-                                        <li className={4 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 4})}}>
-                                            <Link to="/financial/transferRecord">转账记录</Link>
-                                        </li>
-                                        <li className={5 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 5})}}>
-                                            <Link to="/financial/accountChange">资金账变</Link>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ModelView navList={navList}/>
                                 <div>
                                     {this.props.children}
                                 </div>

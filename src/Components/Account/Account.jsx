@@ -1,9 +1,10 @@
 /*账户管理*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import {Link} from 'react-router';
 import { Row, Col  } from 'antd';
 import QueueAnim from 'rc-queue-anim';
+
+import ModelView from '../Common/ChildNav/ChildNav'
 
 import './Account.scss'
 
@@ -45,6 +46,30 @@ export default class Account extends Component {
     };
 
     render() {
+        const navList = [
+            {
+                link: '/account/selfInfo',
+                text: '个人信息'
+            },{
+                link: '/account/teamList',
+                text: '团队列表'
+            },{
+                link: '/account/marketing',
+                text: '市场推广'
+            },{
+                link: '/account/contract',
+                text: '契约系统'
+            },{
+                link: '/account/bankCardManage',
+                text: '银行卡管理'
+            },{
+                link: '/account/security',
+                text: '安全中心'
+            },{
+                link: '/account/message',
+                text: '站内信'
+            },
+        ];
         return (
             <div className="a_m_main">
                 <QueueAnim duration={1000}
@@ -60,31 +85,7 @@ export default class Account extends Component {
                                     <span> > </span>
                                     <span>{this.onChangeTitle()}</span>
                                 </div>
-                                <div className="a_m_nav">
-                                    <ul className="a_m_nav_list">
-                                        <li className={0 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 0})}}>
-                                            <Link to="/account/selfInfo">个人信息</Link>
-                                        </li>
-                                        <li className={1 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 1})}}>
-                                            <Link to="/account/teamList">团队列表</Link>
-                                        </li>
-                                        <li className={2 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 2})}}>
-                                            <Link to="/account/marketing">市场推广</Link>
-                                        </li>
-                                        <li className={3 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 3})}}>
-                                            <Link to="/account/contract">契约系统</Link>
-                                        </li>
-                                        <li className={4 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 4})}}>
-                                            <Link to="/account/bankCardManage">银行卡管理</Link>
-                                        </li>
-                                        <li className={5 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 5})}}>
-                                            <Link to="/account/security">安全中心</Link>
-                                        </li>
-                                        <li className={6 === this.state.navIndex ? 'a_m_nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({navIndex: 6})}}>
-                                            <Link to="/account/message">站内信</Link>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ModelView navList={navList}/>
                                 <div>
                                     {this.props.children}
                                 </div>

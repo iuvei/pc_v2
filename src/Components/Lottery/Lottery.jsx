@@ -15,25 +15,20 @@ export default class Lottery extends Component {
     render() {
         return (
             <div>
-                <QueueAnim duration={1000}
-                    animConfig={[
-                    { opacity: [1, 0], translateY: [0, 50] }
-                    ]}>
+                {/*<QueueAnim duration={1000}*/}
+                    {/*animConfig={[*/}
+                    {/*{ opacity: [1, 0], translateY: [0, 50] }*/}
+                    {/*]}>*/}
                     <Row type="flex" justify="center" align="top" key="betcenter">
                         <Col span={20}>
                             <ContentTop key="ContentTop"/>
                             <ContentMian key="ContentMian"/>
                         </Col>
                         <Col span={4}  >
-                            <QueueAnim duration={1000}
-                                       animConfig={[
-                                           { opacity: [1, 0], translateX: [0, 80] }
-                                       ]} key="RightSiderCol">
-                                <RightSider key="RightSider"/>
-                            </QueueAnim>
+                            <RightSider/>
                         </Col>
                     </Row>
-                </QueueAnim>
+                {/*</QueueAnim>*/}
             </div>
         );
     }
