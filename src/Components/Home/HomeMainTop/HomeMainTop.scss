@@ -5,27 +5,23 @@
 .home_m_top{
     position: relative;
     .home_m_banner{
-        //width: 100%;
-        // 如果在第一屏且导航位置为 relative, 一屏为 height: calc(~"100vh - 64px");
-        //position: relative;
-        //text-align: center;
-        //border-color: #666;
-        //&:before {
+        position: relative;
+        height: 869px;
+        &:before {
             background-image: url("../Img/home_top.jpg");
             background-size: cover;
-            // background-attachment: fixed;
-            //background-position: center;
+            background-position: center;
             position: fixed;
             display: block;
-            top: 0;
+            top: 120px;
             left: 0;
             bottom: 0;
             right: 0;
-            //width: 100%;
-            height: 780px;
+            width: 100%;
+            //height: 869px;
             content: '';
             z-index: -1;
-        //}
+        }
     }
     .home_m_top_text{
         @include cl;

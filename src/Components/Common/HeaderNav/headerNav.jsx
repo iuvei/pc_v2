@@ -30,7 +30,7 @@ export default class HeaderNav extends Component {
         const SubMenu = Menu.SubMenu;
         const MenuItemGroup = Menu.ItemGroup;
         return (
-            <div>
+            <div className="header_main">
                 <div className="nav_top">
                     <div className="nav_top_content">
                         <div className="n_t_lt left">

@@ -7,6 +7,12 @@ $menus-top: 25px;
 $hover-color: #FFDB70;
 $width_100: 100%;
 
+.header_main{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+}
 .nav_top{
     @include wh($width_100, 40px);
     line-height: 40px;

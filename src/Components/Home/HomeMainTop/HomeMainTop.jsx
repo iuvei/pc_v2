@@ -6,17 +6,22 @@ import QueueAnim from 'rc-queue-anim';
 
 import './HomeMainTop.scss'
 
-import home_top from '../Img/home_top.jpg';
-
-
 @observer
 export default class HomeMainTop extends Component {
     constructor(props) {
         super(props)
         this.state = {}
     };
+    componentDidMount() {
+        console.log(document.documentElement.clientHeight)
+        console.log(this.refs.homeBanner)
 
+    };
+    componentDidUpdate() {
+        console.log(this.refs.homeBanner)
+    }
     render() {
+        const oneAnim = { y: '+=30', opacity: 0, type: 'from', ease: 'easeOutQuad' };
         return (
             <OverPack
                 replay
@@ -26,21 +31,45 @@ export default class HomeMainTop extends Component {
                 <QueueAnim
                     type={['bottom', 'top']}
                     delay={200}
-                    // className="home_m_banner"
                     key="text"
+
                 >
-                    <div key="OverPack01">
-                        <img src={home_top} width="100%" style={{verticalAlign: 'middle'}}/>
-                        <div className="home_m_top_text">
-                            <h3>MOBILE PHONE CLIENT</h3>
-                            <h1>恒彩手机客户端</h1>
-                            <h2>随时随地随心，从此财富只在指尖流动</h2>
+                    <div className="home_m_banner"
+                         ref="homeBanner">
+                    <div className="home_m_top_text" key="OverPack01">
+                        <TweenOne
+                            key="h3"
+                            animation={oneAnim}
+                            component="h3"
+                            reverseDelay={100}
+                        >
+                            MOBILE PHONE CLIENT
+                        </TweenOne>
+                        <TweenOne
+                            key="h1"
+                            animation={{ ...oneAnim, delay: 100 }}
+                            component="h1"
+                        >
+                            恒彩手机客户端
+                        </TweenOne>
+                        <TweenOne
+                            key="h2"
+                            animation={{ ...oneAnim, delay: 200 }}
+                            component="h3"
+                        >
+                            随时随地随心，从此财富只在指尖流动
+                        </TweenOne>
+                        <TweenOne
+                            key="download"
+                            animation={{ ...oneAnim, delay: 300 }}
+                        >
                             <a href="#" className="home_m_top_download">立即下载</a>
-                        </div>
+                        </TweenOne>
+                    </div>
                     </div>
                 </QueueAnim>
                 <TweenOne
-                    animation={{ y: '-=20', yoyo: true, repeat: -1, duration: 1000 }}
+                    animation={{ y: '-=20', yoyo: true, repeat: 0, duration: 1000 }}
                     className="home_m_top_down_icon"
                     key="icon"
                 >

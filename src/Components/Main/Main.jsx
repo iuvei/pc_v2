@@ -11,26 +11,26 @@ import './Main.scss';
 export default class Main extends Component {
     render() {
         return (
-            <div className="berCenter">
-                <div className="berCenter_bg">
-                    <header>
-                        <HeaderNav/>
-                    </header>
-                    <Row style={{display: hashHistory.getCurrentLocation().pathname === '/home' ? 'none' : '' }} type="flex" justify="center" align="top" className="main_width" >
-                        <Col span={1} style={{zIndex: '1'}}>
-                            <LeftSider/>
-                        </Col>
-                        <Col span={23}>
-                            {this.props.children}
-                        </Col>
-                    </Row>
-                    <div style={{display: hashHistory.getCurrentLocation().pathname === '/home' ? '' : 'none' }}>
+            <div>
+                <header>
+                    <HeaderNav/>
+                </header>
+                <div className="berCenter_bg" style={{display: hashHistory.getCurrentLocation().pathname === '/home' ? 'none' : '' }}>
+                <Row type="flex" justify="center" align="top" className="main_width" >
+                    <Col span={1} style={{zIndex: '1'}}>
+                        <LeftSider/>
+                    </Col>
+                    <Col span={23}>
                         {this.props.children}
-                    </div>
-                    <footer>
-                        <Footer/>
-                    </footer>
+                    </Col>
+                </Row>
                 </div>
+                <div style={{display: hashHistory.getCurrentLocation().pathname === '/home' ? '' : 'none' }}>
+                    {this.props.children}
+                </div>
+                <footer>
+                    <Footer/>
+                </footer>
             </div>
         );
     }

@@ -2,17 +2,13 @@
 @import '../../Style/mixin';
 
 header {
-    width:100%;
+    @include wh(100%, 120px);
 }
 footer{
     background: #E6EAE9;
 }
-
-.berCenter{
-    background: #E6EAE9;
-}
 .berCenter_bg{
-    background: url('../../Images/betCenter_bg.jpg') no-repeat;
+    background: #E6EAE9 url('../../Images/betCenter_bg.jpg') no-repeat;
     background-size: 100% 614px;
     .main{
         width: $nav_width_1200;
