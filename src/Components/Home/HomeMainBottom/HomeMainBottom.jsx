@@ -16,12 +16,15 @@ export default class HomeMainBottom extends Component {
 
     render() {
         return (
-            <OverPack playScale={0.2}>
-                <div className="home_m_bottom" key="homeBottom">
+            <OverPack playScale={0.2}
+                      className="home_m_bottom"
+            >
                     <QueueAnim type="bottom"
                                component="ul"
                                className="home_m_bottom_list clear"
-                               key="ul" leaveReverse={true} >
+                               key="ul"
+                               leaveReverse
+                    >
                         <li key="01">
                             <div className="home_m_recharge_top clear">
                                 <div className="home_m_top_left left">
@@ -74,7 +77,6 @@ export default class HomeMainBottom extends Component {
                             <img style={{marginLeft: 10}} src={hzyh_icon} alt=""/>
                         </li>
                     </QueueAnim>
-                </div>
             </OverPack>
         )
     }

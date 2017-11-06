@@ -6,7 +6,7 @@
     position: relative;
     .home_m_banner{
         position: relative;
-        height: 869px;
+        height: 768px;
         &:before {
             background-image: url("../Img/home_top.jpg");
             background-size: cover;
@@ -17,8 +17,7 @@
             left: 0;
             bottom: 0;
             right: 0;
-            width: 100%;
-            //height: 869px;
+            height: 100%;
             content: '';
             z-index: -1;
         }

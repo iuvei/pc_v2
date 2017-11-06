@@ -353,7 +353,7 @@ export default class ContentMian extends Component {
                                         <span><strong>4</strong>元</span>
                                     </li>
                                     <li className="c_m_affirm_bet_btn">确认投注</li>
-                                    <li className="c_m_superaddition"><a href="javascript:void(0)" onClick={()=>this.setState({childVisible: true})}>追号</a></li>
+                                    <li className="c_m_superaddition"  onClick={()=>this.setState({childVisible: true})}>追号</li>
                                 </ul>
                                 <ModalView visible={this.state.childVisible} onSuperaddition={()=>this.onSuperaddition()}/>
                             </div>

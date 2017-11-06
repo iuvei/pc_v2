@@ -35,7 +35,7 @@ export default class HomeMainLottery extends Component {
         ];
         const childrenToRender = dataArray.map(this.getChildrenToRender);
         return (
-            <OverPack playScale={0.1}>
+            <OverPack playScale={0.2}>
                 <QueueAnim type="bottom"
                            component="ul"
                            className="home_m_lottery clear"

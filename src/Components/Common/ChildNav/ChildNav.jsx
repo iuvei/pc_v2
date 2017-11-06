@@ -1,12 +1,13 @@
+/*二级导航栏*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import {Link} from 'react-router';
 import './ChildNav.scss'
 
 @observer
-export default class Demo extends Component {
+export default class ChildNav extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             NavIndex: 0,
         }

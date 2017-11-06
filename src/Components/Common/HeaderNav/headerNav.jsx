@@ -146,34 +146,41 @@ export default class HeaderNav extends Component {
                                 <SubMenu className="c_p_game"
                                          title={
                                                     <div className="nav-text">
-                                                        <p>彩票游戏</p>
-                                                        <p>Lottery</p>
+                                                        <a href="javascript:void(0)">
+                                                            <p>彩票游戏</p>
+                                                            <p>Lottery</p>
+                                                        </a>
                                                     </div>
                                                 }>
-                                    <MenuItemGroup title="Item 1">
+                                    <MenuItemGroup title="Item 1" className="left">
                                         <Menu.Item key="setting:1">
                                             <Link to={`/lottery`}>
                                                 Option 1
                                             </Link>
                                         </Menu.Item>
-                                        <Menu.Item key="setting:2">
-                                            <Link to={`/gameRecord`}>
-                                                Option 2
+                                    </MenuItemGroup>
+                                    <MenuItemGroup title="Item 1"  className="left">
+                                        <Menu.Item key="setting:1">
+                                            <Link to={`/lottery`}>
+                                                Option 1
                                             </Link>
                                         </Menu.Item>
                                     </MenuItemGroup>
-                                    <MenuItemGroup title="Item 2">
-                                        <Menu.Item key="setting:3">Option 3</Menu.Item>
-                                        <Menu.Item key="setting:4">Option 4</Menu.Item>
+                                    <MenuItemGroup title="Item 1"  className="left">
+                                        <Menu.Item key="setting:1">
+                                            <Link to={`/lottery`}>
+                                                Option 1
+                                            </Link>
+                                        </Menu.Item>
                                     </MenuItemGroup>
                                 </SubMenu>
                                 <SubMenu
                                     title={
                                     <div className="nav-text">
-                                        <Link to={`/lottery`}>
+                                        <a href="javascript:void(0)">
                                             <p>综合游戏</p>
                                             <p>Other Games</p>
-                                        </Link>
+                                        </a>
                                     </div>
                                 }>
                                     <Menu.Item key="solution:1">Option 1</Menu.Item>

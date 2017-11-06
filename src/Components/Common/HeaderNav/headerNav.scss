@@ -166,12 +166,11 @@ $width_100: 100%;
         .menus {
             position: relative;
             float: right;
-            padding-top: $menus-top;
             font-size: 14px;
         }
     }
     .nav-text{
-        height: ($nav-height)-($menus-top)-3;
+        height: ($nav-height)-3;
         text-align: center;
         p{
             line-height: 20px;
@@ -182,7 +181,8 @@ $width_100: 100%;
         }
         a{
             width: 96px;
-            height: 52px;
+            height: ($nav-height)-3;
+            padding-top: 22px;
             display: inline-block;
             color: #fff;
             &:hover{

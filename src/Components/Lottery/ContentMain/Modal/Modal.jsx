@@ -45,8 +45,7 @@ export default class ModalView extends Component {
                 onCancel={()=>{this.props.onSuperaddition()}}
                 maskClosable={false}
                 footer={null}
-                header={null}
-
+                className="modal_content"
             >
                 <div className="modal_main">
                     <ModelView navList = {navList}/>

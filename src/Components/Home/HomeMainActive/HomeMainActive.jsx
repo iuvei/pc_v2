@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
+import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
 import './HomeMainActive.scss'
@@ -17,12 +18,14 @@ export default class HomeMainActive extends Component {
         this.state = {}
     };
     getChildrenToRender(item, i) {
-        return (<li key={i}>
+        return (
+            <li key={i}>
                     <a href="#">
                         <img src={item.img} alt=""/>
                         <p className="home_m_active_type">{item.content}</p>
                     </a>
-                </li>);
+                </li>
+        );
     };
     getEnterAnim(e, isMode) {
         const index = e.index;
@@ -39,15 +42,21 @@ export default class HomeMainActive extends Component {
         ];
         const childrenToRender = dataArray.map(this.getChildrenToRender);
         return (
-            <OverPack playScale={0.1}>
-                <div className="home_main_active" key="op">
-                    <div className="home_m_active">
-                        <div className="home_favourable_active">
+                <div className="home_main_active">
+                    <div className="home_m_active" key="home_active_op">
+                        <OverPack playScale={0.3}>
+                            <TweenOne
+                                key="icon"
+                                animation={oneAnim}
+                                className="home_favourable_active"
+                                reverseDelay={300} //开始倒放时的延时
+                            >
+                            </TweenOne>
                             <TweenOne
                                 key="p"
                                 animation={oneAnim}
                                 component="p"
-                                reverseDelay={300} //开始倒放时的延时
+                                reverseDelay={200}
                             >
                                 <i style={{color:'#BC0000'}}>优惠</i>活动
                             </TweenOne>
@@ -55,32 +64,23 @@ export default class HomeMainActive extends Component {
                                 animation={{ ...oneAnim, delay: 100 }}
                                 component="h5"
                                 key="h5"
-                                // reverseDelay={200} //开始倒放时的延时
                             >
                                 FAVOURABLE ACTIVITY
                             </TweenOne>
-                        </div>
-                        <TweenOneGroup
-                            className="home_m_active_list clear"
-                            component="ul"
-                            // reverse={true}
-                            key="ul"
-                            enter={(e) => {
-                                return this.getEnterAnim(e, 100)
-                            }}
-                            leave={{ y: '+=30', opacity: 0, ease: 'easeOutQuad' }}
-                        >
-                            {childrenToRender}
-                        </TweenOneGroup>
-                        {/*<QueueAnim*/}
-                            {/*className="home_m_active_list clear"*/}
-                            {/*component="ul" type="bottom" key="block" leaveReverse*/}
-                        {/*>*/}
-                            {/*{childrenToRender}*/}
-                        {/*</QueueAnim>*/}
+                            <TweenOneGroup
+                                className="home_m_active_list clear"
+                                component="ul"
+                                key="ul"
+                                enter={(e) => {
+                                    return this.getEnterAnim(e, 300)
+                                }}
+                                leave={{ y: '+=30', opacity: 0, ease: 'easeOutQuad' }}
+                            >
+                                {childrenToRender}
+                            </TweenOneGroup>
+                        </OverPack>
                     </div>
                 </div>
-            </OverPack>
         )
     }
 }
