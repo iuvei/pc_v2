@@ -14,30 +14,8 @@ export default class Financial extends Component {
             navIndex: 0,
         }
     };
-    onChangeTitle() {
-        switch(this.state.navIndex)
-        {
-            case 0:
-                return '充值';
-                break;
-            case 1:
-                return '提现';
-                break;
-            case 2:
-                return '充提记录';
-                break;
-            case 3:
-                return '转账';
-                break;
-            case 4:
-                return '转账记录';
-                break;
-            case 5:
-                return '资金账变';
-                break;
-            default:
-                return '充值';
-        }
+    onChangeNavIndex(index) {
+        this.setState({navIndex: index});
     };
     componentWillMount() {
     };
@@ -70,7 +48,7 @@ export default class Financial extends Component {
             <div className="financing_c_main">
                 <QueueAnim duration={1000}
                            animConfig={[
-                               { opacity: [1, 0], translateY: [0, 50] }
+                               { opacity: [1, 0] }
                            ]}>
                     <Row type="flex" justify="center" align="top" key="financingCenter">
                         <Col span={24}>
@@ -78,9 +56,9 @@ export default class Financial extends Component {
                                 <div className="a_m_title">
                                     <span>财务中心</span>
                                     <span> > </span>
-                                    <span>{this.onChangeTitle()}</span>
+                                    <span>{navList[this.state.navIndex].text}</span>
                                 </div>
-                                <ModelView navList={navList}/>
+                                <ModelView navList={navList} onChangeNavIndex={this.onChangeNavIndex.bind(this)}/>
                                 <div>
                                     {this.props.children}
                                 </div>

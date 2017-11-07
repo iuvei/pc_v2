@@ -1,7 +1,7 @@
 /*团队列表*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import { DatePicker, Checkbox, Table, Badge, Menu, Dropdown, Icon } from 'antd';
+import { DatePicker, Checkbox, Table, Badge, Input } from 'antd';
 import 'whatwg-fetch'
 
 import './TeamTable.scss'
@@ -235,7 +235,7 @@ export default class teamTable extends Component {
                             </li>
                             <li>
                                 <span>用户名：</span>
-                                <input className="l_b_user_name" type="text"/>
+                                <Input placeholder="请输入用户名" />
                             </li>
                             <li className="t_m_serch">
                                 <img src={t_m_serch} alt="搜索"/>
@@ -273,7 +273,6 @@ export default class teamTable extends Component {
                     </div>
                 </div>
             </div>
-
         );
     }
 }

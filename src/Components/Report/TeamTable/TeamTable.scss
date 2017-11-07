@@ -1,8 +1,6 @@
 @import '../../../Style/variables';
 @import '../../../Style/mixin';
 
-$border-color: #B2B2B2;
-
 .team_list{
     color: #363636;
     font-size: 14px;
@@ -59,12 +57,7 @@ $border-color: #B2B2B2;
                 li{
                     float: left;
                     margin-right: 30px;
-                    .l_b_user_name{
-                        box-sizing: border-box;
-                        border: 1px solid $border-color;
-                        padding: 3px 5px;
-                        @include lh(30px);
-                        margin-left: 8px;
+                    .ant-input{
                         width: 120px;
                     }
                 }
@@ -130,16 +123,17 @@ $border-color: #B2B2B2;
             background-color: #ECFEFF;
         }
     }
+    .t_l_prompt{
+        background-color: #bbb;
+        padding: 5px;
+        @include borderRadius(2px);
+    }
+    .t_l_active{
+        box-sizing: border-box;
+        height: 28px;
+        border:1px solid #CB1313 !important;
+        color:#CB1313;
+        background: #FFF5F5 url('./Img/time_active.png') no-repeat right bottom;
+    }
 }
-.t_l_prompt{
-    background-color: #bbb;
-    padding: 5px;
-    @include borderRadius(2px);
-}
-.t_l_active{
-    box-sizing: border-box;
-    height: 28px;
-    border:1px solid #CB1313 !important;
-    color:#CB1313;
-    background: #FFF5F5 url('./Img/time_active.png') no-repeat right bottom;
-}
+

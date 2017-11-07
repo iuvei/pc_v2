@@ -36,9 +36,9 @@ export default class Report extends Component {
     render() {
         return (
             <div className="s_m_main">
-                <QueueAnim duration={1000}
+                <QueueAnim duration={2000}
                            animConfig={[
-                               { opacity: [1, 0], translateY: [0, 50] }
+                               { opacity: [1, 0] }
                            ]}>
                     <div className="g_r_main" key="report">
                         <Row type="flex" justify="center" align="top">

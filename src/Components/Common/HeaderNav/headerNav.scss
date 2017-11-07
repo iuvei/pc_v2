@@ -46,10 +46,7 @@ $width_100: 100%;
             position: relative;
             &:hover .n_t_controler{
                 height: 180px;
-                transition: height .3s;
-                -moz-transition: height .3s; /* Firefox 4 */
-                -webkit-transition: height .3s; /* Safari 和 Chrome */
-                -o-transition: height .3s; /* Opera */
+                @include transform(height, 0.3s);
             }
         }
         .n_t_controler{
@@ -108,10 +105,7 @@ $width_100: 100%;
             position: relative;
             &:hover .n_t_controler{
                 height: 240px;
-                transition: height .3s;
-                -moz-transition: height .3s; /* Firefox 4 */
-                -webkit-transition: height .3s; /* Safari 和 Chrome */
-                -o-transition: height .3s; /* Opera */
+                @include transform(height, 0.3s);
             }
             .n_t_down_list{
                 @include wh(200px, 230px);
@@ -220,15 +214,6 @@ $width_100: 100%;
             color: #fff;
         }
     }
-    //.c_p_game{
-    //    .ant-menu-submenu-horizontal > .ant-menu{
-    //        width: $nav_width_1200;
-    //        left: -600px;
-    //    }
-    //    .ant-menu-item-group{
-    //        float: left;
-    //    }
-    //}
 }
 
 

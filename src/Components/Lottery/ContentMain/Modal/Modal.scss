@@ -2,8 +2,14 @@
 @import '../../../../Style/mixin';
 
 .modal_content{
+    .ant-modal-header{
+        padding: 0;
+    }
     .ant-modal-body{
         background-color: #F1F1F1;
+    }
+    .ant-modal-close{
+        color: #fff;
     }
     .modal_main{
         .m_m_content{
@@ -45,9 +51,54 @@
                 margin-left: 20px;
                 height: 30px;
             }
+            .ant-input-number{
+                @include borderRadius(0);
+            }
         }
-        .ant-input-number{
-            @include borderRadius(0);
+        .m_m_table{
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 8px;
+            .ant-input-number{
+                @include borderRadius(0);
+                width: 70px;
+            }
+        }
+        .m_m_footer{
+            margin-top: 15px;
+            @include lh(37px);
+            color: $color_363636;
+            .m_m_left_btn{
+                .ant-btn-primary{
+                    background-color: #4D4D4D;
+                    border-color: #4D4D4D;
+                }
+                .ant-btn-primary:hover,
+                .ant-btn-primary:focus {
+                    color: #fff;
+                    background-color: #676767;
+                    border-color: #676767;
+                }
+                .ant-btn-clicked:after {
+                    border: 0 solid #4F4F4F;
+                }
+                .ant-btn-danger.ant-btn-clicked:after {
+                    border-color: #4F4F4F;
+                }
+            }
+            .m_m_footer_info{
+                font-size: 14px;
+                li{
+                    float: left;
+                    em{
+                        font-style: normal;
+                        color: #BD0000;
+                    }
+                    &:last-child{
+                        margin-left: 20px;
+                    }
+                }
+            }
         }
     }
 }

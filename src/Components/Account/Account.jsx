@@ -4,7 +4,7 @@ import {observer} from 'mobx-react';
 import { Row, Col  } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 
-import ModelView from '../Common/ChildNav/ChildNav'
+import ChildNav from '../Common/ChildNav/ChildNav'
 
 import './Account.scss'
 
@@ -16,35 +16,9 @@ export default class Account extends Component {
             navIndex: 0,
         }
     };
-    onChangeTitle() {
-        switch(this.state.navIndex)
-        {
-            case 0:
-                return '个人信息';
-                break;
-            case 1:
-                return '团队列表';
-                break;
-            case 2:
-                return '市场推广';
-                break;
-            case 3:
-                return '契约系统';
-                break;
-            case 4:
-                return '银行卡管理';
-                break;
-            case 5:
-                return '安全中心';
-                break;
-            case 6:
-                return '站内信';
-                break;
-            default:
-                return '个人信息';
-        }
+    onChangeNavIndex(index) {
+        this.setState({navIndex: index});
     };
-
     render() {
         const navList = [
             {
@@ -74,18 +48,17 @@ export default class Account extends Component {
             <div className="a_m_main">
                 <QueueAnim duration={1000}
                            animConfig={[
-                               { opacity: [1, 0], translateY: [0, 50] }
+                               { opacity: [1, 0] }
                            ]}>
-
                     <Row type="flex" justify="center" align="top" key="account">
                         <Col span={24}>
                             <div className="a_m_controler">
                                 <div className="a_m_title">
                                     <span>账户管理</span>
                                     <span> > </span>
-                                    <span>{this.onChangeTitle()}</span>
+                                    <span>{navList[this.state.navIndex].text}</span>
                                 </div>
-                                <ModelView navList={navList}/>
+                                <ChildNav navList={navList} onChangeNavIndex={this.onChangeNavIndex.bind(this)}/>
                                 <div>
                                     {this.props.children}
                                 </div>

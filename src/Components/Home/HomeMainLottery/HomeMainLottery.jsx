@@ -39,7 +39,9 @@ export default class HomeMainLottery extends Component {
                 <QueueAnim type="bottom"
                            component="ul"
                            className="home_m_lottery clear"
-                           key="ul" leaveReverse={true} >
+                           key="ul"
+                           leaveReverse
+                >
                     {childrenToRender}
                 </QueueAnim>
             </OverPack>

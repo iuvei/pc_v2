@@ -12,7 +12,10 @@ export default class ChildNav extends Component {
             NavIndex: 0,
         }
     };
-
+    handClick(index) {
+        this.setState({NavIndex: index});
+        this.props.onChangeNavIndex(index);
+    }
     render() {
         return (
             <div className="c_nav">
@@ -20,7 +23,7 @@ export default class ChildNav extends Component {
                     {
                         this.props.navList.map((item, index)=>{
                             return (
-                                <li className={index === this.state.NavIndex? 'nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.setState({NavIndex: index})}} key={index}>
+                                <li className={index === this.state.NavIndex? 'nav_active' : 'hvr-overline-from-left hvr-fade'} onClick={()=>{this.handClick(index)}} key={index}>
                                     <Link to={item.link}>{item.text}</Link>
                                 </li>
                             )

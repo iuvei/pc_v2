@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import TweenOne, { TweenOneGroup } from 'rc-tween-one';
+import TweenOne from 'rc-tween-one';
 import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 
@@ -26,11 +26,6 @@ export default class HomeMainActive extends Component {
                     </a>
                 </li>
         );
-    };
-    getEnterAnim(e, isMode) {
-        const index = e.index;
-        const delay = isMode ? index * 50 + 200 : index % 4 * 100 + Math.floor(index / 4) * 100 + 300;
-        return { y: '+=30', opacity: 0, type: 'from', delay };
     };
     render() {
         const oneAnim = { y: '+=30', opacity: 0, type: 'from', ease: 'easeOutQuad' };
@@ -67,17 +62,14 @@ export default class HomeMainActive extends Component {
                             >
                                 FAVOURABLE ACTIVITY
                             </TweenOne>
-                            <TweenOneGroup
-                                className="home_m_active_list clear"
-                                component="ul"
-                                key="ul"
-                                enter={(e) => {
-                                    return this.getEnterAnim(e, 300)
-                                }}
-                                leave={{ y: '+=30', opacity: 0, ease: 'easeOutQuad' }}
+                            <QueueAnim type="bottom"
+                                       component="ul"
+                                       className="home_m_active_list clear"
+                                       key="ul"
+                                       leaveReverse
                             >
                                 {childrenToRender}
-                            </TweenOneGroup>
+                            </QueueAnim>
                         </OverPack>
                     </div>
                 </div>

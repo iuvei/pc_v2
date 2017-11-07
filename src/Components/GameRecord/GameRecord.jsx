@@ -26,7 +26,7 @@ export default class GameRecord extends Component {
             <div className="g_r_main">
                 <QueueAnim duration={1000}
                 animConfig={[
-                { opacity: [1, 0], translateY: [0, 50] }
+                { opacity: [1, 0] }
                 ]}>
                     <Row type="flex" justify="center" align="top" key="GameRecord">
                         <Col span={24}>
@@ -34,7 +34,7 @@ export default class GameRecord extends Component {
                                 <div className="a_m_title">
                                     <span>游戏记录</span>
                                     <span> > </span>
-                                    <span>彩票投注</span>
+                                    <span>{navList[this.state.navIndex]}</span>
                                 </div>
                                 <div className="a_m_nav">
                                     <ul className="a_m_nav_list a_m_nav_list_p">
