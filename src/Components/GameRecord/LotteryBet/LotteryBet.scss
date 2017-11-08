@@ -10,12 +10,12 @@ $border-color: #B2B2B2;
         padding: 30px 20px 13px;
         border-bottom: 1px solid #ccc;
         .t_l_time{
-            border-bottom: 1px dotted #8B8D92;
             padding-bottom: 15px;
             .t_m_date_classify{
                 display: inline-block;
                 width: 70px;
                 text-align: right;
+                margin-right: 10px;
             }
             .t_l_time_row{
                 @include lh(30px);
@@ -88,7 +88,23 @@ $border-color: #B2B2B2;
                         cursor: pointer;
                     }
                 }
+                .ant-btn{
+                    @include borderRadius(0);
+                }
             }
+        }
+        .t_m_select_lottery{
+            padding: 0 5px 0;
+            height: 0;
+            overflow: hidden;
+            @include transform(height, 0.3s);
+            .ant-radio-wrapper{
+                margin: 10px 25px 0 0;
+            }
+        }
+        .t_m_select_lottery_show{
+            height: 60px;
+            border-top: 1px dotted #8B8D92;
         }
     }
     .t_l_table{

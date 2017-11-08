@@ -13,13 +13,8 @@ export default class Footer extends Component {
     render() {
         return (
             <div className="footer">
-                <OverPack playScale={0.1} className="f_partner">
-                    <QueueAnim type="bottom"
-                               component="ul"
-                               className="f_partner_list clear"
-                               key="ul"
-                               leaveReverse
-                    >
+                <div className="f_partner">
+                    <ul className="f_partner_list clear">
                         <li key="footerLi01">
                             <div className="f_partner_text">合作伙伴</div>
                             <div><img src={footer_1} alt=""/></div>
@@ -48,8 +43,8 @@ export default class Footer extends Component {
                         <li key="footerLi03">
                             <img src={footer_2} alt=""/>
                         </li>
-                    </QueueAnim>
-                </OverPack>
+                    </ul>
+                </div>
                 <ul className="f_bottom clear">
                     <li className="left" key="footerLi04">Copyright&nbsp;&copy;&nbsp;2014-2017&nbsp;恒彩在线版权所有&nbsp;菲律宾政府合法博彩牌照认证</li>
                     <li className="footer_bottom right" key="footerLi05"><img src={footer_bottom} alt=""/></li>

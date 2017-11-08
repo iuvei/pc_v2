@@ -23,6 +23,7 @@ import {
     financial,
     recharge,
     withdraw,
+    affirmWithdraw,
     mentionFillingRecord,
     transfer,
     transferRecord,
@@ -56,6 +57,7 @@ const routes = params => (
                 <Route path="/financial/transfer" getComponent={transfer} params={params}/>
                 <Route path="/financial/transferRecord" getComponent={transferRecord} params={params}/>
                 <Route path="/financial/accountChange" getComponent={accountChange} params={params}/>
+                <Route path="/financial/withdraw/affirmWithdraw" getComponent={affirmWithdraw} params={params}/>
             </Route>
             <Route path="/report" getComponent={report} params={params}>
                 <IndexRoute getComponent={teamStatistics} />

@@ -128,6 +128,12 @@ export const withdraw = (location, callback) => {
         callback(null, require('../Components/Financial/Withdraw/Withdraw').default);
     }, 'withdraw');
 };
+// 财务中心/确认提现
+export const affirmWithdraw = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Financial/Withdraw/AffirmWithdraw/AffirmWithdraw').default);
+    }, 'affirmWithdraw');
+};
 // 财务中心/充提记录
 export const mentionFillingRecord = (location, callback) => {
     require.ensure([], (require) => {

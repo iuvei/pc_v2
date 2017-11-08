@@ -1,7 +1,7 @@
 /*彩票投注*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import { DatePicker, Checkbox, Radio, Table, Select, Input, Pagination } from 'antd';
+import { DatePicker, Checkbox, Radio, Table, Select, Input, Pagination, Button, Icon } from 'antd';
 import 'whatwg-fetch'
 
 import './LotteryBet.scss'
@@ -16,8 +16,9 @@ export default class LotteryBet extends Component {
             data: [],
             pagination: {},
             loading: false,
-            radioValue: 1,
             timeIndex: 1,// 近三天，近七天
+            showLottery: false, // 隐藏彩种
+            value: 1,
         }
     };
     componentDidMount() {
@@ -79,8 +80,9 @@ export default class LotteryBet extends Component {
     onChangeRadio(e) {
         console.log('radio checked', e.target.value);
         this.setState({
-            radioValue: e.target.value,
+            value: e.target.value,
         });
+        this.setState({showLottery: false})
     };
     // 总计
     c_p_t_z_tabelFooter() {
@@ -105,6 +107,9 @@ export default class LotteryBet extends Component {
     onShowSizeChange(current, pageSize) {
         console.log(current, pageSize);
         this.setState({pagination: current})
+    };
+    showLottery() {
+        this.setState({showLottery: !this.state.showLottery});
     };
     render() {
         const Option = Select.Option;
@@ -330,10 +335,10 @@ export default class LotteryBet extends Component {
         return (
             <div className="lottery_bet">
                 <div className="team_list_top">
-                    <div className="t_l_time" style={{borderBottom: this.props.navIndex === 5 ? '0' : '1px dotted #8B8D92'}}>
+                    <div className="t_l_time">
                         <ul className="t_l_time_row">
                             <li className="t_m_date_classify">投注时间：</li>
-                            <li style={{marginLeft: '8px'}}>
+                            <li>
                                 <DatePicker
                                     showTime
                                     format="YYYY-MM-DD HH:mm:ss"
@@ -363,7 +368,11 @@ export default class LotteryBet extends Component {
                         <ul className="t_l_classify">
                             <li style={{display: this.props.navIndex === 5 ? 'none' : 'block'}}>
                                 <span className="t_m_date_classify">{this.props.navIndex === 4 ? '游戏分类：' : '彩种名称：'}</span>
-                                <span className="t_l_border">重庆时时彩</span>
+                                {/*<span className="t_l_border">重庆时时彩</span>*/}
+                                <Button onClick={()=>this.showLottery()}>
+                                    {arr[this.state.value]}
+                                    <Icon type="menu-unfold" />
+                                </Button>
                             </li>
                             <li style={{display: this.props.navIndex === 2 ||
                                                 this.props.navIndex === 3 ||
@@ -406,8 +415,10 @@ export default class LotteryBet extends Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="l_b_radio_lottery" style={{display: this.props.navIndex === 5 ? 'none' : 'block'}}>
-                        <RadioGroup onChange={(e)=>{this.onChangeRadio(e)}} value={this.state.radioValue}>
+                    <div className={this.state.showLottery ? 't_m_select_lottery clear t_m_select_lottery_show' : 't_m_select_lottery clear'}
+                         style={{display: this.props.navIndex === 5 ? 'none' : 'block'}}
+                    >
+                        <RadioGroup onChange={(e)=>{this.onChangeRadio(e)}} value={this.state.value}>
                             {
                                 arr.map((value,index)=>{
                                     return (

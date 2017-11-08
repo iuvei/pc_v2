@@ -20,11 +20,11 @@ export default class HomeMainActive extends Component {
     getChildrenToRender(item, i) {
         return (
             <li key={i}>
-                    <a href="#">
-                        <img src={item.img} alt=""/>
-                        <p className="home_m_active_type">{item.content}</p>
-                    </a>
-                </li>
+                <a href="#">
+                    <img src={item.img} alt=""/>
+                    <p className="home_m_active_type">{item.content}</p>
+                </a>
+            </li>
         );
     };
     render() {

@@ -3,7 +3,7 @@ import {observer} from 'mobx-react';
 import {Link} from 'react-router';
 import { Row, Col } from 'antd';
 import QueueAnim from 'rc-queue-anim';
-import ModelView from '../Common/ChildNav/ChildNav'
+import ChildNav from '../Common/ChildNav/ChildNav'
 
 import './Financial.scss';
 @observer
@@ -58,7 +58,7 @@ export default class Financial extends Component {
                                     <span> > </span>
                                     <span>{navList[this.state.navIndex].text}</span>
                                 </div>
-                                <ModelView navList={navList} onChangeNavIndex={this.onChangeNavIndex.bind(this)}/>
+                                <ChildNav navList={navList} onChangeNavIndex={this.onChangeNavIndex.bind(this)}/>
                                 <div>
                                     {this.props.children}
                                 </div>
