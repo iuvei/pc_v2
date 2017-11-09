@@ -188,7 +188,7 @@ export default class HeaderNav extends Component {
                                 </SubMenu>
                                 <Menu.Item key="2">
                                     <div className="nav-text">
-                                        <Link to={`/lottery`}>
+                                        <Link to={`/activity`}>
                                             <p>优惠活动</p>
                                             <p>Activity</p>
                                         </Link>

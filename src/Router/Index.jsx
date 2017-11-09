@@ -6,6 +6,8 @@ import {
     main,
     home,
     lottery,
+    activity,
+    activityDetails,
     account,
     gameRecord,
     report,
@@ -22,6 +24,12 @@ import {
     message,
     financial,
     recharge,
+    onlineTopUp,
+    qqWallet,
+    weChat,
+    aliPay,
+    eBank,
+    promptlyRecharge,
     withdraw,
     affirmWithdraw,
     mentionFillingRecord,
@@ -37,6 +45,8 @@ const routes = params => (
         <Route path="/main" getComponent={main} params={params}>
             <IndexRoute getComponent={lottery} />
             <Route path="/lottery" getComponent={lottery} params={params}/>
+            <Route path="/activity" getComponent={activity} params={params}/>
+            <Route path="/activity/activityDetails" getComponent={activityDetails} params={params}/>
             <Route path="/home" getComponent={home} params={params}/>
             <Route path="/account" getComponent={account} params={params}>
                 <IndexRoute getComponent={selfInfo} />
@@ -50,8 +60,16 @@ const routes = params => (
             </Route>
             <Route path="/gameRecord" getComponent={gameRecord} params={params}/>
             <Route path="/financial" getComponent={financial} params={params}>
-                <IndexRoute getComponent={recharge} />
-                <Route path="/financial/recharge" getComponent={recharge} params={params}/>
+                <IndexRoute getComponent={promptlyRecharge} />
+                <Route path="/financial/recharge" getComponent={recharge} params={params}>
+                    <IndexRoute getComponent={onlineTopUp} />
+                    <Route path="/financial/recharge/onlineTopUp" getComponent={onlineTopUp} params={params}/>
+                    <Route path="/financial/recharge/qqWallet" getComponent={qqWallet} params={params}/>
+                    <Route path="/financial/recharge/weChat" getComponent={weChat} params={params}/>
+                    <Route path="/financial/recharge/aliPay" getComponent={aliPay} params={params}/>
+                    <Route path="/financial/recharge/eBank" getComponent={eBank} params={params}/>
+                </Route>
+                <Route path="/financial/recharge/promptlyRecharge" getComponent={promptlyRecharge} params={params}/>
                 <Route path="/financial/withdraw" getComponent={withdraw} params={params}/>
                 <Route path="/financial/mentionFillingRecord" getComponent={mentionFillingRecord} params={params}/>
                 <Route path="/financial/transfer" getComponent={transfer} params={params}/>

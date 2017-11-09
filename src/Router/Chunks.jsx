@@ -1,5 +1,4 @@
 
-
 export const login = (location, callback) => {
     require.ensure([], (require) => {
         callback(null, require('../Components/Login/Login').default);
@@ -21,6 +20,18 @@ export const lottery = (location, callback) => {
     require.ensure([], (require) => {
         callback(null, require('../Components/Lottery/Lottery').default);
     }, 'lottery');
+};
+// 优惠活动
+export const activity = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Activity/Activity').default);
+    }, 'activity');
+};
+// 优惠活动/活动详情
+export const activityDetails = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Activity/ActivityDetails/ActivityDetails').default);
+    }, 'activityDetails');
 };
 // 账户管理
 export const account = (location, callback) => {
@@ -121,6 +132,42 @@ export const recharge = (location, callback) => {
     require.ensure([], (require) => {
         callback(null, require('../Components/Financial/Recharge/Recharge').default);
     }, 'recharge');
+};
+// 财务中心/充值/在线充值
+export const onlineTopUp = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Financial/Recharge/OnlineTopUp/OnlineTopUp').default);
+    }, 'onlineTopUp');
+};
+// 财务中心/充值/立即充值
+export const promptlyRecharge = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Financial/Recharge/OnlineTopUp/PromptlyRecharge/PromptlyRecharge').default);
+    }, 'promptlyRecharge');
+};
+// 财务中心/充值/qq钱包
+export const qqWallet = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Financial/Recharge/QQWallet/QQWallet').default);
+    }, 'qqWallet');
+};
+// 财务中心/充值/微信
+export const weChat = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Financial/Recharge/WeChat/WeChat').default);
+    }, 'weChat');
+};
+// 财务中心/充值/支付宝
+export const aliPay = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Financial/Recharge/AliPay/AliPay').default);
+    }, 'aliPay');
+};
+// 财务中心/充值/网银转账
+export const eBank = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Financial/Recharge/EBank/EBank').default);
+    }, 'eBank');
 };
 // 财务中心/提现
 export const withdraw = (location, callback) => {

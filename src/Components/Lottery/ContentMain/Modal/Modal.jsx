@@ -185,12 +185,6 @@ export default class ModalView extends Component {
                         </ul>
                     </div>
                 </div>
-
-                        {/*<ModelView navList = {navList}/>*/}
-                        {/*<Button className="a_aa_btn" type="primary" loading={this.state.loading} onClick={()=>{this.enterLoading()}}>*/}
-                            {/*下一步*/}
-                        {/*</Button>*/}
-
             </Modal>
         )
     }
