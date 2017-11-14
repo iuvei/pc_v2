@@ -1,2 +1,69 @@
 @import '../../../Style/variables';
 @import '../../../Style/mixin';
+
+
+.a_d_main{
+    .a_d_activeImg{
+        vertical-align: middle;
+    }
+    .a_d_activeName{
+        @include lh(45px);
+        background-color: $background-color;
+        color: #fff;
+        padding-left: 40px;
+        font-size: 18px;
+    }
+    .a_d_active_introduce{
+        padding: 15px 30px;
+        .a_d_active_time{
+            width: 850px;
+        }
+        .a_d_list{
+            li{
+                @include lh(25px);
+            }
+            li:first-child{
+                color: #CC0000;
+            }
+        }
+        .a_d_apply{
+            .ant-btn-primary{
+                background-color: #0088DE;
+                border-color: #0088DE;
+            }
+            .ant-btn-primary:hover,
+            .ant-btn-primary:focus {
+                color: #fff;
+                background-color: #0396de;
+                border-color: #0396de;
+            }
+            .ant-btn-clicked:after {
+                border: 0 solid #0088DE;
+            }
+            .ant-btn-danger.ant-btn-clicked:after {
+                border-color: #0088DE;
+            }
+            .a_d_apply_btn{
+                @include wh(160px, 45px);
+                margin-top: 10px;
+                font-size: 16px;
+            }
+            .a_d_residue_number{
+                text-align: center;
+                color: $color_363636;
+                margin-top: 3px;
+            }
+        }
+        .a_d_explain{
+            margin-top: 15px;
+            .a_d_explain_text{
+                margin: 0 0 5px 10px;
+            }
+            .a_d_table{
+                border: 1px solid #ccc;
+                padding: 15px 10px;
+            }
+        }
+
+    }
+}

@@ -6,17 +6,21 @@
     right: 0;
     top: 30%;
     background-color: #4A4A5F;
-    width: 70px;
+    width: 68px;
     z-index: 99;
     .right_list{
         li{
             text-align: center;
             height: 55px;
-            padding-top: 12px;
+            line-height: 55px;
+            //padding-top: 12px;
             &:hover{
                 cursor: pointer;
                 background-color: #A30404;
             }
+        }
+        img{
+            vertical-align: middle;
         }
     }
 }

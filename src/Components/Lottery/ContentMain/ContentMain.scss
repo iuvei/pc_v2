@@ -3,14 +3,10 @@
 
 $c_m_background: #4A4A5F;
 
-.content_main_wm{
-    width: 925px;
-    margin-left: 5px;
-}
-
 .content_main{
     width: 925px;
     margin-left: 5px;
+    @include boxS(0, 4px, 18px, 0, #c3c3c3, null);
     .c_m_nav{
         position: relative;
         background-image: url('./Img/nav_bg.jpg');
@@ -69,6 +65,7 @@ $c_m_background: #4A4A5F;
             border-right: 1px solid #B2B2B2;
             z-index: 9;
             display: none;
+            @include boxS(0, 0, 10px, 0, #D8D8D8, null);
             li{
                 @include lh(30px);
                 border-bottom: 1px solid #B2B2B2;
@@ -130,7 +127,6 @@ $c_m_background: #4A4A5F;
             border-bottom: 1px solid #D6D6D6;
             padding: 15px 15px 20px 15px;
             .c_m_select_title{
-                //@include lh(24px);
                 margin-bottom: 20px;
                 .c_m_select_method{
                     display: inline-block;
@@ -145,6 +141,7 @@ $c_m_background: #4A4A5F;
                     @extend .c_m_select_method;
                     padding: 0 5px;
                     margin: 0 10px 0 0;
+                    @include boxS(0, 0, 18px, 0, #14171F, inset);
                     li{
                         display: inline-block;
                         padding: 0 5px;
@@ -165,6 +162,7 @@ $c_m_background: #4A4A5F;
                 .c_m_select_name{
                     position: relative;
                     @extend .c_m_select_method;
+                    @include boxS(0, 0, 18px, 0, #14171F, inset);
                     &:after{
                         @include sj(23px, 40px, 6px, $c_m_background);
                     }
@@ -174,6 +172,7 @@ $c_m_background: #4A4A5F;
                     @include wh(30px, 24px);
                     padding: 0;
                     margin-right: 10px;
+                    @include boxS(0, -3px, 5px, 0, #E3E3E3, inset);
                 }
                 .c_m_select_title_right{
                     span{
@@ -188,6 +187,7 @@ $c_m_background: #4A4A5F;
                         background: #8D887B;
                         color: #fff;
                         margin-left: 15px;
+                        @include boxS(0, 0, 10px, 0, #9c9b9b, null);
                         &:hover{
                             cursor: pointer;
                         }
@@ -281,6 +281,7 @@ $c_m_background: #4A4A5F;
                         text-align: center;
                         color:$c_m_background;
                         margin: 0 5px;
+                        @include boxS(0, 2px, 5px, 0, #bfbcbc, inset);
                     }
                     img{
                         vertical-align: middle;
@@ -295,10 +296,11 @@ $c_m_background: #4A4A5F;
                     .c_m_select_yjf{
                         margin-top: 5px;
                         @include wh(99px, 30px);
-                        @include borderRadius(2px);
+                        @include borderRadius(3px);
                         background: $c_m_background;
                         color:#fff;
                         padding: 3px;
+                        @include boxS(0, 0, 12px, 0, #14171F, inset);
                         li{
                             float: left;
                             line-height: 24px;
@@ -355,9 +357,6 @@ $c_m_background: #4A4A5F;
                         border-bottom: 1px dotted #93979F;
                         &:last-child{
                             border: 0;
-                        }
-                        li{
-                            //@include lh(30px);
                         }
                         li:nth-child(1){
                             float: left;

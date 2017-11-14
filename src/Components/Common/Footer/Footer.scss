@@ -22,8 +22,9 @@
                     margin: 0 5px;
                 }
                 a{
-                    color:#D1D1D1 !important;
+                    color:#D1D1D1;
                     &:hover{
+                        color: #FACE69;
                         text-decoration: underline;
                     }
                 }

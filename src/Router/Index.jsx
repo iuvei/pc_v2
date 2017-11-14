@@ -60,7 +60,7 @@ const routes = params => (
             </Route>
             <Route path="/gameRecord" getComponent={gameRecord} params={params}/>
             <Route path="/financial" getComponent={financial} params={params}>
-                <IndexRoute getComponent={promptlyRecharge} />
+                <IndexRoute getComponent={recharge} />
                 <Route path="/financial/recharge" getComponent={recharge} params={params}>
                     <IndexRoute getComponent={onlineTopUp} />
                     <Route path="/financial/recharge/onlineTopUp" getComponent={onlineTopUp} params={params}/>

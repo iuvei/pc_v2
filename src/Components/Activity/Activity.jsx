@@ -54,17 +54,17 @@ export default class Activity extends Component {
                 activeBonus: '最高奖金：10000元',
             },{
                 name: '日本圣诞奢恋游',
-                imgUrl: activity01,
+                imgUrl: activity02,
                 activityTime: '活动时间：2017年11月01日02:00:00 - 12月01日02:00:00',
                 activeBonus: '最高奖金：10000元',
             },{
                 name: '日本圣诞奢恋游',
-                imgUrl: activity01,
+                imgUrl: activity03,
                 activityTime: '活动时间：2017年11月01日02:00:00 - 12月01日02:00:00',
                 activeBonus: '最高奖金：10000元',
             },{
                 name: '日本圣诞奢恋游',
-                imgUrl: activity01,
+                imgUrl: activity04,
                 activityTime: '活动时间：2017年11月01日02:00:00 - 12月01日02:00:00',
                 activeBonus: '最高奖金：10000元',
             }

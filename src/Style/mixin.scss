@@ -15,6 +15,14 @@ $fc:#fff;
     line-height: $lh;
 }
 
+// 阴影
+@mixin boxS($h, $v, $blur, $spread, $color, $inset) {
+    box-shadow: $h $v $blur $spread $color $inset;
+    -o-box-shadow: $h $v $blur $spread $color $inset;
+    -webkit-box-shadow: $h $v $blur $spread $color $inset;
+    -moz-box-shadow: $h $v $blur $spread $color $inset;
+}
+
 //倒三角形
 @mixin sj($t,$r,$b,$bc){
     position: absolute;

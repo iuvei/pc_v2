@@ -17,7 +17,6 @@ $width_100: 100%;
     @include wh($width_100, 40px);
     line-height: 40px;
     background: #A30404;
-    font-size: 14px;
     .nav_top_content{
         width: $nav_width_1200;
         margin: 0 auto;

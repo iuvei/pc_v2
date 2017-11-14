@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { hashHistory } from 'react-router';
 
+import OnlineTopUp from './OnlineTopUp/OnlineTopUp';
+
 import './Recharge.scss'
 
 @observer
@@ -49,7 +51,9 @@ export default class Recharge extends Component {
                     }
 
                 </ul>
-                { this.props.children }
+                {
+                    this.state.navListIndex === 0 ? <OnlineTopUp/> : this.props.children
+                }
             </div>
         );
     }

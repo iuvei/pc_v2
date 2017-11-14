@@ -21,9 +21,6 @@ export default class TeamStatistics extends Component {
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('main'));
         let option = {
-            title: {
-                text: '单位：元',
-            },
             tooltip: {
                 trigger: 'axis' // tooltip 的配置项显示提示框,axis 的时候可选
             },

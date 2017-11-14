@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { Table, Button, Modal, Select, Input } from 'antd';
+const Option = Select.Option;
 import { hashHistory } from 'react-router'
 
 import './BankCardManage.scss'
@@ -128,6 +129,7 @@ export default class BankCardManage extends Component {
                     visible={this.state.visible}
                     title={this.state.ModalTitle === true ? '新增银行卡' : '修改银行卡'}
                     onCancel={()=>{this.setState({ visible: false })}}
+                    maskClosable={false}
                     footer={null}
                 >
                     <div className="a_aa_main">
