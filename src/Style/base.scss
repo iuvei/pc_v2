@@ -119,6 +119,10 @@ body, .ant-table-body, .c_m_select_record_table{
     overflow: visible !important;
     margin-bottom: -1px !important;
 }
+.ant-table-thead{
+    font-size: 14px;
+}
+
 /*超过宽度以...现在*/
 .ellipsis{
     overflow: hidden;

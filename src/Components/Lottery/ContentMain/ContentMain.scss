@@ -139,7 +139,7 @@ $c_m_background: #4A4A5F;
                 }
                 .c_m_select_hot{
                     @extend .c_m_select_method;
-                    padding: 0 5px;
+                    padding: 0 2px;
                     margin: 0 10px 0 0;
                     @include boxS(0, 0, 18px, 0, #14171F, inset);
                     li{
