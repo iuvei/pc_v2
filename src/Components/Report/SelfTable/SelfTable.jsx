@@ -149,6 +149,7 @@ export default class SelfTable extends Component {
                             </li>
                             <li className="t_m_serch">
                                 <Button type="primary"
+                                        icon="search"
                                         loading={this.state.searchLoading}
                                         onClick={()=>this.enterLoading()}
                                 >

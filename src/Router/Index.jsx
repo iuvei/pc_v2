@@ -36,6 +36,7 @@ import {
     transfer,
     transferRecord,
     accountChange,
+    dividend,
 } from './Chunks';
 
 const routes = params => (
@@ -83,6 +84,7 @@ const routes = params => (
                 <Route path="/report/teamTable" getComponent={teamTable} params={params}/>
                 <Route path="/report/selfTable" getComponent={selfTable} params={params}/>
                 <Route path="/report/gameBill" getComponent={gameBill} params={params}/>
+                <Route path="/report/dividend" getComponent={dividend} params={params}/>
             </Route>
         </Route>
     </Route>

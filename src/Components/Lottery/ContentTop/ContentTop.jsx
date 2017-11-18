@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
+import 'whatwg-fetch'
 import { Row, Col, Switch } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import './ContentTop.scss'

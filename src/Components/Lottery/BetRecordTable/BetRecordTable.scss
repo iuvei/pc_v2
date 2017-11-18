@@ -9,6 +9,17 @@
         text-align: center;
         background: #8D887B;
     }
-
+    .ant-table-tbody{
+        tr:nth-child(2n){
+            background-color: #F0F0F0;
+        }
+    }
+    .ant-table table{
+        @include borderRadius(0);
+    }
+    .ant-table-small .ant-table-thead > tr > th:not(.ant-table-selection-column){
+        padding: 5px 8px;
+        @include gradient(0, 10.5, 0, bottom, #fff, #F0F0F0);
+    }
 }
 

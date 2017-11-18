@@ -4,7 +4,7 @@
 
 .game_bill{
     .team_list_top{
-        padding: 30px 20px 13px;
+        padding: 30px 30px 13px;
         border-bottom: 1px solid #ccc;
         .t_l_time{
             padding-bottom: 15px;
@@ -52,6 +52,10 @@
             }
             .t_l_classify{
                 @include lh(30px);
+                .ant-btn{
+                    padding: 5px 15px;
+                    margin-left: 8px;
+                }
                 li{
                     float: left;
                     margin-right: 30px;
@@ -80,8 +84,10 @@
                     }
                 }
                 .t_m_serch{
-                    height: 30px;
                     margin-left: 5px;
+                    .ant-btn-primary{
+                        height: 30px;
+                    }
                     &:hover{
                         cursor: pointer;
                     }
@@ -104,11 +110,11 @@
     }
     .t_l_table{
         background-color: #F4F4F4;
-        padding: 10px 8px 50px;
+        padding: 10px 12px 50px;
         .t_l_table_list{
             border: 1px solid #ccc;
             background-color: #fff;
-            padding: 5px;
+            padding:8px 5px;
         }
         .t_l_page{
             float: right;

@@ -65,7 +65,7 @@
     .item_text{
         @include bis('./Img/time_bg.png');
         @include lh(62px);
-        font-size: 26px;
+        font-size: 32px;
         color:#363636;
         text-align: center;
         font-weight: bold;
@@ -87,7 +87,7 @@
     margin: ($content-top)+17px 0 0 20px;
     .praise_mark_text{
         color: #fff;
-        font-size: 12px;
+        font-size: 14px;
         margin: 0 6px 10px 10px;
         .method_introduce{
             @include wh(60px, 18px);
@@ -95,6 +95,7 @@
             background-color: #D6D6D7;
             color: #4C4C4C;
             text-align: center;
+            font-size: 12px;
             &:hover{
                 cursor: pointer
             }
@@ -107,7 +108,7 @@
             @include wh(62px, 64px);
             line-height: 57px;
             text-align: center;
-            font-size: 29px;
+            font-size: 30px;
             color: #fff;
             font-weight: bold;
             font-family: myFirstFont;

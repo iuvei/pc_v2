@@ -114,6 +114,12 @@ export const teamTable = (location, callback) => {
         callback(null, require('../Components/Report/TeamTable/TeamTable').default);
     }, 'teamTable');
 };
+// 报表管理/分红
+export const dividend = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Report/Dividend/Dividend').default);
+    }, 'dividend');
+};
 // 报表管理/游戏帐变
 export const gameBill = (location, callback) => {
     require.ensure([], (require) => {

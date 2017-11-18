@@ -125,7 +125,6 @@ export default class teamTable extends Component {
 
 
     render() {
-        const arr = ['重庆时时彩', '新疆时时彩', '重庆时时彩', '重庆时时彩', '重庆时时彩', '重庆时时彩', '重庆时时彩', '重庆时时彩', '重庆时时彩', '重庆时时彩', '重庆时时彩'];
         const timeArr = ['上周','上半月','下半月','本月'];
 
         const columns = [
@@ -242,15 +241,6 @@ export default class teamTable extends Component {
                             </li>
                         </ul>
                     </div>
-                    <ul className="t_m_select_lottery clear">
-                        {
-                            arr.map((value,index)=>{
-                                return (
-                                    <li key={index}><Checkbox onChange={(e)=>{this.onSelectLottery(e)}}>{value}</Checkbox></li>
-                                )
-                            })
-                        }
-                    </ul>
                 </div>
                 <div className="t_l_table">
                     <div className="t_l_location_name">

@@ -143,7 +143,11 @@ export default class GameBill extends Component {
                                 <Input placeholder="请输入用户名" />
                             </li>
                             <li className="t_m_serch">
-                                <Button type="primary" loading={this.state.searchLoading} onClick={()=>this.enterLoading()}>
+                                <Button type="primary"
+                                        icon="search"
+                                        loading={this.state.searchLoading}
+                                        onClick={()=>this.enterLoading()}
+                                >
                                     搜索
                                 </Button>
                             </li>

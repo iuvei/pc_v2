@@ -31,6 +31,9 @@ export default class Report extends Component {
             },{
                 link: '/report/gameBill',
                 text: '游戏帐变'
+            },{
+                link: '/report/dividend',
+                text: '分红'
             }
         ];
         return (

@@ -27,7 +27,7 @@ export default class ContentMian extends Component {
         }
     };
     check_nav_index( index ){
-        return index === this.state.navIndex ? "nav_list_active hvr-float" : "hvr-float"
+        return index === this.state.navIndex ? "nav_list_active" : ""
     };
     handleChange( value ) {
         console.log(value);
@@ -62,7 +62,7 @@ export default class ContentMian extends Component {
     };
     render() {
         const Option = Select.Option;
-        const arr = ['五星','五星','五星','五星','五星'];
+        const arr = ['五星','五星','五星','龙虎庄闲','五星'];
         const yjf = ['元','角','分'];
         return (
             <QueueAnim duration={1000}
@@ -91,7 +91,7 @@ export default class ContentMian extends Component {
                     </div>
                     <div className="c_m_controler">
                         <div className="c_m_controler_method">
-                            <div className="c_m_metho_type clear">
+                            <div className="c_m_method_type clear">
                                 <span className="left">后三直选</span>
                                 <ul className="c_m_method_details left">
                                     <li className="method_details_active">复式</li>
@@ -101,7 +101,7 @@ export default class ContentMian extends Component {
                                     <li>复式</li>
                                 </ul>
                             </div>
-                            <div className="c_m_metho_type clear">
+                            <div className="c_m_method_type clear">
                                 <span className="left">后三直选</span>
                                 <ul className="c_m_method_details left">
                                     <li>复式</li>
@@ -111,7 +111,7 @@ export default class ContentMian extends Component {
                                     <li>复式</li>
                                 </ul>
                             </div>
-                            <div className="c_m_metho_type clear">
+                            <div className="c_m_method_type clear">
                                 <span className="left">后三直选</span>
                                 <ul className="c_m_method_details left">
                                     <li>复式</li>
@@ -123,12 +123,10 @@ export default class ContentMian extends Component {
                             </div>
                             <div className="c_m_bonus_ratio">
                                 <span>单注奖金</span>
-                                <span>
-                                    <Select defaultValue="1" style={{ width: 100 }} onChange={(value)=>{this.handleChangeRatio(value)}}>
-                                        <Option value="1">1950-0</Option>
-                                        <Option value="2">1950-8</Option>
-                                    </Select>
-                                </span>
+                                <Select defaultValue="1" style={{ width: 100 }} onChange={(value)=>{this.handleChangeRatio(value)}}>
+                                    <Option value="1">1950-0</Option>
+                                    <Option value="2">1950-8</Option>
+                                </Select>
                             </div>
                         </div>
                         <div className="c_m_select_number">

@@ -5,10 +5,10 @@
     color: #363636;
     font-size: 14px;
     .team_list_top{
-        padding: 30px 20px 13px;
+        padding: 30px 30px 13px;
         border-bottom: 1px solid #ccc;
+        background-color: #fff;
         .t_l_time{
-            border-bottom: 1px dotted #8B8D92;
             padding-bottom: 15px;
             .t_m_date_classify{
                 display: inline-block;
@@ -85,29 +85,17 @@
                 }
             }
         }
-        .t_m_select_lottery{
-            margin-top: 12px;
-            padding: 0 5px;
-            li{
-                float: left;
-                margin: 0 25px 10px 0;
-            }
-            .ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner {
-                background-color: #CB1313;
-                border-color: #CB1313;
-            }
-        }
     }
     .t_l_table{
         background-color: #F4F4F4;
-        padding: 0 8px 50px;
+        padding: 0 12px 50px;
         .t_l_location_name{
             @include lh(50px);
         }
         .t_l_table_list{
             border: 1px solid #ccc;
             background-color: #fff;
-            padding: 5px;
+            padding: 8px 5px;
         }
     }
     .ant-table-expanded-row{
