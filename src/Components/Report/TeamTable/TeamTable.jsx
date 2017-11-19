@@ -1,8 +1,13 @@
 /*团队列表*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
+import { action } from 'mobx';
 import { DatePicker, Checkbox, Table, Badge, Input } from 'antd';
 import 'whatwg-fetch'
+
+import contact from '../../../State/Fatch'
+
+import request from '../../../Utils/Request'
 
 import './TeamTable.scss'
 
@@ -12,7 +17,7 @@ import t_m_icon from './Img/t_m_icon.png'
 @observer
 export default class teamTable extends Component {
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             data: [],
             pagination: {},
@@ -23,15 +28,8 @@ export default class teamTable extends Component {
         }
     };
     onChange(date, dateString) {
-        console.log(date, dateString);
-    }
-    onSelectLottery(e) {
-        console.log(`checked = ${e.target.checked}`);
-    }
-    onChangeTable(pagination, filters, sorter) {
-        console.log('params', pagination, filters, sorter);
-    }
-
+        // console.log(date, dateString);
+    };
     handleTableChange = (pagination, filters, sorter) => {
         const pager = { ...this.state.pagination };
         pager.current = pagination.current;
@@ -45,9 +43,9 @@ export default class teamTable extends Component {
             sortOrder: sorter.order,
             ...filters,
         });
-    }
+    };
     fetch = (params = {}) => {
-        console.log('params:', params);
+        // console.log('params:', params);
         this.setState({ loading: true });
         fetch('https://randomuser.me/api?results=5',{
             // body: JSON.stringify({
@@ -57,7 +55,7 @@ export default class teamTable extends Component {
         }) .then(function(response) {
                 return response.json()
             }).then((json) => {
-            console.log(json)
+            // console.log(json)
             const pagination = { ...this.state.pagination };
             // Read total count from server
             // pagination.total = data.totalCount;
@@ -68,11 +66,13 @@ export default class teamTable extends Component {
                 pagination,
             });
         }).catch((ex) => {
-            console.log('parsing failed', ex)
+            // console.log('parsing failed', ex)
         })
-    }
+    };
     componentDidMount() {
-        this.fetch();
+        // this.fetch();
+        let data = request('https://randomuser.me/api?results=5')
+        console.log(data)
     };
     // 游戏分类
     classify_index(index) {

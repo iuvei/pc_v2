@@ -6,7 +6,7 @@
 import 'whatwg-fetch';
 
 /**
- * Construct an Error object
+ * 构造一个错误对象
  * @param response
  * @returns {Error}
  */
@@ -17,9 +17,9 @@ const apiError = (response) => {
 };
 
 /**
- * Handle response error
+ * 处理错误的反应
  * @param err
- * @return {undefined} throws an error
+ * @return {undefined}
  */
 const handledResponseError = (err) => {
     let response;
@@ -32,6 +32,8 @@ const handledResponseError = (err) => {
     }
 
     const error = new Error(response.statusText);
+    console.log(response)
+    debugger
     if (!response.status) {
         response.status = 500;
     }

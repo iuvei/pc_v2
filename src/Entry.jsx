@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { Router, hashHistory,browserHistory } from 'react-router';
 
 import Routes from './Router/Index';
-import 'whatwg-fetch'
 
 import './Style/base.scss';
 

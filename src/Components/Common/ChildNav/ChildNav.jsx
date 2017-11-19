@@ -10,13 +10,19 @@ export default class ChildNav extends Component {
         super(props);
         this.state = {
             NavIndex: 0,
-        }
+        };
+        console.log(this.state.NavIndex)
     };
     handClick(index) {
         this.setState({NavIndex: index});
         this.props.onChangeNavIndex(index);
     }
+    componentDidMount() {
+        console.log('12345');
+        // this.props.NavIndex !== undefined ? this.setState({NavIndex: parseInt(this.props.NavIndex.navIndex)}) : '';
+    };
     render() {
+        // console.log(this.state.NavIndex);
         return (
             <div className="c_nav">
                 <ul className="nav_list clear">

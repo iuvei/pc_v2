@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import TweenOne from 'rc-tween-one';
-import QueueAnim from 'rc-queue-anim';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack'; //滚动动画
 import './Home.scss'
 
 import HomeMainTop from './HomeMainTop/HomeMainTop'
@@ -19,8 +16,14 @@ export default class Home extends Component {
 
         };
     };
-
+    shouldComponentUpdate(){
+        return (this.props.router.location.action === 'PUSH')
+    };
+    componentDidMount() {
+        console.log('home');
+    };
     render() {
+        console.log('home123');
         const main = [
             <HomeMainTop key="HomeMainTop"/>,
             <HomeMainLottery key="HomeMainLottery"/>,

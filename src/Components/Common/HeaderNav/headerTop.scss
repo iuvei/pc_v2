@@ -81,14 +81,21 @@ $width_100: 100%;
         .n_t_cursor:hover{
             cursor: pointer;
         }
-        .n_t_cursor_color:hover{
-            cursor: pointer;
-            color: #FFDB70;
+        .n_t_cursor_color{
+            padding: 0;
+            a{
+                display: inline-block;
+                @include wh(55px, 40px);
+                text-align: center;
+            }
+            &:hover{
+                cursor: pointer;
+                color: #FFDB70;
+            }
         }
         .n_t_message{
             width: 80px;
         }
-
         .n_t_balance_p{
             position: relative;
             &:hover .n_t_controler{

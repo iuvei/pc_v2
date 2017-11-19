@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
+import { Link } from 'react-router';
 import { Icon, Badge } from 'antd';
 import './headerTop.scss'
 import name_icon from './Img/name_icon.png'
@@ -99,13 +100,34 @@ export default class HeaderTop extends Component {
                             </div>
                         </li>
                         <li className="n_t_cursor_color">
-                            充值
+                            <Link to={
+                                {
+                                    pathname: '/financial/recharge',
+                                    query: {navIndex: 0}
+                                }
+                            }>
+                                充值
+                            </Link>
                         </li>
                         <li className="n_t_cursor_color">
-                            提款
+                            <Link to={
+                                {
+                                    pathname: '/financial/withdraw',
+                                    query: {navIndex: 1}
+                                }
+                            }>
+                                提款
+                            </Link>
                         </li>
                         <li className="n_t_cursor_color">
-                            转账
+                            <Link to={
+                                {
+                                    pathname: '/financial/transfer',
+                                    query: {navIndex: 3}
+                                }
+                            }>
+                                转账
+                            </Link>
                         </li>
                     </ul>
                 </div>

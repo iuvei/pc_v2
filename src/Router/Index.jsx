@@ -45,10 +45,10 @@ const routes = params => (
         <IndexRoute getComponent={login} />
         <Route path="/main" getComponent={main} params={params}>
             <IndexRoute getComponent={lottery} />
+            <Route path="/home" getComponent={home} params={params}/>
             <Route path="/lottery" getComponent={lottery} params={params}/>
             <Route path="/activity" getComponent={activity} params={params}/>
             <Route path="/activity/activityDetails" getComponent={activityDetails} params={params}/>
-            <Route path="/home" getComponent={home} params={params}/>
             <Route path="/account" getComponent={account} params={params}>
                 <IndexRoute getComponent={selfInfo} />
                 <Route path="/account/selfInfo" getComponent={selfInfo} params={params}/>

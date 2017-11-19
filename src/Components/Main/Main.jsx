@@ -10,6 +10,7 @@ import './Main.scss';
 
 @observer
 export default class Main extends Component {
+
     showLeftSider() {
         if (hashHistory.getCurrentLocation().pathname === '/home' || hashHistory.getCurrentLocation().pathname === '/activity' || hashHistory.getCurrentLocation().pathname === '/activity/activityDetails') {
             return true
@@ -18,24 +19,24 @@ export default class Main extends Component {
         }
     };
     render() {
+        const contain = <div className="berCenter_bg">
+                            <Row type="flex" justify="center" align="top" className="main_width" >
+                                <Col span={1} style={{zIndex: '1'}}>
+                                    <LeftSider/>
+                                </Col>
+                                <Col span={23}>
+                                    {this.props.children}
+                                </Col>
+                            </Row>
+                        </div>;
         return (
             <div>
                 <header>
                     <HeaderNav/>
                 </header>
-                <div className="berCenter_bg" style={{display: this.showLeftSider() ? 'none' : '' }}>
-                    <Row type="flex" justify="center" align="top" className="main_width" >
-                        <Col span={1} style={{zIndex: '1'}}>
-                            <LeftSider/>
-                        </Col>
-                        <Col span={23}>
-                            {this.props.children}
-                        </Col>
-                    </Row>
-                </div>
-                <div style={{display: this.showLeftSider() ? '' : 'none' }}>
-                    {this.props.children}
-                </div>
+                {
+                    this.showLeftSider() ? this.props.children : contain
+                }
                 <RightPlug/>
                 <footer>
                     <Footer/>

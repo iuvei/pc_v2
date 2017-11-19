@@ -27,7 +27,6 @@ export default class HeaderNav extends Component {
         });
     };
     componentDidMount() {
-        console.log(MixinLog.log());
         // 给彩票游戏下拉框获取body宽度
         // this.refs.lotteryNameType.style.width = document.body.clientWidth+'px';
     };

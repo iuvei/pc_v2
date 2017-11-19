@@ -4,6 +4,7 @@
 $border_color: #C8C8C8;
 $width_110px: 110px;
 .withdraw_main{
+    font-size: 14px;
     .tr_m_text{
         width: 1096px;
         height:57px;
@@ -13,9 +14,10 @@ $width_110px: 110px;
         padding: 15px 20px;
         color:#474646;
         h4{
-            margin-bottom: 10px;
             padding-left: 28px;
             background: url(./Img/plaint_sj.png) no-repeat center left;
+            font-size: 14px;
+            color: #474646;
         }
         i{
             font-style: normal;
