@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react';
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 
 import right01 from './Img/right01.png'
 import right02 from './Img/right02.png'
@@ -14,7 +15,30 @@ import './Rightplug.scss'
 export default class RightPlug extends Component {
 
     render() {
-        const rightArr = [right01, right02, right03, right04, right05, right06, right07];
+        const rightArr = [
+            {
+                img: right01,
+                link: ''
+            },{
+                img: right02,
+                link: ''
+            },{
+                img: right03,
+                link: ''
+            },{
+                img: right04,
+                link: ''
+            },{
+                img: right05,
+                link: ''
+            },{
+                img: right06,
+                link: '/tendency'
+            },{
+                img: right07,
+                link: ''
+            }
+        ];
         return (
             <div className="right_plug">
                 <ul className="right_list">
@@ -22,7 +46,9 @@ export default class RightPlug extends Component {
                         rightArr.map((item, index)=> {
                             return (
                                 <li key={index}>
-                                    <img src={item} alt=""/>
+                                    <Link to={item.link}>
+                                        <img src={item.img} alt=""/>
+                                    </Link>
                                 </li>
                             )
                         })

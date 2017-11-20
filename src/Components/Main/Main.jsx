@@ -15,7 +15,8 @@ export default class Main extends Component {
         if (hashHistory.getCurrentLocation().pathname === '/home' ||
             hashHistory.getCurrentLocation().pathname === '/activity' ||
             hashHistory.getCurrentLocation().pathname === '/activity/activityDetails' ||
-            hashHistory.getCurrentLocation().pathname === '/bobing') {
+            hashHistory.getCurrentLocation().pathname === '/bobing' ||
+            hashHistory.getCurrentLocation().pathname === '/tendency') {
             return true
         } else {
             return false
