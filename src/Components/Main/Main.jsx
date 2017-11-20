@@ -12,23 +12,36 @@ import './Main.scss';
 export default class Main extends Component {
 
     showLeftSider() {
-        if (hashHistory.getCurrentLocation().pathname === '/home' || hashHistory.getCurrentLocation().pathname === '/activity' || hashHistory.getCurrentLocation().pathname === '/activity/activityDetails') {
+        if (hashHistory.getCurrentLocation().pathname === '/home' ||
+            hashHistory.getCurrentLocation().pathname === '/activity' ||
+            hashHistory.getCurrentLocation().pathname === '/activity/activityDetails' ||
+            hashHistory.getCurrentLocation().pathname === '/bobing') {
+            return true
+        } else {
+            return false
+        }
+    };
+    showFooter() {
+        if (hashHistory.getCurrentLocation().pathname === '/tendency' ) {
             return true
         } else {
             return false
         }
     };
     render() {
-        const contain = <div className="berCenter_bg">
-                            <Row type="flex" justify="center" align="top" className="main_width" >
-                                <Col span={1} style={{zIndex: '1'}}>
-                                    <LeftSider/>
-                                </Col>
-                                <Col span={23}>
-                                    {this.props.children}
-                                </Col>
-                            </Row>
-                        </div>;
+        const contain = <div>
+            <div className="berCenter_bg">
+                <Row type="flex" justify="center" align="top" className="main_width" >
+                    <Col span={1} style={{zIndex: '1'}}>
+                        <LeftSider/>
+                    </Col>
+                    <Col span={23}>
+                        {this.props.children}
+                    </Col>
+                </Row>
+            </div>
+            <RightPlug/>
+        </div>;
         return (
             <div>
                 <header>
@@ -37,8 +50,7 @@ export default class Main extends Component {
                 {
                     this.showLeftSider() ? this.props.children : contain
                 }
-                <RightPlug/>
-                <footer>
+                <footer style={{display: this.showFooter ? 'none' : ''}}>
                     <Footer/>
                 </footer>
             </div>

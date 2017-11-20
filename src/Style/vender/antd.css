@@ -12840,8 +12840,8 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   list-style: none;
   z-index: 1050;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.65);
-  background: #fff;
+  color: #fff;
+  background: #1B1B21;
   line-height: 46px;
 }
 .ant-menu-hidden {
@@ -12900,7 +12900,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
 .ant-menu-submenu-active,
 .ant-menu-submenu-title:hover {
-  color: #CF2027;
+  color: #FFDB70;
 }
 .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open {
   z-index: 1050;
@@ -12915,7 +12915,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   background-color: transparent;
 }
 .ant-menu-item-selected {
-  color: #CF2027;
+  color: #FFDB70;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -12924,8 +12924,9 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   color: #CF2027;
 }
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-  background-color: #ecf6fd;
+  background-color: #1B1B21;
 }
+
 .ant-menu-horizontal,
 .ant-menu-inline,
 .ant-menu-vertical {
@@ -12986,7 +12987,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 .ant-menu-item,
 .ant-menu-submenu-title {
   margin: 0;
-  padding: 0 20px;
+  padding: 0;
   position: relative;
   display: block;
   white-space: nowrap;
@@ -13095,8 +13096,8 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 .ant-menu-horizontal > .ant-menu-submenu-open,
 .ant-menu-horizontal > .ant-menu-item-selected,
 .ant-menu-horizontal > .ant-menu-submenu-selected {
-  border-bottom: 2px solid #CF2027;
-  color: #CF2027;
+  border-bottom: 3px solid #FFDB70;
+  color: #FFDB70;
 }
 .ant-menu-horizontal > .ant-menu-item > a,
 .ant-menu-horizontal > .ant-menu-submenu > a {

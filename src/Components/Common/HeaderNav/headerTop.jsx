@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { Link } from 'react-router';
 import { Icon, Badge } from 'antd';
+
 import './headerTop.scss'
 import name_icon from './Img/name_icon.png'
 import email_icon from './Img/email_icon.png'

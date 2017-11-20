@@ -71,8 +71,7 @@ export default class teamTable extends Component {
     };
     componentDidMount() {
         // this.fetch();
-        let data = request('https://randomuser.me/api?results=5')
-        console.log(data)
+        request('https://randomuser.me/api?results=5').then((result) => { console.log(result) })
     };
     // 游戏分类
     classify_index(index) {

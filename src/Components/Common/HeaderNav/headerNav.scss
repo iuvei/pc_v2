@@ -25,6 +25,12 @@ $width_100: 100%;
                 position: relative;
                 float: right;
                 font-size: 14px;
+                .ant-menu-item > a{
+                    color: #fff;
+                    &:hover{
+                        color: #FFDB70;
+                    }
+                }
             }
         }
         .nav-text{
@@ -50,32 +56,21 @@ $width_100: 100%;
                 }
             }
         }
-
-        .ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
-            color: $hover-color;
-        }
         .ant-dropdown-link{
             color: #fff;
         }
         .ant-menu-horizontal{
             border: 0;
         }
-        .ant-menu{
-            background: $nav-background-color;
-            color: #fff;
-        }
-
-        .ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected{
-            border-bottom: 3px solid $hover-color;
-            color: $hover-color;
-        }
-        .ant-menu-item, .ant-menu-submenu-title{
-            padding: 0;
-        }
         .ant-menu-submenu-horizontal, .ant-menu-submenu{
             .ant-menu{
                 background: rgba(27,27,33,.8);
                 color: #fff;
+            }
+        }
+        .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+            a{
+                color:#FFDB70;
             }
         }
     }

@@ -1,0 +1,60 @@
+@import '../../../Style/variables';
+@import '../../../Style/mixin';
+
+.bo_bing{
+    height: 778px;
+    @include bis('./Img/bobing_bg.png');
+    .b_b_content{
+        position: relative;
+        @include wh(1156px, 778px);
+        margin: 0 auto;
+        .b_b_bonus_pool{
+            position: absolute;
+            top: 80px;
+            left: 330px;
+            color: #FFC600;
+            font-size: 40px;
+            width: 535px;
+            text-align: center;
+        }
+        .bobing_btn{
+            position: absolute;
+            top: 400px;
+            left: 437px;
+            @include wh(333px, 112px);
+            background: url(./Img/bobing_btn1.png) no-repeat 0 0;
+            &:hover{
+                cursor: pointer;
+                background: url(./Img/bobing_btn1.png) no-repeat 0 -112px;
+            }
+        }
+        .account_money{
+            position: absolute;
+            top: 515px;
+            left: 430px;
+            color: #EF2800;
+            font-size: 20px;
+            width: 333px;
+            text-align: center;
+        }
+        .transfer_btn{
+            position: absolute;
+            top: 550px;
+            left: 500px;
+            @include wh(185px, 35px);
+            font-size: 16px;
+            @include borderRadius(17px);
+            color: #FFFFA2;
+            @include boxS(0, 3px, 2px, 0, #681002, null);
+            font-weight: bold;
+            span{
+                background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#FFF), to(#FFFF9D));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .ant-btn-primary{
+            @include gradient(0, 10, 0, bottom, #F33404, #981600);
+        }
+    }
+}

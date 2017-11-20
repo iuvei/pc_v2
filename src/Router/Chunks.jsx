@@ -211,4 +211,15 @@ export const accountChange = (location, callback) => {
         callback(null, require('../Components/Financial/AccountChange/AccountChange').default);
     }, 'accountChange');
 };
-
+// 综合游戏/博饼
+export const bobing = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/OtherGames/Bobing/Bobing').default);
+    }, 'bobing');
+};
+//走势图
+export const tendency = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Tendency/Tendency').default);
+    }, 'tendency');
+};

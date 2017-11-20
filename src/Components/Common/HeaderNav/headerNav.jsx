@@ -93,8 +93,15 @@ export default class HeaderNav extends Component {
                                         </a>
                                     </div>
                                 }>
-                                    <Menu.Item key="solution:1">Optifeeeeeeeeeeeeeon 1</Menu.Item>
-                                    <Menu.Item key="solution:2">Option 2</Menu.Item>
+                                    <Menu.Item key="solution:1">PT游戏</Menu.Item>
+                                    <Menu.Item key="solution:2">体育竞技</Menu.Item>
+                                    <Menu.Item key="solution:3">EA娱乐城</Menu.Item>
+                                    <Menu.Item key="solution:4">GT娱乐</Menu.Item>
+                                    <Menu.Item key="solution:5">
+                                        <Link to={`/bobing`}>
+                                            博饼
+                                        </Link>
+                                    </Menu.Item>
                                 </SubMenu>
                                 <Menu.Item key="2">
                                     <div className="nav-text">

@@ -37,6 +37,8 @@ import {
     transferRecord,
     accountChange,
     dividend,
+    bobing,
+    tendency,
 } from './Chunks';
 
 const routes = params => (
@@ -49,6 +51,7 @@ const routes = params => (
             <Route path="/lottery" getComponent={lottery} params={params}/>
             <Route path="/activity" getComponent={activity} params={params}/>
             <Route path="/activity/activityDetails" getComponent={activityDetails} params={params}/>
+            <Route path="/tendency" getComponent={tendency} params={params}/>
             <Route path="/account" getComponent={account} params={params}>
                 <IndexRoute getComponent={selfInfo} />
                 <Route path="/account/selfInfo" getComponent={selfInfo} params={params}/>
@@ -86,6 +89,7 @@ const routes = params => (
                 <Route path="/report/gameBill" getComponent={gameBill} params={params}/>
                 <Route path="/report/dividend" getComponent={dividend} params={params}/>
             </Route>
+            <Route path="/bobing" getComponent={bobing} params={params}/>
         </Route>
     </Route>
 
