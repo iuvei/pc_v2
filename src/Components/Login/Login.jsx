@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { hashHistory } from 'react-router';
 import { Input,Button,Icon,Checkbox,Modal  } from 'antd';
-import 'whatwg-fetch'
 import md5 from 'md5';
-
-import request from '../../Utils/Request'
+import Fatch from '../../Utils'
+import { stateVar } from '../../State'
 import onCanvas from './canvas'
 import './Login.scss'
 import loginlogoSrc from './Img/logologin.png'
@@ -14,6 +13,7 @@ import dnsSrc from './Img/dns.png'
 import warnSrc from './Img/warn.png'
 import serviceSrc from './Img/service.png'
 const validImgSrc='http://10.63.15.242:8013/pcservice/?useValid=true';
+import { debounce } from 'react-decoration';
 
 @observer
 export default class Login extends Component {
@@ -41,20 +41,15 @@ export default class Login extends Component {
     };
 
     getSession(){
-        request('http://10.63.15.242:8013/pcservice/?sessValid=true',
-            {
-                method: "POST",
-            }).then((data)=>{
-            console.log("getSession");
+        Fatch.getSess({method: "POST"}).then((data)=>{
+            let parseData = JSON.parse(data);
             this.setState({
-                session: JSON.parse(data).repsoneContent,
-                validImg:validImgSrc+"&sess="+JSON.parse(data).repsoneContent,
-                validImgModal:validImgSrc+'?rand='+Math.random()+"&sess="+JSON.parse(data).repsoneContent,
-            })
-            console.log('session',this.state.session)
-            console.log('validImg:',this.state.validImg)
-        })
-
+                session: parseData.repsoneContent,
+                validImg:validImgSrc+"&sess="+parseData.repsoneContent,
+                validImgModal:validImgSrc+'?rand='+Math.random()+"&sess="+parseData.repsoneContent,
+            });
+            stateVar.sess = parseData.repsoneContent;
+        });
     }
     /*
     * 点击登录后的处理
@@ -64,68 +59,50 @@ export default class Login extends Component {
     * 4.验证成功后进入主界面
     * 5.根据后台返回数据显示错误信息
     */
+    // @debounce(500)
     enterLogin() {
-      //  this.setState({ loading: true });
-        if(this.state.account==''||this.state.password==''){
-            console.log("用户名或密码为空")
+        if(this.state.account===''||this.state.password===''){
             this.setState({
                 warn:"用户名或密码为空",
                 displayWarn:true,
             });
-            //hashHistory.push('/lottery')
-        }else if(this.state.aptchac==''){
-            console.log("验证码为空")
+        }else if(this.state.aptchac===''){
             this.setState({
                 warn:"验证码为空",
                 displayWarn:true,
             });
-        }else{
-            console.log("提交后台")
-            this.fetch();
+        }else {
+            this.login()
         }
-
     };
-    fetch = (params = {}) => {
-        console.log('params:', params);
-       // this.setState({ loading: true });
-
-      request('http://10.63.15.242:8013/pcservice/index.php?controller=default&action=login&sess='+this.state.session,
-            {
-
-               method: "POST",
-           body:JSON.stringify({
-                "sType":'formal',
-                "username":'hobart',
-                 "loginpass":md5((md5(this.state.aptchac)+md5('123qwe'))),
-                "validcode":this.state.aptchac
-             })
+    login() {
+        this.setState({ loading: true });
+        Fatch.login({
+            method: "POST",
+            body: JSON.stringify({
+                "sType": 'formal',
+                "username": 'hobart',
+                "loginpass": md5((md5(this.state.aptchac) + md5('123qwe'))),
+                "validcode": this.state.aptchac
+            })
         }).then((data)=>{
-          console.log(data)
-          console.log("data.status",data.status)
-          if(data.status==200){
-              hashHistory.push('/lottery')
-              console.log("登录成功")
-              console.log("data.status",data.status)
-          }else{
-              console.log("登录错误")
-              console.log("data.longMessage",data.longMessage)
-              this.setState({
-                  warn:data.longMessage,
-                  displayWarn:true,
-              });
-          }
-      })
-           // valicadeImg=responseText;
-
-    }
+            this.setState({ loading: false });
+            if(data.status===200){
+                hashHistory.push('/lottery')
+            }else{
+                this.setState({
+                    warn:data.longMessage,
+                    displayWarn:true,
+                });
+            }
+        })
+    };
 
     onAccount(e) {
         this.setState({account:e.target.value});
-        console.log(e.target.value)
 
     }
     onPwd(e) {
-        console.log(e.target.value);
         this.setState({password: e.target.value});
     }
     refreshImg(){
@@ -135,11 +112,9 @@ export default class Login extends Component {
         this.setState({validImgModal:validImgSrc+'?rand='+Math.random()+"&sess="+this.state.session});
     }
     onAptchac(e) {
-        console.log(e.target.value);
         this.setState({aptchac: e.target.value});
     }
     onAptchacModal(e) {
-        console.log(e.target.value);
         this.setState({aptchacModal: e.target.value});
     }
     showModal(value) {
@@ -148,7 +123,6 @@ export default class Login extends Component {
                 visible1: true,
             });
         } else if(value ==='reset_pwd'){
-            console.log(value);
             this.setState({
                 visible1: false,
                 visible2: true,
@@ -170,11 +144,9 @@ export default class Login extends Component {
         let indx = Math.floor(Math.random()*(onCanvas.length-1));
         onCanvas[indx]();
         this.getSession();
-        console.log("componentDidMount")
       //  this.fetch();
     };
     componentWillUnmount(){
-        console.log("componentWillMount")
        // this.getSession();
     };
 

@@ -1,10 +1,11 @@
 import { observable, toJS } from 'mobx';
 
 
-class StateVar {
+class State {
+    @observable sess = null;
     @observable childNavIndex = 0;
     @observable todoList = [];
     @observable homeMainLeftActive = true;
 }
 
-export const stateVar = toJS(new StateVar());
+export const stateVar = toJS(new State());

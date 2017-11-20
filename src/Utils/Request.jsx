@@ -32,8 +32,6 @@ const handledResponseError = (err) => {
     }
 
     const error = new Error(response.statusText);
-    console.log(response)
-    debugger
     if (!response.status) {
         response.status = 500;
     }

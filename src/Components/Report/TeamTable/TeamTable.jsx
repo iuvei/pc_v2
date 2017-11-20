@@ -5,8 +5,6 @@ import { action } from 'mobx';
 import { DatePicker, Checkbox, Table, Badge, Input } from 'antd';
 import 'whatwg-fetch'
 
-import contact from '../../../State/Fatch'
-
 import request from '../../../Utils/Request'
 
 import './TeamTable.scss'

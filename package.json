@@ -22,6 +22,7 @@
     "rc-scroll-anim": "^2.0.2",
     "rc-tween-one": "^1.5.3",
     "react": "^15.4.2",
+    "react-decoration": "^2.0.0",
     "react-dom": "^15.4.2",
     "react-mixin": "^2.0.2",
     "react-router": "^3.0.2",

@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { Link } from 'react-router';
 
-import ReactMixin from 'react-mixin';
-import MixinLog from '../../../Mixin/Mixins';
-
 import { Menu } from 'antd';
 import HeaderTop from './HeaderTop'
 import './headerNav.scss';
@@ -152,4 +149,3 @@ export default class HeaderNav extends Component {
     }
 }
 
-ReactMixin(HeaderNav.prototype, MixinLog);
