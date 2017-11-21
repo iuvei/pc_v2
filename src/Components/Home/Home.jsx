@@ -20,10 +20,8 @@ export default class Home extends Component {
         return (this.props.router.location.action === 'PUSH')
     };
     componentDidMount() {
-        console.log('home');
     };
     render() {
-        console.log('home123');
         const main = [
             <HomeMainTop key="HomeMainTop"/>,
             <HomeMainLottery key="HomeMainLottery"/>,

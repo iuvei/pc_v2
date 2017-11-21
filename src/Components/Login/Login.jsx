@@ -81,14 +81,15 @@ export default class Login extends Component {
             method: "POST",
             body: JSON.stringify({
                 "sType": 'formal',
-                "username": 'hobart',
+                "username": 'bery123',
                 "loginpass": md5((md5(this.state.aptchac) + md5('123qwe'))),
                 "validcode": this.state.aptchac
             })
         }).then((data)=>{
             this.setState({ loading: false });
             if(data.status===200){
-                hashHistory.push('/lottery')
+                stateVar.userName = 'bery123';// 保存到全局
+                hashHistory.push('/lottery');
             }else{
                 this.setState({
                     warn:data.longMessage,

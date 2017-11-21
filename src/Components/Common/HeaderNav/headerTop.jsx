@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 import { Link } from 'react-router';
 import { Icon, Badge } from 'antd';
-
+import { stateVar } from '../../../State'
 import './headerTop.scss'
 import name_icon from './Img/name_icon.png'
 import email_icon from './Img/email_icon.png'
@@ -26,7 +26,7 @@ export default class HeaderTop extends Component {
                     <ul className="n_t_list right">
                         <li className="n_t_cursor n_t_position">
                             <img src={name_icon} style={{verticalAlign: 'middle',marginRight: 5}}/>
-                            supervip01
+                            {stateVar.userName}
                             <Icon type="caret-down" style={{marginLeft: '5px'}}/>
                             <div className="n_t_controler">
                                 <div className="n_t_drop_down">

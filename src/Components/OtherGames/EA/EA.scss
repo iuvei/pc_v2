@@ -1,0 +1,11 @@
+@import '../../../Style/variables';
+@import '../../../Style/mixin';
+
+.ea{
+    height: 779px;
+    @include bis('./Img/ea_bg.png');
+    text-align: center;
+    .ea_content{
+        position: relative;
+    }
+}

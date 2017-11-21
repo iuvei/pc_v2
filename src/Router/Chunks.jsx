@@ -120,6 +120,12 @@ export const dividend = (location, callback) => {
         callback(null, require('../Components/Report/Dividend/Dividend').default);
     }, 'dividend');
 };
+// 报表管理/日工资
+export const dayRate = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/Report/DayRate/DayRate').default);
+    }, 'dayRate');
+};
 // 报表管理/游戏帐变
 export const gameBill = (location, callback) => {
     require.ensure([], (require) => {
@@ -216,6 +222,18 @@ export const bobing = (location, callback) => {
     require.ensure([], (require) => {
         callback(null, require('../Components/OtherGames/Bobing/Bobing').default);
     }, 'bobing');
+};
+// 综合游戏/EA娱乐城
+export const ea = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/OtherGames/EA/EA').default);
+    }, 'ea');
+};
+// 综合游戏/PT游戏
+export const pt = (location, callback) => {
+    require.ensure([], (require) => {
+        callback(null, require('../Components/OtherGames/PT/PT').default);
+    }, 'pt');
 };
 //走势图
 export const tendency = (location, callback) => {

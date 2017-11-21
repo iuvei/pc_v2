@@ -1,27 +1,41 @@
-/*分红*/
+/*日工资*/
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
+import Fatch from '../../../Utils'
 import { DatePicker, Table, Pagination, Input, Button } from 'antd';
+import moment from 'moment';
 const ButtonGroup = Button.Group;
 import 'whatwg-fetch'
+import { stateVar } from '../../../State'
+import common from '../../../CommonJs/common'
 
-import './Dividend.scss'
+import './DayRate.scss'
 
 @observer
-export default class Dividend extends Component {
+export default class DayRate extends Component {
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             data: [],
             pagination: {},
             loading: false,
             timeArrIndex: '', // 时间选择按钮
             searchLoading: false,
+
+            userName: stateVar.userName,// 查询用户名
+            startDate: common.setDateTime(-1),// 查询日期
+            dayRateList: [], // 日工资列表
         }
     };
-    onChange(date, dateString) {
-        console.log(date, dateString);
-    }
+    /*获取查询日期*/
+    onChangeDate(date, dateString) {
+        this.setState({startDate: dateString})
+    };
+    /*获取查询用户名*/
+    onUserName(e) {
+        this.setState({userName: e.target.value})
+    };
+
     handleTableChange = (pagination, filters, sorter) => {
         const pager = { ...this.state.pagination };
         pager.current = pagination.current;
@@ -35,7 +49,7 @@ export default class Dividend extends Component {
             sortOrder: sorter.order,
             ...filters,
         });
-    }
+    };
     fetch = (params = {}) => {
         console.log('params:', params);
         this.setState({ loading: true });
@@ -47,7 +61,6 @@ export default class Dividend extends Component {
         }) .then(function(response) {
             return response.json()
         }).then((json) => {
-            console.log(json)
             const pagination = { ...this.state.pagination };
             // Read total count from server
             // pagination.total = data.totalCount;
@@ -62,75 +75,91 @@ export default class Dividend extends Component {
         })
     }
     componentDidMount() {
-        this.fetch();
+        this.dayRateList();
+        // this.fetch();
     };
     enterLoading() {
         this.setState({ searchLoading: true });
+        this.dayRateList();
     };
     onShowSizeChange (current, pageSize) {
         console.log(current, pageSize);
     }
-
+    dayRateList() {
+        this.setState({ loading: true });
+        Fatch.dailysalary({
+            method: "POST",
+            body: JSON.stringify({
+                username: this.state.userName,
+                starttime: this.state.startDate,
+                p: 1,
+            })
+        }).then((data)=>{
+            console.log(data);
+            this.setState({
+                loading: false,
+                searchLoading: false,
+            });
+            if(data.status === 200){
+                this.setState({dayRateList: data.repsoneContent.results})
+            }
+        })
+    };
     render() {
         const columns = [
-             {
+            {
                 title: '用户名',
-                dataIndex: 'name',
-                 width: 100,
-            }, {
-                title: '所属组',
-                dataIndex: 'gender',
-                width: 80,
-            }, {
-                title: '有效销售额',
-                dataIndex: 'email',
-                width: 110,
-            }, {
-                title: '盈亏总额',
-                dataIndex: 'email6',
-                width: 110,
-            }, {
-                title: '日工资总额',
-                dataIndex: 'email7',
-                width: 110,
-            }, {
-                title: '日亏损总额',
-                dataIndex: 'email8',
-                width: 110,
-            }, {
-                title: '分红比例',
-                dataIndex: 'email9',
+                dataIndex: 'username',
                 width: 100,
             }, {
-                title: '分红',
-                dataIndex: 'email10',
+                title: '所属组',
+                dataIndex: 'usergroup_name',
+                width: 80,
+            }, {
+                title: '日销量',
+                dataIndex: 'sale',
+                width: 110,
+            }, {
+                title: '日有效量',
+                dataIndex: 'effective_sale',
+                width: 110,
+            }, {
+                title: '日工资比例',
+                dataIndex: 'salary_ratio',
+                width: 110,
+            }, {
+                title: '团队日工资',
+                dataIndex: 'allsalary',
+                width: 110,
+            }, {
+                title: '日工资',
+                dataIndex: 'salary',
                 width: 100,
             }, {
                 title: '操作',
-                dataIndex: 'email11',
-                width: 230,
+                dataIndex: 'buttons',
+                width: 150,
                 render: (text, record) => (
-                   <ButtonGroup>
-                      <Button>历史工资</Button>
-                      <Button>修改比例</Button>
-                      <Button>发放分红</Button>
+                    <ButtonGroup>
+                        <Button>历史工资</Button>
+                        <Button>签到协议</Button>
                     </ButtonGroup>
                 ),
             }];
 
         return (
-            <div className="dividend_main">
+            <div className="dayRate_main">
                 <div className="team_list_top">
                     <div className="t_l_time">
                         <ul className="t_l_time_row">
                             <li>
                                 <span>用户名：</span>
-                                <Input placeholder="请输入用户名" />
+                                <Input placeholder="请输入用户名" onChange={(e)=>this.onUserName(e)} defaultValue={this.state.userName}/>
                             </li>
                             <li className="t_m_date_classify">日期：</li>
-                            <li style={{marginLeft: '8px'}}><DatePicker onChange={(date, dateString)=>{this.onChange(date, dateString)}} /></li>
-                            <li style={{margin: '0 8px'}}>至</li>
-                            <li><DatePicker onChange={(date, dateString)=>{this.onChange(date, dateString)}} /></li>
+                            <li style={{marginLeft: '8px'}}>
+                                <DatePicker onChange={(date, dateString)=>{this.onChangeDate(date, dateString)}}
+                                            defaultValue={moment(common.setDateTime(-1), 'YYYY-MM-DD')}/></li>
                             <li>
                                 <Button type="primary"
                                         icon="search"
@@ -146,15 +175,15 @@ export default class Dividend extends Component {
                 <div className="t_l_table">
                     <div className="t_l_location_name">
                         <span>当前位置：</span>
-                        <span>2017-9-26</span>
-                        <span> 至 </span>
-                        <span>2017-10-12</span>
+                        <a href="#">supervips</a>
+                        <span> > </span>
+                        <span>supervips02</span>
                         <a className="t_l_goBack right" href="#"> &lt;&lt;返回上一层 </a>
                     </div>
                     <div className="t_l_table_list">
                         <Table columns={columns}
                                rowKey={record => record.registered}
-                               dataSource={this.state.data}
+                               dataSource={this.state.dayRateList}
                                pagination={false}
                                loading={this.state.loading}
                                footer={() => 'Footer'}

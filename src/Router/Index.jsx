@@ -39,6 +39,9 @@ import {
     dividend,
     bobing,
     tendency,
+    ea,
+    pt,
+    dayRate,
 } from './Chunks';
 
 const routes = params => (
@@ -88,8 +91,11 @@ const routes = params => (
                 <Route path="/report/selfTable" getComponent={selfTable} params={params}/>
                 <Route path="/report/gameBill" getComponent={gameBill} params={params}/>
                 <Route path="/report/dividend" getComponent={dividend} params={params}/>
+                <Route path="/report/dayRate" getComponent={dayRate} params={params}/>
             </Route>
             <Route path="/bobing" getComponent={bobing} params={params}/>
+            <Route path="/ea" getComponent={ea} params={params}/>
+            <Route path="/pt" getComponent={pt} params={params}/>
         </Route>
     </Route>
 

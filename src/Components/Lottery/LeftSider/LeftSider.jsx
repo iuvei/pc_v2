@@ -18,6 +18,12 @@ import triangle_right from './Img/triangle_right.png'
 
 @observer
 export default class LeftSider extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+
+      };
+    };
     handleClick(e) {
         console.log('click', e);
     }

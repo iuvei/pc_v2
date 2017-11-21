@@ -16,14 +16,16 @@ export default class Main extends Component {
             hashHistory.getCurrentLocation().pathname === '/activity' ||
             hashHistory.getCurrentLocation().pathname === '/activity/activityDetails' ||
             hashHistory.getCurrentLocation().pathname === '/bobing' ||
-            hashHistory.getCurrentLocation().pathname === '/tendency') {
+            hashHistory.getCurrentLocation().pathname === '/tendency' ||
+            hashHistory.getCurrentLocation().pathname === '/ea' ||
+            hashHistory.getCurrentLocation().pathname === '/pt') {
             return true
         } else {
             return false
         }
     };
     showFooter() {
-        if (hashHistory.getCurrentLocation().pathname === '/tendency' ) {
+        if (hashHistory.getCurrentLocation().pathname === '/tendency') {
             return true
         } else {
             return false
@@ -51,7 +53,7 @@ export default class Main extends Component {
                 {
                     this.showLeftSider() ? this.props.children : contain
                 }
-                <footer style={{display: this.showFooter ? 'none' : ''}}>
+                <footer style={{display: this.showFooter() ? 'none' : ''}}>
                     <Footer/>
                 </footer>
             </div>

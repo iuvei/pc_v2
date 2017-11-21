@@ -34,6 +34,9 @@ export default class Report extends Component {
             },{
                 link: '/report/dividend',
                 text: '分红'
+            },{
+                link: '/report/dayRate',
+                text: '日工资'
             }
         ];
         return (

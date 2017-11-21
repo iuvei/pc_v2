@@ -9,6 +9,10 @@ const interFace = (key) => {
     INTERFACE['LOGIN'] = 'controller=default&action=login';
     // 退出登录
     INTERFACE['LOGINOUT'] = 'controller=default&action=logout';
+    // 投注中心
+    INTERFACE['PLAY'] = 'controller=game&action=play';
+    // 日工资
+    INTERFACE['DAILYSALARY'] = 'controller=salarymanage&action=dailysalary';
 
     let httpUrl;
     if (key === 'SESS') {
