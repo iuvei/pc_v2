@@ -24,7 +24,12 @@ export default class DayRate extends Component {
 
             userName: stateVar.userName,// 查询用户名
             startDate: common.setDateTime(-1),// 查询日期
-            dayRateList: [], // 日工资列表
+            table_1: {
+                dayRateList_1: [], // 日工资列表
+                tfootSum_1: {},
+                total_1: 0, // 日工资记录条数
+                history: [],
+            },
         }
     };
     /*获取查询日期*/
@@ -50,42 +55,20 @@ export default class DayRate extends Component {
             ...filters,
         });
     };
-    fetch = (params = {}) => {
-        console.log('params:', params);
-        this.setState({ loading: true });
-        fetch('https://randomuser.me/api?results=5',{
-            // body: JSON.stringify({
-            //             results: 10,
-            //             ...params,
-            // })
-        }) .then(function(response) {
-            return response.json()
-        }).then((json) => {
-            const pagination = { ...this.state.pagination };
-            // Read total count from server
-            // pagination.total = data.totalCount;
-            pagination.total = 200;
-            this.setState({
-                loading: false,
-                data: json.results,
-                pagination,
-            });
-        }).catch((ex) => {
-            console.log('parsing failed', ex)
-        })
-    }
+
     componentDidMount() {
-        this.dayRateList();
-        // this.fetch();
+        this.getDayRateList();
     };
     enterLoading() {
         this.setState({ searchLoading: true });
-        this.dayRateList();
+        this.getDayRateList();
     };
+    /*切换每页显示条数*/
     onShowSizeChange (current, pageSize) {
         console.log(current, pageSize);
     }
-    dayRateList() {
+    /*获取日工资列表*/
+    getDayRateList() {
         this.setState({ loading: true });
         Fatch.dailysalary({
             method: "POST",
@@ -101,51 +84,82 @@ export default class DayRate extends Component {
                 searchLoading: false,
             });
             if(data.status === 200){
-                this.setState({dayRateList: data.repsoneContent.results})
+                let table_1 = this.state.table_1;
+                table_1.dayRateList_1 = data.repsoneContent.results;
+                table_1.tfootSum_1 = data.repsoneContent.sum;
+                table_1.total_1 = parseInt(data.repsoneContent.affects);
+                this.setState({table_1: table_1});
             }
         })
+    };
+    /*点击用户名*/
+    onClickUserName(name) {
+        console.log(this.state.userName);
+        this.setState({userName: name}, ()=> this.getDayRateList());
     };
     render() {
         const columns = [
             {
                 title: '用户名',
                 dataIndex: 'username',
-                width: 100,
+                key: 'username',
+                render: text => <a href="javascript:void(0)" onClick={()=>this.onClickUserName(text)} style={{color: '#0088DE'}}>{text}</a>,
+                width: 130,
             }, {
                 title: '所属组',
                 dataIndex: 'usergroup_name',
-                width: 80,
+                key: 'usergroup_name',
+                width: 130,
             }, {
                 title: '日销量',
                 dataIndex: 'sale',
-                width: 110,
+                key: 'sale',
+                width: 130,
             }, {
                 title: '日有效量',
                 dataIndex: 'effective_sale',
-                width: 110,
+                key: 'effective_sale',
+                width: 130,
             }, {
                 title: '日工资比例',
                 dataIndex: 'salary_ratio',
-                width: 110,
+                key: 'salary_ratio',
+                width: 130,
             }, {
                 title: '团队日工资',
                 dataIndex: 'allsalary',
-                width: 110,
+                key: 'allsalary',
+                width: 130,
             }, {
                 title: '日工资',
                 dataIndex: 'salary',
-                width: 100,
+                key: 'salary',
+                width: 130,
             }, {
                 title: '操作',
                 dataIndex: 'buttons',
-                width: 150,
+                key: 'buttons',
+                width: 200,
                 render: (text, record) => (
                     <ButtonGroup>
-                        <Button>历史工资</Button>
-                        <Button>签到协议</Button>
+                        {
+                            text.map((item, index)=>{
+                                return <Button style={{color: item.color}} key={index}>{item.text}</Button>
+                            })
+                        }
                     </ButtonGroup>
                 ),
-            }];
+            }
+        ];
+        const tfoot = <ul className="tfoot_list clear">
+            <li>合计</li>
+            <li>{this.state.table_1.tfootSum_1.total_sale === null ? '-' : this.state.table_1.tfootSum_1.total_sale}</li>
+            <li>{this.state.table_1.tfootSum_1.total_effective_sale === null ? '-' : this.state.table_1.tfootSum_1.total_effective_sale}</li>
+            <li>-</li>
+            <li>-</li>
+            <li>{this.state.table_1.tfootSum_1.total_salary === null ? '-' : this.state.table_1.tfootSum_1.total_salary}</li>
+            <li>-</li>
+        </ul>;
 
         return (
             <div className="dayRate_main">
@@ -154,7 +168,7 @@ export default class DayRate extends Component {
                         <ul className="t_l_time_row">
                             <li>
                                 <span>用户名：</span>
-                                <Input placeholder="请输入用户名" onChange={(e)=>this.onUserName(e)} defaultValue={this.state.userName}/>
+                                <Input placeholder="请输入用户名" onChange={(e)=>this.onUserName(e)} value={this.state.userName}/>
                             </li>
                             <li className="t_m_date_classify">日期：</li>
                             <li style={{marginLeft: '8px'}}>
@@ -178,21 +192,27 @@ export default class DayRate extends Component {
                         <a href="#">supervips</a>
                         <span> > </span>
                         <span>supervips02</span>
-                        <a className="t_l_goBack right" href="#"> &lt;&lt;返回上一层 </a>
+                        <a className="t_l_goBack right" href="javascript:void(0)"> &lt;&lt;返回上一层 </a>
                     </div>
                     <div className="t_l_table_list">
                         <Table columns={columns}
                                rowKey={record => record.registered}
-                               dataSource={this.state.dayRateList}
+                               dataSource={this.state.table_1.dayRateList_1}
                                pagination={false}
                                loading={this.state.loading}
-                               footer={() => 'Footer'}
+                               footer={() => tfoot}
                                onChange={this.handleTableChange}
                                scroll={{y: 300}}
+                               size="middle"
                         />
                     </div>
                     <div className="t_l_page right">
-                        <Pagination showSizeChanger onShowSizeChange={()=>this.onShowSizeChange()} defaultCurrent={3} total={500} />
+                        <Pagination showSizeChanger
+                                    onShowSizeChange={(current, pageSize)=>this.onShowSizeChange(current, pageSize)}
+                                    defaultCurrent={1}
+                                    total={this.state.total_1}
+                                    pageSizeOptions={['10', '25', '50']}
+                        />
                     </div>
                 </div>
             </div>
